@@ -1,0 +1,42 @@
+[global]
+format = "<b>%s</b>\n%b"
+markup = full
+alignment = left
+vertical_alignment = top
+word_wrap = yes
+geometry = "300x5-10-10"
+separator_height = 0
+padding = 8
+horizontal_padding = 8
+browser = /usr/bin/firefox -new-tab
+sort = yes
+idle_threshold = 180
+icon_position = left
+max_icon_size = 80
+frame_width = 2
+show_indicators = no
+
+[shortcuts]
+close = mod4+comma
+close_all = mod4+shift+comma
+history = mod4+n
+context = mod4+shift+n
+
+[urgency_low]
+frame_color = "#000000"
+foreground = "#000000"
+background = "#ffffff"
+timeout = 10
+
+[urgency_normal]
+frame_color = "#000000"
+foreground = "#000000"
+background = "#ffffff"
+highlight = "#000000"
+timeout = 10
+
+[urgency_critical]
+frame_color = "#B7472A"
+foreground = "#B7472A"
+background = "#191311"
+timeout = 15

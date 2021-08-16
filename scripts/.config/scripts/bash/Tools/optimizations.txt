@@ -1,0 +1,8 @@
+# Fstab
+	noatime
+	commit=300
+# utilities
+	powertop
+	iotop
+	bpytop
+	intel-undervolt

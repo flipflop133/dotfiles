@@ -1,0 +1,13 @@
+include lightTheme
+set font "RobotoMono Nerd Font 12"
+set selection-clipboard clipboard
+set highlight-transparency 0.3
+set guioptions none # hide status bar
+
+# Key bindings
+map j navigate next
+map k navigate previous
+map H scroll left
+map K scroll up
+map J scroll down
+map L scroll right

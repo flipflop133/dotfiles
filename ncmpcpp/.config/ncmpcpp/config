@@ -1,0 +1,38 @@
+# music visualizer
+visualizer_output_name = "pulse audio"
+visualizer_in_stereo = "yes"
+visualizer_fps = 60
+visualizer_color = "cyan"
+
+# notifications
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
+
+# song format
+now_playing_prefix = $b$(cyan)
+now_playing_suffix = $(end)$/b
+current_item_prefix = $(blue)$r
+
+# progress bar
+progressbar_look = "━━ "
+
+# columns settings
+song_columns_list_format = (20)[]{a} (6f)[]{NE} (50)[]{t|f:Title} (20)[]{b} (7f)[]{l}
+
+# colors definitions
+colors_enabled = yes
+empty_tag_color = black
+header_window_color = black
+volume_color = black
+state_line_color = black
+state_flags_color = black:b
+main_window_color = black
+color1 = black
+color2 = black
+progressbar_color = black:b
+progressbar_elapsed_color = cyan:b
+statusbar_color = black
+statusbar_time_color = black:b
+player_state_color = cyan:b
+alternative_ui_separator_color = black:b
+window_border_color = black
+active_window_border = black

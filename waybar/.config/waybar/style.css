@@ -1,0 +1,77 @@
+/***********/
+/* GENERAL */
+/***********/
+* {
+  font-family: RobotoMono Nerd Font;
+  font-size: 18px;
+  border: none;
+  border-radius: 0;
+}
+window#waybar {
+  background: @theme_bg_color;
+  color: @theme_fg_color;
+}
+
+/****************/
+/* MODULES LEFT */
+/****************/
+#workspaces button.focused {
+  color: @theme_selected_fg_color;
+  background: @theme_selected_bg_color;
+}
+
+#workspaces button.urgent {
+  color: @error_color;
+}
+
+#mode,
+#window {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/******************/
+/* MODULES MIDDLE */
+/******************/
+#mpd,
+#custom-media {
+  padding-left: 15px;
+  padding-right: 8px;
+}
+#mpd {
+  font-size: 16px;
+}
+
+/*****************/
+/* MODULES right */
+/*****************/
+#tray,
+#clock,
+#idle_inhibitor,
+#disk,
+#disk.home,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#network,
+#backlight,
+#battery,
+#custom-calendar,
+#custom-notifications,
+#tray {
+  padding-left: 15px;
+  padding-right: 8px;
+}
+
+#temperature.critical {
+  color: @error_color;
+}
+
+#battery.warning:not(.charging) {
+  color: @error_color;
+}
+
+#battery.critical:not(.charging) {
+  color: @error_color;
+}

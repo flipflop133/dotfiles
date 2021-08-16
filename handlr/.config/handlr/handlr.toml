@@ -1,0 +1,3 @@
+enable_selector = true
+selector = "bemenu -p 'Open With: '"
+terminal_emulator = 'foot'

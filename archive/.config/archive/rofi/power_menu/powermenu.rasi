@@ -1,0 +1,63 @@
+/*******************************************************************************
+ * ROFI Color theme
+ * User: François Bechet
+ * Copyright: François Bechet
+ * Man: https://www.mankier.com/5/rofi-theme#
+ *******************************************************************************/
+
+/* Global properties section */
+ *{
+  font:                            "Noto Sans Nerd Font Medium 11";
+
+  menu-window-padding:                   0px 0px;
+  menu-inputbar-margin:                  10px 0px 10px 0px;
+  menu-prompt-padding:                   10px 20px 10px 20px;
+  menu-prompt-margin:                    0px 0px 0px -2px;
+  menu-element-border:                   0px;
+  menu-element-padding:                  10px 0px 10px 0px;
+
+  background-color: #000000;
+  color: #ffffff;
+
+ }
+
+/* Element theme section */
+#window {
+  width: 140px;
+  height: 145px;
+  location: south east;
+  x-offset: 0%;
+  y-offset: -29px;
+  padding: 0px;
+}
+
+#element {
+  padding: @option-element-padding;
+  background-color: #ffffff;
+  text-color: #000000;
+  padding: 5px;
+}
+
+#element.selected {
+  background-color: #333333;
+  text-color: #ffffff;
+}
+
+#listview{
+  spacing: 0px;
+}
+#prompt{
+  enabled: false;
+}
+
+#entry{
+  enabled: false;
+}
+
+#textbox{
+  enabled: false;
+}
+
+#inputbar{
+  enabled: false;
+}

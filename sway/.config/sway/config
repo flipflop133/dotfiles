@@ -1,0 +1,259 @@
+###########
+# GENERAL #
+###########
+# key modifier
+set $mod Mod4
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# exit sway
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
+
+# terminal
+set $term foot
+
+# xwayland support
+xwayland enable
+
+#########
+# INPUT #
+#########
+input * {
+	xkb_layout "be"
+	xkb_numlock enabled
+	tap enabled
+	natural_scroll enabled
+	pointer_accel 0.2
+}
+
+# hide cursor after some time
+seat * hide_cursor 5000
+
+# hide cursor on keypress
+seat * hide_cursor when-typing enable
+
+##########
+# OUTPUT #
+##########
+output * {
+	bg ~/Images/wallpaper/light/* fill
+}
+
+##################
+# WINDOWS DESIGN #
+##################
+# borders
+default_border pixel 3
+default_floating_border pixel 3
+smart_borders on
+
+# windows titles font
+font pango:RobotoMono Nerd Font 18px
+
+# colors
+include lightTheme
+
+####################
+# WINDOWS CONTROLS #
+####################
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus he child container
+bindsym $mod+z focus child
+
+##############
+# SCRATCHPAD #
+##############
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+u move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+u scratchpad show
+
+##############
+# WORKSPACES #
+##############
+# Define names for default workspaces for which we configure key bindings later on.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+ampersand workspace number $ws1
+bindsym $mod+eacute workspace number $ws2
+bindsym $mod+quotedbl workspace number $ws3
+bindsym $mod+apostrophe workspace number $ws4
+bindsym $mod+parenleft workspace number $ws5
+bindsym $mod+section workspace number $ws6
+bindsym $mod+egrave workspace number $ws7
+bindsym $mod+exclam workspace number $ws8
+bindsym $mod+ccedilla workspace number $ws9
+bindsym $mod+agrave workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+ampersand move container to workspace number $ws1
+bindsym $mod+Shift+eacute move container to workspace number $ws2
+bindsym $mod+Shift+quotedbl move container to workspace number $ws3
+bindsym $mod+Shift+apostrophe move container to workspace number $ws4
+bindsym $mod+Shift+parenleft move container to workspace number $ws5
+bindsym $mod+Shift+section move container to workspace number $ws6
+bindsym $mod+Shift+egrave move container to workspace number $ws7
+bindsym $mod+Shift+exclam move container to workspace number $ws8
+bindsym $mod+Shift+ccedilla move container to workspace number $ws9
+bindsym $mod+Shift+agrave move container to workspace number $ws10
+
+# resize window
+bindsym $mod+r mode "resize"
+mode "resize" {
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
+
+	# back to normal: Enter or Escape or $mod+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
+}
+
+#######
+# GTK #
+#######
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+	gsettings set $gnome-schema gtk-theme 'WhiteSur-light'
+	gsettings set $gnome-schema icon-theme 'Papirus-Light'
+	gsettings set $gnome-schema cursor-theme 'macOSBigSur'
+	gsettings set $gnome-schema font-name 'Open Sans 12'
+}
+
+####################################
+# OTHER CONTROLS AND STARTUP STUFF #
+####################################
+# notifications script path
+set $notifications $HOME/.config/scripts/bash/notifications.sh
+
+# volume control
+bindsym XF86AudioRaiseVolume exec pamixer -i 2;exec $notifications volume
+bindsym XF86AudioLowerVolume exec pamixer -d 2;exec $notifications volume
+bindsym XF86AudioMute exec pamixer -t;exec $notifications volume
+
+# microphone control
+bindsym XF86AudioRaiseVolume+alt exec pamixer --source 5 -i 2;exec $notifications microphone
+bindsym XF86AudioLowerVolume+alt exec pamixer --source 5 -d 2;exec $notifications microphone
+bindsym XF86AudioMicMute exec pamixer --source 5 -t;exec $notifications microphone
+
+# media control
+bindsym XF86AudioPlay exec playerctl play-pause || mpc toggle
+bindsym XF86AudioPause exec playerctl pause || mpc pause
+bindsym XF86AudioNext exec playerctl next || mpc next
+bindsym XF86AudioPrev exec playerctl previous || mpc prev
+bindsym XF86AudioStop exec playerctl stop || mpc stop
+
+# backlight control
+bindsym $mod+KP_Add exec light -A 1;exec $notifications brightness
+bindsym $mod+KP_Subtract exec light -U 1;exec $notifications brightness
+
+# lockscreen
+bindsym $mod+x exec swaylock --no-unlock-indicator --image $HOME/Images/wallpaper/light/*
+
+# power management
+exec swayidle -w timeout 330 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/*'\
+                 timeout 300 'swaymsg "output * dpms off"'\
+                 resume 'swaymsg "output * dpms on"'\
+                 before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/*'
+
+# powermenu
+bindsym $mod+p exec $HOME/.config/scripts/bash/bemenupower.sh
+
+# terminal
+bindsym $mod+Return exec $term
+
+# screenshot
+bindsym Print exec $HOME/.config/scripts/bash/bemenuscreenshot.sh
+
+# screenrecorder
+bindsym $mod+Shift+r exec $HOME/.config/scripts/bash/bemenuscreenrecord.sh
+bindsym $mod+alt+r exec killall -s SIGINT wf-recorder & killall -s SIGINT ffmpeg & notify-send "Stopped recording" "Record is located in ~/Videos"
+
+# calculator
+bindsym XF86Calculator exec foot python -i $HOME/.config/sway/calculator.py
+
+# file manager
+bindsym $mod+Shift+f exec $term nnn
+
+# app launcher
+include lightFuzzel
+
+# bar
+exec waybar
+
+# notification daemon
+exec mako
+
+# music player
+exec mpd
+bindsym $mod+m exec $term ncmpcpp
+
+# web browser
+bindsym $mod+b exec $BROWSER
+
+# night light
+exec wlsunset -l 49 -L 5
+
+# nextcloud
+exec nextcloud
+
+# theme manager
+exec python $HOME/.config/themes/main.py
+
+# notes
+bindsym $mod+n exec foot nnn $HOME/Nextcloud/Notes

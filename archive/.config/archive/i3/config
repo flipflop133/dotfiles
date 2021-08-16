@@ -1,0 +1,218 @@
+###########
+# GENERAL #
+###########
+# key modifier
+set $mod Mod4
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+###########
+# i3-gaps #
+###########
+smart_borders on
+gaps inner 30
+gaps bottom 35
+
+##################
+# WINDOWS DESIGN #
+##################
+# borders
+hide_edge_borders smart
+default_border pixel 3
+
+# window titles font
+font pango:RobotoMono Nerd Font 14
+
+# colors
+# define colors
+set $black       #000000
+set $bg          #999999
+set $grey        #333333
+set $lg          #cccccc
+set $fg          #ffffff
+set $cyan        #007DB7
+set $red         #EE0000
+# set colors
+# class                 border  backgr. text    indicator child_border
+client.focused          $fg     $fg     $black  $red      $cyan
+client.focused_inactive $fg     $fg     $black  $fg       $fg
+client.unfocused        $bg     $bg     $grey   $fg       $fg
+client.urgent           $bg     $bg     $red    $fg       $fg
+client.placeholder      $black  #0c0c0c $fg     $black    #0c0c0c
+client.background       $fg
+
+####################
+# WINDOWS CONTROLS #
+####################
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+z focus child
+
+##############
+# WORKSPACES #
+##############
+# Define names for default workspaces for which we configure key bindings later on.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# resize window
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+####################################
+# OTHER CONTROLS AND STARTUP STUFF #
+####################################
+# volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up 2;exec --no-startup-id $HOME/.config/i3/notifications.sh volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down 2;exec --no-startup-id $HOME/.config/i3/notifications.sh volume
+bindsym XF86AudioMute exec --no-startup-id pulseaudio-ctl mute;exec --no-startup-id $HOME/.config/i3/notifications.sh volume
+
+# microphone control
+bindsym XF86AudioMicMute exec --no-startup-id pulseaudio-ctl mute-input;exec --no-startup-id $HOME/.config/i3/notifications.sh microphone
+
+# media control
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# backlight control
+bindsym $mod+KP_Add exec light -A 2;exec --no-startup-id $HOME/.config/i3/notifications.sh brightness
+bindsym $mod+KP_Subtract exec light -U 2;exec --no-startup-id $HOME/.config/i3/notifications.sh brightness
+
+# lockscreen
+bindsym $mod+x exec --no-startup-id convert $HOME/Images/wallpaper/* -scale 100% RGB:- | i3lock --no-unlock-indicator --raw=1920x1080:rgb --image /dev/stdin
+
+# powermenu
+bindsym $mod+p exec --no-startup-id $HOME/.config/i3/dmenupower.sh
+
+# terminal
+bindsym $mod+Return exec --no-startup-id alacritty
+
+# screenshot
+bindsym $mod+Print exec --no-startup-id flameshot gui
+
+# calculator
+bindsym XF86Calculator exec --no-startup-id galculator
+
+# file manager
+bindsym $mod+Shift+f exec --no-startup-id alacritty -e fish -c "nnn -e"
+
+# app launcher
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -l 10"
+
+# wallpaper
+exec --no-startup-id xwallpaper --stretch ~/Images/wallpaper/*.png
+exec --no-startup-id xwallpaper --stretch ~/Images/wallpaper/*.jpg
+exec --no-startup-id nitrogen --restore
+
+# bar
+exec --no-startup-id polybar -r bottom
+
+# touchpad tapping & natural scrolling
+exec --no-startup-id xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Natural Scrolling Enabled" 1
+
+# numlock
+exec --no-startup-id numlockx on
+
+# compositor
+exec --no-startup-id picom
+
+# screenshot utility
+exec --no-startup-id flameshot
+
+# notification daemon
+exec --no-startup-id dunst
+
+# screen dpms flags: standby | suspend | off
+exec --no-startup-id xset dpms 200 400 600

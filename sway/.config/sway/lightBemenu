@@ -1,0 +1,14 @@
+bindsym $mod+d exec j4-dmenu-desktop --dmenu="bemenu --scrollbar=always --fn 'RobotoMono 16' \
+						 -i\
+						 -l 10\
+						 --tb=#ffffff\
+						 --tf=#000000\
+						 --fb=#ffffff\
+						 --ff=#000000\
+						 --nb=#ffffff\
+						 --nf=#000000\
+						 --hb=#000000\
+						 --hf=#ffffff\
+						 --scb=#000000\
+						 --scf=#999999\
+						 "

@@ -1,0 +1,28 @@
+# general
+background-color=#f5f5f5
+text-color=#242424
+progress-color=#5895f9
+border-color=#242424
+font=RobotoMono 12
+anchor=bottom-right
+layer=overlay
+default-timeout=15000
+
+# audio
+[category=audio]
+default-timeout=2000
+group-by=category
+format=<b>%s</b>\n%b
+
+# brightness
+[category=brightness]
+default-timeout=2000
+group-by=category
+format=<b>%s</b>\n%b
+
+# screenshot
+[category=screenshot]
+default-timeout=10000
+format=<b>%s</b>\n%b
+width=700
+max-icon-size=500

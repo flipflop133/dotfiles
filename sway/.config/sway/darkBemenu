@@ -1,0 +1,11 @@
+bindsym $mod+d exec j4-dmenu-desktop --dmenu="bemenu --fn 'RobotoMono 16' \
+        -i\
+        -l 10\
+        --fb=#000000\
+	--ff=#ffffff\
+	--tb=#000000\
+	--tf=#ffffff\
+	--nb=#000000\
+	--hb=#ffffff\
+	--hf=#000000\
+	--nf=#ffffff"

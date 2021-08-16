@@ -1,0 +1,153 @@
+{
+	// General
+	"layer": "top",
+	"position": "bottom",
+	"height": 35,
+
+	// Modules order
+	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+	"modules-center": ["custom/media","mpd"],
+	"modules-right": ["custom/weather", "temperature", "pulseaudio", "network", "backlight", "battery", "clock#date", "clock", "tray"],
+
+	// Modules configuration
+	"sway/mode": {
+		"interval": 1,
+		"format": "<span style=\"italic\">{}</span>"
+	},
+	"sway/window":{
+		"interval": 1,
+		"max-length": 35
+	},
+	"tray": {
+		"interval": 5,
+		"icon-size": 21,
+		"spacing": 10
+	},
+	"clock": {
+		"interval": 5,
+		"format": "{:%I:%M %p}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"clock#date": {
+		"interval": 600,
+		"format": "{:%a %d}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"disk#root": {
+		"format": "{percentage_used}% \uf07b",
+		"on-click":"foot fish -c nnn -e"
+	},
+	"disk#home": {
+		"format": "{percentage_used}% \uf07b",
+		"on-click":"foot fish -c nnn -e",
+		"path":"/home"
+	},
+	"cpu": {
+		"format": "{usage}% \uf9c4",
+		"interval": 1,
+		"on-click": "foot bpytop"
+	},
+	"memory": {
+		"format": "{}% \uf85a",
+		"interval": 1,
+		"format-alt": "{used:0.1f}G/{total:0.1f}G"
+	},
+	"temperature": {
+		"interval": 5,
+		"thermal-zone": 5,
+		"critical-threshold": 70,
+		"format-critical": "{temperatureC}°C \uf737",
+		"format": "{temperatureC}°C {icon}",
+		"format-icons": ["\uf2cb", "\uf2ca", "\uf2c9","\uf2c8","\uf2c7"]
+	},
+	"backlight": {
+		"interval": 1,
+		"format": "{percent}% {icon}",
+		"format-icons": ["\uf5d9","\uf5da","\uf5db","\uf5dc","\uf5dd","\uf5de","\uf5df"]
+	},
+	"battery": {
+		"interval": 10,
+		"states": {
+			"good": 95,
+			"warning": 15,
+			"critical": 5
+		},
+		"format": "{capacity}% {icon}",
+		"format-charging": "{capacity}% \uf583",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["\uf58d","\uf579","\uf57a","\uf57b","\uf57c","\uf57d","\uf57e","\uf57f","\uf580","\uf581","\uf578"],
+	},
+	"network": {
+		"interval": 10,
+		"format-wifi": "{signalStrength}% \uf1eb",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr} \uf700",
+		"format-linked": "{ifname} (No IP) \uf700",
+		"format-disconnected": "Disconnected \uf701",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}",
+		"format-icons": [""],
+		"tooltip-format-wifi": "{essid}"
+	},
+	"pulseaudio": {
+		"interval": 1,
+		"scroll-step": 2,
+		"format": "{volume}% {icon} {format_source}",
+		"format-bluetooth": "{volume}% {icon}\uf5ae {format_source}",
+		"format-bluetooth-muted": "{icon}\uf5b1 {format_source}",
+		"format-muted": "\ufa80 {format_source}",
+		"format-source": "{volume}% \uf130",
+		"format-source-muted": "\uf131",
+		"format-icons": {
+			"headphone": "\uf025",
+			"hands-free": "\uf256",
+			"headset": "\uf7cd",
+			"phone": "\uf8f1",
+			"portable": "\uf61b",
+			"car": "\uf1b9",
+			"default": ["\uf026", "\ufa7f","\ufa7d", "\uf028"]
+		},
+		"on-click": "pavucontrol"
+	},
+	"custom/media": {
+		"format": "<span style=\"italic\">{}</span>",
+		"interval": 3,
+		"exec": "python -OO $HOME/.config/scripts/python/spotify.py",
+		"on-click": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
+		"on-click-right": "killall spotify"
+	},
+	"mpd": {
+		"format": "<span style=\"italic\">{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title}</span>",
+		"format-disconnected": "",
+		"format-stopped": "",
+		"interval": 10,
+		"consume-icons": {
+			"on": "\uf0c4 "
+		},
+		"random-icons": {
+			"off": "<span color=\"#f53c3c\"></span> ",
+			"on": "\uf074 "
+		},
+		"repeat-icons": {
+			"on": "\uf01e "
+		},
+		"single-icons": {
+			"on": "\uf01e1 "
+		},
+		"state-icons": {
+			"paused": "\uf28b",
+			"playing": "\uf144"
+		},
+		"tooltip-format": "{album}",
+		"max-length": 40
+	},
+	"custom/weather": {
+		"interval": 600,
+		"exec": "python -OO $HOME/.config/weather-script/weather.py",
+		"on-click": "$BROWSER www.meteo.be"
+	},
+	"custom/notifications": {
+		"format": "{} ",
+		"interval": 1,
+		"exec": "$HOME/.config/scripts/bash/notifications_status.sh --status",
+		"on-click": "$HOME/.config/scripts/bash/notifications_status.sh --toggle"
+	},
+}
