@@ -22,7 +22,7 @@ autoload -Uz _zinit
 # GENERAL #
 ###########
 # Aliases
-source $HOME/.config/aliases
+source $HOME/aliases
 
 # Default sudoeditor
 export SUDO_EDITOR=/usr/bin/nvim

@@ -13,3 +13,9 @@ nnn/.config/nnn/mounts
 nnn/.config/nnn/plugins
 nnn/.config/nnn/sessions
 nnn/.config/nnn/.selection
+
+# python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class

@@ -8,7 +8,7 @@ function()
 		'projekt0n/github-nvim-theme',
 		config = function()
 			require('github-theme').setup({
-				themeStyle = "light",
+				themeStyle = "dark",
 			})
 		end
 	}
@@ -64,6 +64,7 @@ function()
 	}
 
 	use {'hrsh7th/vim-vsnip', requires = 'hrsh7th/nvim-compe'}
+	use {'hrsh7th/vim-vsnip-integ'}
 
 	use {'tzachar/compe-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-compe'}
 

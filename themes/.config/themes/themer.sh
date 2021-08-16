@@ -2,6 +2,9 @@
 theme(){
 	theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
 	newTheme=${theme/$1/$2}
+	# theme tutanota
+	killall tutanota-desktop
+	sed -i "s|\"selectedTheme\": \"${1}\"|\"selectedTheme\": \"${2}\"|g" "$HOME"/.config/tutanota-desktop/conf.json
 	# theme foot
 	sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/foot/foot.ini
 	# theme sway
