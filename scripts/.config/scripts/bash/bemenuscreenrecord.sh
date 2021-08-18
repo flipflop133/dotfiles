@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $HOME/.config/scripts/bash/lightBemenu
+source $HOME/.config/scripts/bash/darkBemenu
 
 menu() { bemenu --fn "$font"\
 	-i\
@@ -14,7 +14,7 @@ options() {
 }
 
 subOptions(){
-	printf "\uf988area\n\uf792screen"
+	printf "麗 area\n screen"
 }
 
 select=$(options | menu "Audio?")
@@ -39,11 +39,11 @@ esac
 secondChoice=""
 
 case $secondSelect in
-	"\uf988area")
+	"麗 area")
 		secondChoice="slurp"
 		thirdSelect=$(options | menu "Camera?")
 		;;
-	"\uf792screen")
+	" screen")
 		secondChoice=""
 		thirdSelect=$(options | menu "Camera?")
 		;;

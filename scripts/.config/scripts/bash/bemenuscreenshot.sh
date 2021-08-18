@@ -1,5 +1,5 @@
 #!/bin/bash
-source $HOME/.config/scripts/bash/lightBemenu
+source $HOME/.config/scripts/bash/darkBemenu
 
 menu() { bemenu --fn "$font"\
 	-i\
@@ -9,23 +9,23 @@ menu() { bemenu --fn "$font"\
 }
 
 options() {
-	printf "\uf0c7save\n\uf68ecopy"
+	printf " save\n copy"
 }
 
 subOptions(){
-	printf "\uf245active\n\uf792screen\n\ufafboutput\n\uf988area\n\uf2d0window\n"
+	printf " active\n screen\n output\n麗 area\n window\n"
 }
 
 select=$(options | menu)
 choice=""
 
 case $select in
-	"\uf0c7save")
+	" save")
 		choice="save"
 		echo "save selected"
 		subSelect=$(subOptions | menu)
 		;;
-	"\uf68copy")
+	" copy")
 		choice="copy"
 		echo "copy selected"
 		subSelect=$(subOptions | menu)
@@ -38,19 +38,19 @@ esac
 secondChoice=""
 
 case $subSelect in
-	"\uf245active")
+	" active")
 		secondChoice="active"
 		;;
-	"\uf792screen")
+	" screen")
 		secondChoice="screen"
 		;;
-	"\ufafboutput")
+	" output")
 		secondChoice="output"
 		;;
-	"\uf988area")
+	"麗 area")
 		secondChoice="area"
 		;;
-	"\uf2d0window")
+	" window")
 		secondChoice="window"
 		;;
 	*)

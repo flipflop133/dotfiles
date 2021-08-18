@@ -8,7 +8,7 @@ function()
 		'projekt0n/github-nvim-theme',
 		config = function()
 			require('github-theme').setup({
-				themeStyle = "light",
+				themeStyle = "dark",
 			})
 		end
 	}
