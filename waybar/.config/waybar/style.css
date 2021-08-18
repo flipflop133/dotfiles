@@ -2,7 +2,8 @@
 /* GENERAL */
 /***********/
 * {
-  font-family: RobotoMono Nerd Font;
+  font-family: Open Sans, JetBrainsMono Nerd Font;
+  font-weight: 600;
   font-size: 18px;
   border: none;
   border-radius: 0;
@@ -30,18 +31,6 @@ window#waybar {
   padding-right: 8px;
 }
 
-/******************/
-/* MODULES MIDDLE */
-/******************/
-#mpd,
-#custom-media {
-  padding-left: 15px;
-  padding-right: 8px;
-}
-#mpd {
-  font-size: 16px;
-}
-
 /*****************/
 /* MODULES right */
 /*****************/
@@ -50,7 +39,7 @@ window#waybar {
 #idle_inhibitor,
 #disk,
 #disk.home,
-#cpu,
+#custom-cpu,
 #memory,
 #temperature,
 #pulseaudio,

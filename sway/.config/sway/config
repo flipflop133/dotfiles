@@ -37,7 +37,7 @@ seat * hide_cursor when-typing enable
 # OUTPUT #
 ##########
 output * {
-	bg ~/Images/wallpaper/dark/* fill
+	bg ~/Images/wallpaper/light/* fill
 }
 
 ##################
@@ -49,10 +49,10 @@ default_floating_border pixel 3
 smart_borders on
 
 # windows titles font
-font pango:RobotoMono Nerd Font 18px
+font pango:Open Sans SemiBold 18px
 
 # colors
-include darkTheme
+include lightTheme
 
 ####################
 # WINDOWS CONTROLS #
@@ -169,10 +169,10 @@ mode "resize" {
 #######
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-	gsettings set $gnome-schema gtk-theme 'WhiteSur-dark'
+	gsettings set $gnome-schema gtk-theme 'WhiteSur-light'
 	gsettings set $gnome-schema icon-theme 'Papirus-Light'
 	gsettings set $gnome-schema cursor-theme 'macOSBigSur'
-	gsettings set $gnome-schema font-name 'Open Sans 12'
+	gsettings set $gnome-schema font-name 'Open Sans 18px'
 }
 
 ####################################
@@ -203,19 +203,19 @@ bindsym $mod+KP_Add exec light -A 1;exec $notifications brightness
 bindsym $mod+KP_Subtract exec light -U 1;exec $notifications brightness
 
 # lockscreen
-bindsym $mod+x exec swaylock --no-unlock-indicator --image $HOME/Images/wallpaper/dark/*
+bindsym $mod+x exec swaylock --no-unlock-indicator --image $HOME/Images/wallpaper/light/*
 
 # power management
-exec swayidle -w timeout 330 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/dark/*'\
+exec swayidle -w timeout 330 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/*'\
                  timeout 300 'swaymsg "output * dpms off"'\
                  resume 'swaymsg "output * dpms on"'\
-                 before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/dark/*'
+                 before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/*'
 
 # powermenu
 bindsym $mod+p exec $HOME/.config/scripts/bash/bemenupower.sh
 
 # terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec $term -T terminal
 
 # screenshot
 bindsym Print exec $HOME/.config/scripts/bash/bemenuscreenshot.sh
@@ -228,10 +228,10 @@ bindsym $mod+alt+r exec killall -s SIGINT wf-recorder & killall -s SIGINT ffmpeg
 bindsym XF86Calculator exec foot python -i $HOME/.config/sway/calculator.py
 
 # file manager
-bindsym $mod+Shift+f exec $term nnn
+bindsym $mod+Shift+f exec $term -T "file manager" nnn
 
 # app launcher
-include darkFuzzel
+include lightFuzzel
 
 # bar
 exec waybar
@@ -253,4 +253,7 @@ exec wlsunset -l 49 -L 5
 exec nextcloud
 
 # notes
-bindsym $mod+n exec foot nnn $HOME/Nextcloud/Notes
+bindsym $mod+n exec $term -T "notes" nnn $HOME/Nextcloud/Notes
+
+# theme manager
+exec python -OO $HOME/.config/themes/main.py

@@ -7,7 +7,7 @@
 	// Modules order
 	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
 	"modules-center": ["custom/media","mpd"],
-	"modules-right": ["custom/weather", "temperature", "pulseaudio", "network", "backlight", "battery", "clock#date", "clock", "tray"],
+	"modules-right": ["custom/weather", "pulseaudio", "network", "backlight", "battery", "clock#date", "clock", "tray"],
 
 	// Modules configuration
 	"sway/mode": {
@@ -33,33 +33,6 @@
 		"format": "{:%a %d}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
-	"disk#root": {
-		"format": "{percentage_used}% \uf07b",
-		"on-click":"foot fish -c nnn -e"
-	},
-	"disk#home": {
-		"format": "{percentage_used}% \uf07b",
-		"on-click":"foot fish -c nnn -e",
-		"path":"/home"
-	},
-	"cpu": {
-		"format": "{usage}% \uf9c4",
-		"interval": 1,
-		"on-click": "foot bpytop"
-	},
-	"memory": {
-		"format": "{}% \uf85a",
-		"interval": 1,
-		"format-alt": "{used:0.1f}G/{total:0.1f}G"
-	},
-	"temperature": {
-		"interval": 5,
-		"thermal-zone": 5,
-		"critical-threshold": 70,
-		"format-critical": "{temperatureC}°C \uf737",
-		"format": "{temperatureC}°C {icon}",
-		"format-icons": ["\uf2cb", "\uf2ca", "\uf2c9","\uf2c8","\uf2c7"]
-	},
 	"backlight": {
 		"interval": 1,
 		"format": "{percent}% {icon}",
@@ -72,18 +45,19 @@
 			"warning": 15,
 			"critical": 5
 		},
-		"format": "{capacity}% {icon}",
-		"format-charging": "{capacity}% \uf583",
-		"format-alt": "{time} {icon}",
-		"format-icons": ["\uf58d","\uf579","\uf57a","\uf57b","\uf57c","\uf57d","\uf57e","\uf57f","\uf580","\uf581","\uf578"],
+		"format": "{capacity}% {icon}\uf22f",
+		"format-charging": "{capacity}% {icon}\uf22f \uf0e7",
+		"format-plugged": "{capacity}% {icon}\uf22f \ufba3",
+		"format-alt": "{time} {icon}\uf22f",
+		"format-icons": ["\uf244","\uf243","\uf242","\uf241","\uf240"],
 	},
 	"network": {
 		"interval": 10,
-		"format-wifi": "{signalStrength}% \uf1eb",
+		"format-wifi": "\uf1eb",
 		"format-ethernet": "{ifname}: {ipaddr}/{cidr} \uf700",
 		"format-linked": "{ifname} (No IP) \uf700",
 		"format-disconnected": "Disconnected \uf701",
-		"format-alt": "{ifname}: {ipaddr}/{cidr}",
+		"format-alt": "{ifname}: {ipaddr}/{cidr} {signalStrength}%",
 		"format-icons": [""],
 		"tooltip-format-wifi": "{essid}"
 	},
@@ -140,14 +114,9 @@
 		"max-length": 40
 	},
 	"custom/weather": {
+		"format": "{} ",
 		"interval": 600,
 		"exec": "python -OO $HOME/.config/weather-script/weather.py",
 		"on-click": "$BROWSER www.meteo.be"
-	},
-	"custom/notifications": {
-		"format": "{} ",
-		"interval": 1,
-		"exec": "$HOME/.config/scripts/bash/notifications_status.sh --status",
-		"on-click": "$HOME/.config/scripts/bash/notifications_status.sh --toggle"
 	},
 }

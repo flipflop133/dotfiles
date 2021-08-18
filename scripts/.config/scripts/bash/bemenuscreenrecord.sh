@@ -1,8 +1,6 @@
 #!/bin/bash
 
-source $HOME/.config/scripts/bash/darkBemenu
-
-font="RobotoMono 16"
+source $HOME/.config/scripts/bash/lightBemenu
 
 menu() { bemenu --fn "$font"\
 	-i\
@@ -16,7 +14,7 @@ options() {
 }
 
 subOptions(){
-	printf "麗 area\n screen"
+	printf "\uf988area\n\uf792screen"
 }
 
 select=$(options | menu "Audio?")
@@ -41,11 +39,11 @@ esac
 secondChoice=""
 
 case $secondSelect in
-	"麗 area")
+	"\uf988area")
 		secondChoice="slurp"
 		thirdSelect=$(options | menu "Camera?")
 		;;
-	" screen")
+	"\uf792screen")
 		secondChoice=""
 		thirdSelect=$(options | menu "Camera?")
 		;;

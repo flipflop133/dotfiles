@@ -1,5 +1,5 @@
 #!/bin/bash
-source $HOME/.config/scripts/bash/darkBemenu
+source $HOME/.config/scripts/bash/lightBemenu
 
 logoff_cmd() { sway exit; }
 
@@ -13,7 +13,6 @@ suspend_hibernate_icon="system-suspend-hibernate.svg"
 screen_icon="cs-screen.svg"
 
 # menu
-font="RobotoMono 16"
 
 menu() { bemenu --fn "$font"\
 	-i\
@@ -23,54 +22,54 @@ menu() { bemenu --fn "$font"\
 
 
 options() {
-	printf " Poweroff\n勒 Reboot\n﫼 Logout\n鈴 Suspend\n Hibernate\n PowerMode\n祥 Screen timeout"
+	printf "\uf011Poweroff\n\uf952Reboot\n\uf842Logout\n\uf9b1Suspend\n\uf2dcHibernate\n\uf58ePowerMode\n\ufa1aScreen timeout"
 }
 
 select=$(options | menu)
 
 # power menu
 case $select in
-	" Poweroff")
+	"\uf011Poweroff")
 		notify-send -i "$icon_path/$shutdown_icon" "Shutting down..." &
 		sleep 1
 		poweroff
 		;;
-	"勒 Reboot")
+	"\uf952Reboot")
 		notify-send -i "$icon_path/$reboot_icon" "Rebooting..." &
 		sleep 1
 		reboot
 		;;
-	"﫼 Logout")
+	"\uf842Logout")
 		notify-send -i "$icon_path/$log_out_icon" "Logging off..." &
 		echo "not waiting"
 		sleep 1
 		logoff_cmd
 		;;
-	"鈴 Suspend")
+	"\uf9b1Suspend")
 		notify-send -i "$icon_path/$suspend_icon" "Suspending..." &
 		sleep 1
 		systemctl suspend
 		;;
-	" Hibernate")
+	"\uf2dcHibernate")
 		notify-send -i "$icon_path/$suspend_hibernate_icon" "Hibernating..." &
 		sleep 1
 		systemctl hibernate
 		;;
-	" PowerMode")
+	"\uf58ePowerMode")
 		foot sudo "$HOME"/.config/scripts/bash/Tools/powersave.sh
 		;;
-	"祥 Screen timeout")
-		timeout=$(printf "鈴 Enable screen timeout\n零 Disable screen timeout" | menu)
+	"\ufa1aScreen timeout")
+		timeout=$(printf "\uf9b1Enable screen timeout\n\uf9b2Disable screen timeout" | menu)
 		;;
 esac
 
 # screen timeout
 case $timeout in
-	"鈴 Enable screen timeout")
+	"\uf9b1Enable screen timeout")
 		"$HOME"/.config/scripts/bash/Tools/idle.sh
 		notify-send -i "$icon_path/$screen_icon" "Screen timeout enabled"
 		;;
-	"零 Disable screen timeout")
+	"\uf9b2Disable screen timeout")
 		if "$HOME"/.config/scripts/bash/Tools/idle.sh 0;then
 			notify-send -i "$icon_path/$screen_icon" "Screen timeout disabled"
 		fi
