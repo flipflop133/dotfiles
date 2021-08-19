@@ -1,1 +1,1 @@
-bindsym $mod+d exec fuzzel -f 'mononoki Nerd Font:style:Regular:size=14' -b '333333ff' -t 'dededeff' -s '0860f2ff' -S 'ffffffff' -m 'fc4138ff' -i 'Papirus-Light'
+bindsym $mod+d exec fuzzel -f 'Roboto:style=Regular:size=14' -b '333333ff' -t 'dededeff' -s '0860f2ff' -S 'ffffffff' -m 'fc4138ff' -i 'Papirus-Light'

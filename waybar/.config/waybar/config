@@ -6,7 +6,7 @@
 	// Modules order
 	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
 	"modules-center": ["custom/media", "mpd"],
-	"modules-right": ["custom/weather", "pulseaudio", "network", "backlight", "battery", "clock#date", "clock", "tray"],
+	"modules-right": ["pulseaudio", "network", "backlight", "battery", "clock#date", "clock", "tray"],
 
 	// Modules configuration
 	"sway/mode": {
@@ -109,11 +109,5 @@
 		},
 		"tooltip-format": "{album}",
 		"max-length": 40
-	},
-	"custom/weather": {
-		"format": "{}",
-		"interval": 600,
-		"exec": "python -OO $HOME/.config/weather-script/weather.py",
-		"on-click": "$BROWSER www.meteo.be"
 	},
 }

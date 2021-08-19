@@ -49,7 +49,7 @@ default_floating_border pixel 3
 smart_borders on
 
 # windows titles font
-font pango:mononoki Nerd Font 18px 
+font pango:Roboto 18px 
 
 # colors
 include lightTheme
@@ -172,7 +172,7 @@ exec_always {
 	gsettings set $gnome-schema gtk-theme 'WhiteSur-light'
 	gsettings set $gnome-schema icon-theme 'Papirus-Light'
 	gsettings set $gnome-schema cursor-theme 'macOSBigSur'
-	gsettings set $gnome-schema font-name 'mononoki Nerd Font 18px'
+	gsettings set $gnome-schema font-name 'Roboto 18px'
 }
 
 ####################################
