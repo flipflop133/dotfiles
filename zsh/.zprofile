@@ -1,5 +1,11 @@
 # Default browser
-export BROWSER=firefox
+export BROWSER="firefox"
+
+# Default sudoeditor
+export SUDO_EDITOR="nvim"
+
+# Default editor
+export EDITOR="nvim"
 
 # start sway in tty1
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then

@@ -1,21 +1,17 @@
-/***********/
 /* GENERAL */
-/***********/
 * {
-  font-family: Open Sans, JetBrainsMono Nerd Font;
-  font-weight: 600;
+  font-family: mononoki Nerd Font;
   font-size: 18px;
   border: none;
   border-radius: 0;
+  min-height: 0;
 }
 window#waybar {
   background: @theme_bg_color;
   color: @theme_fg_color;
 }
 
-/****************/
 /* MODULES LEFT */
-/****************/
 #workspaces button.focused {
   color: @theme_selected_fg_color;
   background: @theme_selected_bg_color;
@@ -31,9 +27,7 @@ window#waybar {
   padding-right: 8px;
 }
 
-/*****************/
 /* MODULES right */
-/*****************/
 #tray,
 #clock,
 #idle_inhibitor,

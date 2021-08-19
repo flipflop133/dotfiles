@@ -24,12 +24,6 @@ autoload -Uz _zinit
 # Aliases
 source $HOME/aliases
 
-# Default sudoeditor
-export SUDO_EDITOR=/usr/bin/nvim
-
-# Default editor
-export EDITOR=nvim
-
 # History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=1200000

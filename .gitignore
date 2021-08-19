@@ -8,6 +8,9 @@ mpd/.config/mpd/state
 # mpv
 mpv/.config/mpv/watch_later
 
+# ncmpcpp
+ncmpcpp/.config/ncmpcpp/error.log
+
 # nnn
 nnn/.config/nnn/mounts
 nnn/.config/nnn/plugins
