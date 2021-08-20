@@ -1,0 +1,13 @@
+bar {
+    position bottom
+    workspace_min_width 40px
+    font "JetBrainsMono Nerd Font 18px"
+    icon_theme Papirus-Dark
+    status_command $HOME/.config/sway/bar.sh
+    colors {
+        statusline #dedede
+        background #333333
+	focused_workspace #0860f2ff  #0860f2ff #ffffffff
+        inactive_workspace #333333ff #333333ff #dededeff
+    }
+}

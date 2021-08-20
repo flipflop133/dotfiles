@@ -2,7 +2,9 @@
 import os
 from subprocess import check_output, run, PIPE
 import time
+from time import sleep
 import json
+import sys
 try:
     import dbus
 except ModuleNotFoundError:
@@ -90,21 +92,23 @@ def getSong():
     # determine icon
     status = get_playBackStatus()
     if status == "Paused":
-        icon = '\uf28b'
+        icon = "Paused"
     else:
-        icon = '\uf144'
+        icon = "Playing"
 
     # display song name
     if (song != '' or artist != ''
             or album != '') and 'Advertisement' not in song:
         if (artist != '' and song != ''):
-            print("{} {} - {}".format(icon, song[:15], artist[:15]))
+            output = {'text': song[:15] + " - " + artist[:15], 'alt': icon}
         elif (artist != ''):
-            print("{} {}".format(icon, artist[:20]))
+            output = {'text': artist[:20], 'alt': icon}
         elif (song != ''):
-            print("{} {}".format(icon, song[:20]))
+            output = {'text': song[:20], 'alt': icon}
         else:
-            print("{} {}".format(icon, album[:20]))
+            output = {'text': album[:20], 'alt': icon}
+    sys.stdout.write(json.dumps(output) + '\n')
+    sys.stdout.flush()
     return ad
 
 
@@ -147,8 +151,4 @@ def main():
             print('')
 
 
-try:
-    check_output(["pidof", "spotify"])
-    main()
-except:
-    print('')
+main()

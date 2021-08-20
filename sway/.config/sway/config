@@ -234,7 +234,7 @@ bindsym $mod+Shift+f exec $term -T "file manager" nnn
 include lightFuzzel
 
 # bar
-exec waybar
+#exec waybar
 
 # notification daemon
 exec mako
@@ -257,3 +257,6 @@ bindsym $mod+n exec $term -T "notes" nnn $HOME/Nextcloud/Notes
 
 # theme manager
 exec python -OO $HOME/.config/themes/main.py
+
+# bar
+exec waybar

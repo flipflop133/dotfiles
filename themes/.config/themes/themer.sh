@@ -9,6 +9,10 @@ theme(){
 	sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/foot/foot.ini
 	# theme sway
 	sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/sway/config
+	#sed -i "s|${1}Bar|${2}Bar|g" "$HOME"/.config/sway/config
+	capitalizedCurr1="$(tr '[:lower:]' '[:upper:]' <<< ${1:0:1})${1:1}"
+	capitalizedCurr2="$(tr '[:lower:]' '[:upper:]' <<< ${2:0:1})${2:1}"
+	sed -i "s|Papirus-$capitalizedCurr1|Papirus-$capitalizedCurr2|g" "$HOME"/.config/sway/config
 	sed -i "s|${1}Fuzzel|${2}Fuzzel|g" "$HOME"/.config/sway/config
 	sed -i "s|wallpaper/${1}|wallpaper/${2}|g" "$HOME"/.config/sway/config
 	sed -i "s|$theme|$newTheme|g" "$HOME"/.config/sway/config

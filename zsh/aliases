@@ -1,16 +1,13 @@
-#
-# ALIASES
-#
 # packages
 alias pacman='pacman --color=auto'
 alias paru='paru --color=auto --removemake'
 alias pu='paru -Syu'
 alias pr='sudo pacman -Rns'
-
 plist (){
 	LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
 }
-# system
+
+# other
 alias ls='exa --icons'
 alias df='df -h'
 alias du='du -h'
@@ -23,12 +20,7 @@ alias cl='clear'
 alias wifi='$HOME/.config/scripts/bash/Tools/wifi.sh'
 alias compress='tar -cvf archive.tar.xz --use-compress-program\='xz -T8\'
 alias hcompress='tar -cvf archive.tar.xz --use-compress-program\='xz -9T8\'
-
-# other
 alias vi='nvim'
 alias vip="nvim -p *"
 alias nf='clear; neofetch'
-alias bt='bpytop'
-alias xrp='python -O $HOME/.config/crypto-script/crypto.py'
-alias q='python -O $HOME/.config/scripts/python/daily_quote/daily_quote.py | lolcat -p 1.5 -a -d 3'
 alias n='nnn'

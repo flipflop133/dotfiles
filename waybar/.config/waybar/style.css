@@ -51,10 +51,6 @@ window#waybar {
   color: @error_color;
 }
 
-#battery.warning:not(.charging) {
-  color: @error_color;
-}
-
-#battery.critical:not(.charging) {
+#battery.warning.critical:not(.charging) {
   color: @error_color;
 }

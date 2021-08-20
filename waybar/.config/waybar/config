@@ -79,11 +79,17 @@
 		"on-click": "pavucontrol"
 	},
 	"custom/media": {
-		"format": "<span style=\"italic\">{}</span>",
-		"interval": 3,
+		"format": "<span style=\"italic\">{icon}  {}</span>",
 		"exec": "python -OO $HOME/.config/scripts/python/spotify.py",
+		"exec-if": "pgrep spotify",
+		"return-type": "json",
+		"interval": 3,
 		"on-click": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
-		"on-click-right": "killall spotify"
+		"on-click-right": "killall spotify",
+		"format-icons": {
+      			"Playing": "\uf144",
+      			"Paused": "\uf28b",
+    		},
 	},
 	"mpd": {
 		"format": "<span style=\"italic\">{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title}</span>",
