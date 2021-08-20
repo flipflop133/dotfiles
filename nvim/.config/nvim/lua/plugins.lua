@@ -2,6 +2,13 @@ return require('packer').startup(
 function()
 	-- Packer can manage itself
 	use "wbthomason/packer.nvim"
+	-- Status line
+	use {
+		'hoob3rt/lualine.nvim',
+		config = function()
+			require'lualine'.setup{options={theme = 'github'}}
+		end
+	}
 
 	-- Theme
 	use {
@@ -10,14 +17,6 @@ function()
 			require('github-theme').setup({
 				themeStyle = "light",
 			})
-		end
-	}
-
-	-- Status line
-	use {
-		'hoob3rt/lualine.nvim',
-		config = function()
-			require'lualine'.setup{options={theme = 'github'}}
 		end
 	}
 

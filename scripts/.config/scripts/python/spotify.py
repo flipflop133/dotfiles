@@ -1,13 +1,12 @@
 import os
 from subprocess import run, PIPE
-import time
+from time import sleep
 import json
 import sys
 try:
     import dbus
 except ModuleNotFoundError:
-    n = os.fork()
-    if n == 0:
+    if os.fork() == 0:
         run(["pip", "install", "dbus-python"])
         import dbus
     else:
@@ -24,9 +23,7 @@ class Dbus:
 
 
 class Spotify:
-    song = ""
-    artist = ""
-    album = ""
+    song, artist, album = "", "", ""
     ad = False
 
     def __init__(self):
@@ -37,7 +34,7 @@ class Spotify:
             Spotify.output(self)
             # check and block ads
             Spotify.blockAds(self)
-            time.sleep(3)
+            sleep(3)
 
     def muteSpotify(self, mute):
         """ Mute Spotify sound
@@ -84,31 +81,24 @@ class Spotify:
     def getSongData(self):
         """Retrieve Spotify current playing song data using dbus
         """
-        session_bus = dbus.SessionBus()
-        spotify_bus = session_bus.get_object('org.mpris.MediaPlayer2.spotify',
-                                             '/org/mpris/MediaPlayer2')
-
-        spotify_properties = dbus.Interface(spotify_bus,
-                                            'org.freedesktop.DBus.Properties')
-        metadata = spotify_properties.Get('org.mpris.MediaPlayer2.Player',
-                                          'Metadata')
-        artist = metadata['xesam:artist'][0] if metadata['xesam:artist'] else ''
-        Spotify.artist = artist
-        song = metadata['xesam:title'] if metadata['xesam:title'] else ''
-        Spotify.song = song
-        album = metadata['xesam:album'] if metadata['xesam:album'] else ''
-        Spotify.album = album
+        metadata = dbus.Interface(
+            dbus.SessionBus().get_object('org.mpris.MediaPlayer2.spotify',
+                                         '/org/mpris/MediaPlayer2'),
+            'org.freedesktop.DBus.Properties').Get(
+                'org.mpris.MediaPlayer2.Player', 'Metadata')
+        Spotify.artist = metadata['xesam:artist'][0] if metadata[
+            'xesam:artist'] else ''
+        Spotify.song = metadata['xesam:title'] if metadata[
+            'xesam:title'] else ''
+        Spotify.album = metadata['xesam:album'] if metadata[
+            'xesam:album'] else ''
 
     def output(self):
         """ Print song data in Json format.
         """
         output = ""
-        # determine icon
-        status = Spotify.getPlayBackStatus(self)
-        if status == "Paused":
-            icon = "Paused"
-        else:
-            icon = "Playing"
+        status = Spotify.getPlayBackStatus(
+            self)  # status used to determine icon
 
         # display song name
         if (Spotify.song != '' or Spotify.artist != '' or
@@ -116,33 +106,33 @@ class Spotify:
             if (Spotify.artist != '' and Spotify.song != ''):
                 output = {
                     'text': Spotify.song[:20] + " - " + Spotify.artist[:20],
-                    'alt': icon,
+                    'alt': status,
                     'tooltip': Spotify.album
                 }
             elif (Spotify.artist != ''):
                 output = {
                     'text': Spotify.artist[:40],
-                    'alt': icon,
+                    'alt': status,
                     'tooltip': Spotify.album
                 }
             elif (Spotify.song != ''):
                 output = {
                     'text': Spotify.song[:40],
-                    'alt': icon,
+                    'alt': status,
                     'tooltip': Spotify.album
                 }
             else:
-                output = {'text': Spotify.album[:40], 'alt': icon}
+                output = {'text': Spotify.album[:40], 'alt': status}
         sys.stdout.write(json.dumps(output) + '\n')
         sys.stdout.flush()
 
     def getPlayBackStatus(self):
         """Use Dbus to find the current playback status
         """
-        player = Dbus.obj_player + "." + "spotify"
-        player = dbus.SessionBus().get_object(player, Dbus.path_player)
-        properties = dbus.Interface(player, Dbus.intf_props)
-        return properties.Get(Dbus.intf_player, "PlaybackStatus")
+        return (dbus.Interface(
+            dbus.SessionBus().get_object(Dbus.obj_player + "." + "spotify",
+                                         Dbus.path_player),
+            Dbus.intf_props)).Get(Dbus.intf_player, "PlaybackStatus")
 
 
 Spotify()
