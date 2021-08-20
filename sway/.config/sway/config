@@ -206,7 +206,7 @@ bindsym $mod+KP_Subtract exec light -U 1;exec $notifications brightness
 bindsym $mod+x exec swaylock --no-unlock-indicator --image $HOME/Images/wallpaper/light/*
 
 # power management
-exec swayidle -w timeout 330 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/*'\
+exec_always swayidle -w timeout 330 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/*'\
                  timeout 300 'swaymsg "output * dpms off"'\
                  resume 'swaymsg "output * dpms on"'\
                  before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/*'
