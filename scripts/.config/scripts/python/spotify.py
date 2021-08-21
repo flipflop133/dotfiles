@@ -1,16 +1,16 @@
-import os
-from subprocess import run, PIPE
+from os import wait, fork
+from subprocess import run, PIPE, DEVNULL
 from time import sleep
-import json
-import sys
+from json import dumps
+from sys import stdout
 try:
     import dbus
 except ModuleNotFoundError:
-    if os.fork() == 0:
+    if fork() == 0:
         run(["pip", "install", "dbus-python"])
         import dbus
     else:
-        os.wait()
+        wait()
 
 
 class Dbus:
@@ -25,16 +25,31 @@ class Dbus:
 class Spotify:
     song, artist, album = "", "", ""
     ad = False
+    clean = 0
 
     def __init__(self):
         while True:
-            # retrieve Spotify metadata
-            Spotify.getSongData(self)
-            # display Spotify metadata
-            Spotify.output(self)
-            # check and block ads
-            Spotify.blockAds(self)
+            try:
+                run([
+                    'pgrep',
+                    'spotify',
+                ], check=True, stdout=DEVNULL)
+                # retrieve Spotify metadata
+                Spotify.getSongData(self)
+                # display Spotify metadata
+                Spotify.formatSongOutput(self)
+                # check and block ads
+                Spotify.blockAds(self)
+                self.clean = 1
+            except:
+                if self.clean == 1:
+                    Spotify.output(self, {'text': ''})
+                    self.clean = 0
             sleep(3)
+
+    def output(self, output):
+        stdout.write(dumps(output) + '\n')
+        stdout.flush()
 
     def muteSpotify(self, mute):
         """ Mute Spotify sound
@@ -93,10 +108,10 @@ class Spotify:
         Spotify.album = metadata['xesam:album'] if metadata[
             'xesam:album'] else ''
 
-    def output(self):
+    def formatSongOutput(self):
         """ Print song data in Json format.
         """
-        output = ""
+        output = {'text': ''}
         status = Spotify.getPlayBackStatus(
             self)  # status used to determine icon
 
@@ -123,8 +138,7 @@ class Spotify:
                 }
             else:
                 output = {'text': Spotify.album[:40], 'alt': status}
-        sys.stdout.write(json.dumps(output) + '\n')
-        sys.stdout.flush()
+        Spotify.output(self, output)
 
     def getPlayBackStatus(self):
         """Use Dbus to find the current playback status

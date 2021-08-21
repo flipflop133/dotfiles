@@ -2,21 +2,20 @@ return require('packer').startup(
 function()
 	-- Packer can manage itself
 	use "wbthomason/packer.nvim"
-	-- Status line
+	-- Status Line
 	use {
-		'hoob3rt/lualine.nvim',
+		"hoob3rt/lualine.nvim",
 		config = function()
-			require'lualine'.setup{options={theme = 'github'}}
+			require("lualine").setup {options = {theme = "github"}}
 		end
 	}
 
 	-- Theme
 	use {
-		'projekt0n/github-nvim-theme',
+		"projekt0n/github-nvim-theme",
+		requires = {{"hoob3rt/lualine.nvim", opt = true}},
 		config = function()
-			require('github-theme').setup({
-				themeStyle = "light",
-			})
+			require("github-theme").setup({themeStyle = "light"})
 		end
 	}
 
@@ -127,7 +126,7 @@ function()
 		"mcchrish/nnn.vim",
 		cmd = {"Np", "NnnPicker"}
 	}
-	
+
 	-- Tabs management
 	use "romgrk/barbar.nvim"
 end)

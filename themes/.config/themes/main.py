@@ -2,7 +2,7 @@
 from subprocess import run
 from pathlib import Path
 home = str(Path.home())
-from sunset_sunrise import get_sunset_sunrise
+from sunsetSunrise import get_sunset_sunrise
 import datetime
 from time import sleep
 
