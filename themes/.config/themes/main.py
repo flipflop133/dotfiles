@@ -5,6 +5,7 @@ home = str(Path.home())
 from sunsetSunrise import get_sunset_sunrise
 import datetime
 from time import sleep
+from wallpaper import Wallpaper
 
 
 def main():
@@ -13,6 +14,7 @@ def main():
     sunrise = 600
     sunset = 1800
     theme = ''
+    wallpaper = Wallpaper()
     while True:
         try:
             # check current theme
@@ -40,6 +42,7 @@ def main():
             # check which theme to apply
             if ((currentTime < sunrise) or
                 (currentTime > sunset)) and ("light" in theme):
+                wallpaper.updateWallpaper("dark")
                 run([
                     home + "/.config/themes/themer.sh",
                     "light",
@@ -48,6 +51,7 @@ def main():
                 checkedTheme = False
             elif ((currentTime > sunrise) and
                   (currentTime < sunset)) and ("dark" in theme):
+                wallpaper.updateWallpaper("light")
                 run([home + "/.config/themes/themer.sh", "dark", "light"])
                 checkedTheme = False
             sleep(5)

@@ -81,6 +81,8 @@
 	"custom/media": {
 		"format": "<span style=\"italic\">{icon}  {}</span>",
 		"exec": "python -OO $HOME/.config/scripts/python/spotify.py",
+		"interal": 3,
+		"exec-if": "pgrep spotify",
 		"return-type": "json",
 		"on-click": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
 		"on-click-right": "killall spotify",

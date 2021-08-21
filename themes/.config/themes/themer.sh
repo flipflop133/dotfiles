@@ -7,6 +7,9 @@ theme(){
 	sed -i "s|\"selectedTheme\": \"${1}\"|\"selectedTheme\": \"${2}\"|g" "$HOME"/.config/tutanota-desktop/conf.json
 	# theme foot
 	sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/foot/foot.ini
+	# theme swayidle & swaylock
+	sed -i "s|${1}|${2}|g" "$HOME"/.config/sway/swayidle
+	sed -i "s|${1}|${2}|g" "$HOME"/.config/sway/swaylock
 	# theme sway
 	sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/sway/config
 	#sed -i "s|${1}Bar|${2}Bar|g" "$HOME"/.config/sway/config
