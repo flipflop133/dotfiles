@@ -15,6 +15,7 @@ def main():
     sunset = 1800
     theme = ''
     wallpaper = Wallpaper()
+    wallpaperChanged = False
     while True:
         try:
             # check current theme
@@ -40,20 +41,24 @@ def main():
                 datetime.datetime.now().strftime("%H:%M").replace(':', ''))
 
             # check which theme to apply
-            if ((currentTime < sunrise) or
-                (currentTime > sunset)) and ("light" in theme):
-                wallpaper.updateWallpaper("dark")
-                run([
-                    home + "/.config/themes/themer.sh",
-                    "light",
-                    "dark",
-                ])
-                checkedTheme = False
-            elif ((currentTime > sunrise) and
-                  (currentTime < sunset)) and ("dark" in theme):
-                wallpaper.updateWallpaper("light")
-                run([home + "/.config/themes/themer.sh", "dark", "light"])
-                checkedTheme = False
+            if (currentTime < sunrise) or (currentTime > sunset):
+                if ("light" in theme):
+                    wallpaperChanged = wallpaper.updateWallpaper("dark")
+                    run([
+                        home + "/.config/themes/themer.sh",
+                        "light",
+                        "dark",
+                    ])
+                    checkedTheme = False
+                if (not wallpaperChanged):
+                    wallpaperChanged = wallpaper.updateWallpaper("dark")
+            elif (currentTime > sunrise) and (currentTime < sunset):
+                if ("dark" in theme):
+                    wallpaperChanged = wallpaper.updateWallpaper("light")
+                    run([home + "/.config/themes/themer.sh", "dark", "light"])
+                    checkedTheme = False
+                if (not wallpaperChanged):
+                    wallpaperChanged = wallpaper.updateWallpaper("light")
             sleep(5)
         except:
             pass

@@ -1,3 +1,3 @@
-timeout 330 "swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/dark/wallpaper.jpg"
+timeout 330 "swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/wallpaper.jpg"
 timeout 300 "swaymsg \"output * dpms off\"" resume 'swaymsg "output * dpms on"'
-before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/dark/wallpaper.jpg'
+before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/Images/wallpaper/light/wallpaper.jpg'

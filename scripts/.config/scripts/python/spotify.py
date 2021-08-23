@@ -42,10 +42,9 @@ class Spotify:
                 Spotify.blockAds(self)
                 self.clean = 1
             except:
-                #if self.clean == 1:
-                #    Spotify.output(self, {'text': ''})
-                #    self.clean = 0
-                break
+                if self.clean == 1:
+                    Spotify.output(self, {'text': ''})
+                    self.clean = 0
             sleep(3)
 
     def output(self, output):
