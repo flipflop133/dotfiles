@@ -15,14 +15,16 @@ class Wallpaper:
         try:
             response = requests.get(self.urls[theme], stream=True)
             if response.ok:
-                with open("wallpaper.jpg", 'wb') as handle:
+                with open("{}/.config/themes/wallpaper.jpg".format(self.home),
+                          'wb') as handle:
                     for block in response.iter_content(1024):
                         if not block:
                             break
                         handle.write(block)
                     run([
                         "swaymsg",
-                        "output * bg wallpaper.jpg fill".format(theme)
+                        "output * bg {}/.config/themes/wallpaper.jpg fill".
+                        format(self.home)
                     ],
                         stdout=DEVNULL)
                     return True
