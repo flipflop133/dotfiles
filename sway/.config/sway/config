@@ -241,7 +241,7 @@ bindsym $mod+m exec $term ncmpcpp
 bindsym $mod+b exec $BROWSER
 
 # night light
-exec wlsunset -l 49 -L 5
+exec wlsunset -l 49 -L 5 -t 3000
 
 # nextcloud
 exec nextcloud

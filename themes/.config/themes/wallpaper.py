@@ -26,6 +26,7 @@ class Wallpaper:
                         "output * bg {}/.config/themes/wallpaper.jpg fill".
                         format(self.home)
                     ],
+                        check=True,
                         stdout=DEVNULL)
                     return True
         except:

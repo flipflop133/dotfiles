@@ -1,8 +1,10 @@
 from os import wait, fork
-from subprocess import run, PIPE, DEVNULL
-from time import sleep
+from subprocess import run, PIPE
 from json import dumps
+from time import sleep
 from sys import stdout
+from gi.repository import GLib
+from dbus.mainloop.glib import DBusGMainLoop
 try:
     import dbus
 except ModuleNotFoundError:
@@ -28,24 +30,24 @@ class Spotify:
     clean = 0
 
     def __init__(self):
-        while True:
-            try:
-                run([
-                    'pgrep',
-                    'spotify',
-                ], check=True, stdout=DEVNULL)
-                # retrieve Spotify metadata
-                Spotify.getSongData(self)
-                # display Spotify metadata
-                Spotify.formatSongOutput(self)
-                # check and block ads
-                Spotify.blockAds(self)
-                self.clean = 1
-            except:
-                if self.clean == 1:
-                    Spotify.output(self, {'text': ''})
-                    self.clean = 0
-            sleep(3)
+        # initialize the signal handler
+        DBusGMainLoop(set_as_default=True)
+        loop = GLib.MainLoop()
+        dbus.SessionBus().add_signal_receiver(
+            handler_function=self.signal_handler,
+            interface_keyword='org.mpris.MediaPlayer2.spotify')
+        loop.run()
+
+    def signal_handler(self, *args, **kwargs):
+        try:
+            # retrieve Spotify metadata
+            Spotify.getSongData(self)
+            # display Spotify metadata
+            Spotify.formatSongOutput(self)
+            # check and block ads
+            Spotify.blockAds(self)
+        except:
+            self.output({'text': ''})
 
     def output(self, output):
         stdout.write(dumps(output) + '\n')
@@ -101,6 +103,7 @@ class Spotify:
                                          '/org/mpris/MediaPlayer2'),
             'org.freedesktop.DBus.Properties').Get(
                 'org.mpris.MediaPlayer2.Player', 'Metadata')
+
         Spotify.artist = metadata['xesam:artist'][0] if metadata[
             'xesam:artist'] else ''
         Spotify.song = metadata['xesam:title'] if metadata[
