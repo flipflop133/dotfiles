@@ -69,7 +69,10 @@ power_save_mode(){
 	#####################
 	# powertop commands #
 	#####################
-	# VM writeback timeout
+	# Wireless power saving for interface wlan0
+	iw dev wlan0 set power_save on
+
+	# WM writeback timeout
 	echo '1500' > '/proc/sys/vm/dirty_writeback_centisecs';
 
 	# Enable SATA link power management for host0
@@ -83,6 +86,7 @@ power_save_mode(){
 
 	# Runtime PM for I2C Adapter
 	echo 'auto' > '/sys/bus/i2c/devices/i2c-7/device/power/control';
+	echo 'auto' > '/sys/bus/i2c/devices/i2c-14/device/power/control';
 
 	# Autosuspend for USB device Goodix FingerPrint Device
 	echo 'auto' > '/sys/bus/usb/devices/3-7/power/control';

@@ -114,6 +114,10 @@ mode "resize" {
 	bindsym Escape mode "default"
 	bindsym $mod+r mode "default"
 }
+#################
+# WINDOWS RULES #
+#################
+for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating toggle
 
 ##############
 # SCRATCHPAD #

@@ -91,6 +91,8 @@ class Spotify:
         if 'Advertisement' in Spotify.song and Spotify.ad is False:
             Spotify.muteSpotify(self, "1")
             Spotify.ad = True
+            # Workaround: sleep for 2 seconds because Spotify seems to mix the end of the ad with the start of the song.
+            sleep(3)
         if 'Advertisement' not in Spotify.song and Spotify.ad is True:
             Spotify.muteSpotify(self, "0")
             Spotify.ad = False

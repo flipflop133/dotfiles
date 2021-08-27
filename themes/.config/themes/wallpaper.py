@@ -1,14 +1,19 @@
 import requests
 from pathlib import Path
 from subprocess import run, DEVNULL
+from random import sample
 
 
 class Wallpaper:
     home = str(Path.home())
     theme = "light"
+    categories = ["nature", "animal", "city", "technology", "travel"]
     urls = {
-        "light": "https://source.unsplash.com/1920x1080/?nature",
-        "dark": "https://source.unsplash.com/1920x1080/?night"
+        "light":
+        "https://source.unsplash.com/1920x1080/?{}".format(
+            sample(categories, 1)),
+        "dark":
+        "https://source.unsplash.com/1920x1080/?night"
     }
 
     def updateWallpaper(self, theme):
