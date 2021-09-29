@@ -22,7 +22,6 @@ class Theme:
 
     def __init__(self):
         self.update()
-        self.launchTimer()
 
     def launchTimer(self):
         Timer(self.determineSleepTime(self.currentTime, self.secondsNow),
@@ -105,7 +104,6 @@ class Theme:
             tmp = (int((str(self.sunset)[-2:])) * 60) + (int(
                 (str(self.sunset)[:2])) * 3600)
             sleepTime = tmp - secondsNow
-        print(sleepTime)
         return sleepTime
 
 

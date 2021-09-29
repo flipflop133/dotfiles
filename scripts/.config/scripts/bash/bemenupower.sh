@@ -42,6 +42,7 @@ case $select in
 		notify-send -i "$icon_path/$log_out_icon" "Logging off..." &
 		echo "not waiting"
 		sleep 1
+		killall python
 		logoff_cmd
 		;;
 	"鈴 Suspend")

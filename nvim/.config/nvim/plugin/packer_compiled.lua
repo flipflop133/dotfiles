@@ -87,7 +87,7 @@ _G.packer_plugins = {
     path = "/home/francois/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
   ["github-nvim-theme"] = {
-    config = { "\27LJ\1\2R\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\15themeStyle\nlight\nsetup\17github-theme\frequire\0" },
+    config = { "\27LJ\1\2y\0\0\2\0\b\0\v4\0\0\0007\0\1\0%\1\3\0:\1\2\0004\0\4\0%\1\5\0>\0\2\0027\0\6\0003\1\a\0>\0\2\1G\0\1\0\1\0\1\15themeStyle\nlight\nsetup\17github-theme\frequire\nlight\15background\6o\bvim\0" },
     loaded = true,
     path = "/home/francois/.local/share/nvim/site/pack/packer/start/github-nvim-theme"
   },
@@ -181,7 +181,7 @@ try_loadstring("\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\
 time([[Config for nvim-colorizer.lua]], false)
 -- Config for: github-nvim-theme
 time([[Config for github-nvim-theme]], true)
-try_loadstring("\27LJ\1\2R\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\15themeStyle\nlight\nsetup\17github-theme\frequire\0", "config", "github-nvim-theme")
+try_loadstring("\27LJ\1\2y\0\0\2\0\b\0\v4\0\0\0007\0\1\0%\1\3\0:\1\2\0004\0\4\0%\1\5\0>\0\2\0027\0\6\0003\1\a\0>\0\2\1G\0\1\0\1\0\1\15themeStyle\nlight\nsetup\17github-theme\frequire\nlight\15background\6o\bvim\0", "config", "github-nvim-theme")
 time([[Config for github-nvim-theme]], false)
 -- Config for: nvim-compe
 time([[Config for nvim-compe]], true)

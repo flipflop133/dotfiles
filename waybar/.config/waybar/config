@@ -91,7 +91,7 @@
     		},
 	},
 	"mpd": {
-		"format": "<span style=\"italic\">{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title}</span>",
+		"format": "<span style=\"italic\">{stateIcon}  {consumeIcon}{randomIcon} {repeatIcon}{singleIcon}{artist} - {title}</span>",
 		"format-disconnected": "",
 		"format-stopped": "",
 		"interval": 10,

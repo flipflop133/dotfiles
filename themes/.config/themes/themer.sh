@@ -2,9 +2,10 @@
 theme(){
 	theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
 	newTheme=${theme/$1/$2}
-	# theme tutanota
-	killall tutanota-desktop
+	# theme tutanota (tutanota needs to be closed for this to work)
 	sed -i "s|\"selectedTheme\": \"${1}\"|\"selectedTheme\": \"${2}\"|g" "$HOME"/.config/tutanota-desktop/conf.json
+	# theme bpytop
+	bpytop "$1"
 	# theme foot
 	sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/foot/foot.ini
 	# theme swayidle & swaylock
@@ -12,7 +13,6 @@ theme(){
 	sed -i "s|${1}|${2}|g" "$HOME"/.config/sway/swaylock
 	# theme sway
 	sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/sway/config
-	#sed -i "s|${1}Bar|${2}Bar|g" "$HOME"/.config/sway/config
 	capitalizedCurr1="$(tr '[:lower:]' '[:upper:]' <<< ${1:0:1})${1:1}"
 	capitalizedCurr2="$(tr '[:lower:]' '[:upper:]' <<< ${2:0:1})${2:1}"
 	sed -i "s|Papirus-$capitalizedCurr1|Papirus-$capitalizedCurr2|g" "$HOME"/.config/sway/config
@@ -33,7 +33,7 @@ theme(){
 	# theme zathura
 	sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/zathura/zathurarc
 	# theme nvim
-	sed -i "s/themeStyle = \"${1}\"/themeStyle = \"${2}\"/g" "$HOME"/.config/nvim/lua/plugins.lua
+	sed -i "s/\"${1}\"/\"${2}\"/g" "$HOME"/.config/nvim/lua/plugins.lua
 	nvim +PackerCompile +qall!
 }
 
@@ -45,24 +45,26 @@ ncmcpp(){
 	fi
 }
 
-mako(){
-	makoPID=$(pidof mako)
-	if [ -n "$makoPID" ];then
-		pkill mako
-		if [[ $1 = "light" ]];then
-			sed -i 's/background-color=#f5f5f5/background-color=#333333/g' "$HOME"/.config/mako/config
-			sed -i 's/text-color=#242424/text-color=#dedede/g' "$HOME"/.config/mako/config
-			sed -i 's/border-color=#242424/border-color=#dedede/g' "$HOME"/.config/mako/config
-			sed -i 's/progress-color=#5895f9/progress-color=#0860f2/g' "$HOME"/.config/mako/config
-		else
-
-			sed -i 's/background-color=#333333/background-color=#f5f5f5/g' "$HOME"/.config/mako/config
-			sed -i 's/text-color=#dedede/text-color=#242424/g' "$HOME"/.config/mako/config
-			sed -i 's/border-color=#dedede/border-color=#242424/g' "$HOME"/.config/mako/config
-			sed -i 's/progress-color=#0860f2/progress-color=#5895f9/g' "$HOME"/.config/mako/config
-
-		fi
-		setsid mako &
+bpytop(){
+	if [[ $1 = "light" ]];then
+		sed -i 's/flat-remix-light/default/g' "$HOME"/.config/bpytop/bpytop.conf
+	else
+		sed -i 's/default/flat-remix-light/g' "$HOME"/.config/bpytop/bpytop.conf
 	fi
+}
+
+mako(){
+	if [[ $1 = "light" ]];then
+		sed -i 's/background-color=#f5f5f5/background-color=#333333/g' "$HOME"/.config/mako/config
+		sed -i 's/text-color=#242424/text-color=#dedede/g' "$HOME"/.config/mako/config
+		sed -i 's/border-color=#242424/border-color=#dedede/g' "$HOME"/.config/mako/config
+		sed -i 's/progress-color=#5895f9/progress-color=#0860f2/g' "$HOME"/.config/mako/config
+	else
+		sed -i 's/background-color=#333333/background-color=#f5f5f5/g' "$HOME"/.config/mako/config
+		sed -i 's/text-color=#dedede/text-color=#242424/g' "$HOME"/.config/mako/config
+		sed -i 's/border-color=#dedede/border-color=#242424/g' "$HOME"/.config/mako/config
+		sed -i 's/progress-color=#0860f2/progress-color=#5895f9/g' "$HOME"/.config/mako/config
+	fi
+	makoctl reload
 }
 theme "$1" "$2"

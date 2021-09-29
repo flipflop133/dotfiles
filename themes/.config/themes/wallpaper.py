@@ -7,13 +7,20 @@ from random import sample
 class Wallpaper:
     home = str(Path.home())
     theme = "light"
-    categories = ["nature", "animal", "city", "technology", "travel"]
+    categoriesLight = [
+        "nature", "animal", "city", "technology", "travel", "wallpapers"
+    ]
+    categoriesDark = [
+        "night", "black+background", "dark", "stars", "black", "neon",
+        "darkness"
+    ]
     urls = {
         "light":
-        "https://source.unsplash.com/1920x1080/?{}".format(
-            sample(categories, 1)),
+        "https://source.unsplash.com/featured/1920x1080/?{}".format(
+            sample(categoriesLight, 1)),
         "dark":
-        "https://source.unsplash.com/1920x1080/?night"
+        "https://source.unsplash.com/featured/1920x1080/?{}".format(
+            sample(categoriesDark, 1))
     }
 
     def updateWallpaper(self, theme):

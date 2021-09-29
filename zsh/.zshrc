@@ -33,6 +33,10 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
+# Navigate to beginning or end of line
+bindkey "^A" vi-beginning-of-line
+bindkey "^E" vi-end-of-line
+
 # Enable colors
 autoload -Uz colors && colors
 

@@ -7,12 +7,6 @@ set $mod Mod4
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# exit sway
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
-
-# terminal
-set $term foot
-
 # xwayland support
 xwayland enable
 
@@ -210,13 +204,13 @@ bindsym $mod+KP_Subtract exec light -U 1;exec $notifications brightness
 bindsym $mod+x exec swaylock -C $HOME/.config/sway/swaylock
 
 # power management
-exec_always swayidle -C $HOME/.config/sway/swayidle
+exec swayidle -C $HOME/.config/sway/swayidle
 
 # powermenu
 bindsym $mod+p exec $HOME/.config/scripts/bash/bemenupower.sh
 
 # terminal
-bindsym $mod+Return exec $term -T terminal
+bindsym $mod+Return exec $TERM -T terminal
 
 # screenshot
 bindsym Print exec $HOME/.config/scripts/bash/bemenuscreenshot.sh
@@ -229,7 +223,7 @@ bindsym $mod+alt+r exec killall -s SIGINT wf-recorder & killall -s SIGINT ffmpeg
 bindsym XF86Calculator exec foot python -i $HOME/.config/sway/calculator.py
 
 # file manager
-bindsym $mod+Shift+f exec $term -T "file manager" nnn
+bindsym $mod+Shift+f exec $TERM -T "file manager" nnn
 
 # app launcher
 include lightFuzzel
@@ -239,7 +233,7 @@ exec mako
 
 # music player
 exec mpd
-bindsym $mod+m exec $term ncmpcpp
+bindsym $mod+m exec $TERM ncmpcpp
 
 # web browser
 bindsym $mod+b exec $BROWSER
@@ -248,10 +242,10 @@ bindsym $mod+b exec $BROWSER
 exec wlsunset -l 49 -L 5 -t 3000
 
 # nextcloud
-exec nextcloud
+#exec nextcloud
 
 # notes
-bindsym $mod+n exec $term -T "notes" nnn $HOME/Nextcloud/Notes
+bindsym $mod+n exec $TERM -T "notes" nnn $HOME/Nextcloud/Notes
 
 # theme manager
 exec python -OO $HOME/.config/themes/main.py

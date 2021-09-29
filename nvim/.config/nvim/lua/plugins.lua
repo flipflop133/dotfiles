@@ -15,6 +15,7 @@ function()
 		"projekt0n/github-nvim-theme",
 		requires = {{"hoob3rt/lualine.nvim", opt = true}},
 		config = function()
+			vim.o.background = "light"
 			require("github-theme").setup({themeStyle = "light"})
 		end
 	}
