@@ -2,10 +2,13 @@
 export BROWSER="firefox"
 
 # Chrome
-export CHROME_EXECUTABLE="google-chrome-stable"
+export CHROME_EXECUTABLE="chromium"
 
 # Flutter
 export PATH="$PATH:/home/francois/flutter/bin"
+
+# Dart
+export PATH="$PATH:/usr/lib/dart/bin"
 
 # Default sudoeditor
 export SUDO_EDITOR="nvim"
@@ -18,6 +21,9 @@ export TERM="foot"
 
 # Fix for java applications
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Flutter
+export FLUTTER="/flutter/bin"
 
 # start sway in tty1
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then

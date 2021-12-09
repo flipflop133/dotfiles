@@ -46,7 +46,7 @@ smart_borders on
 font pango:Roboto 18px 
 
 # colors
-include lightTheme
+include darkTheme
 
 ####################
 # WINDOWS CONTROLS #
@@ -167,9 +167,9 @@ bindsym $mod+Shift+agrave move container to workspace number $ws10
 #######
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-	gsettings set $gnome-schema gtk-theme 'WhiteSur-light'
-	gsettings set $gnome-schema icon-theme 'Papirus-Light'
-	gsettings set $gnome-schema cursor-theme 'macOSBigSur'
+	gsettings set $gnome-schema gtk-theme 'WhiteSur-dark'
+	gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+	gsettings set $gnome-schema cursor-theme 'volantes_light_cursors'
 	gsettings set $gnome-schema font-name 'Roboto 18px'
 }
 
@@ -201,10 +201,13 @@ bindsym $mod+KP_Add exec light -A 1;exec $notifications brightness
 bindsym $mod+KP_Subtract exec light -U 1;exec $notifications brightness
 
 # lockscreen
-bindsym $mod+x exec swaylock -C $HOME/.config/sway/swaylock
+bindsym $mod+x exec swaylock --no-unlock-indicator -i $HOME/.config/themes/wallpaper_image.*
 
 # power management
-exec swayidle -C $HOME/.config/sway/swayidle
+exec swayidle -w timeout 330 'swaylock -f --no-unlock-indicator --image $HOME/.config/themes/wallpaper_image.*'\
+                 timeout 300 'swaymsg "output * dpms off"'\
+                 resume 'swaymsg "output * dpms on"'\
+                 before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/.config/themes/wallpaper_image.*'
 
 # powermenu
 bindsym $mod+p exec $HOME/.config/scripts/bash/bemenupower.sh
@@ -226,7 +229,7 @@ bindsym XF86Calculator exec foot python -i $HOME/.config/sway/calculator.py
 bindsym $mod+Shift+f exec $TERM -T "file manager" nnn
 
 # app launcher
-include lightFuzzel
+include darkFuzzel
 
 # notification daemon
 exec mako
@@ -252,3 +255,6 @@ exec python -OO $HOME/.config/themes/main.py
 
 # bar
 exec waybar
+
+# nm-applet
+exec nm-applet --indicator

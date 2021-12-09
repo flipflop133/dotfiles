@@ -8,6 +8,7 @@ from time import sleep
 from threading import Timer
 from wallpaper import Wallpaper
 
+autoWallpaper = False
 
 class Theme:
     lastChecked = -1
@@ -29,6 +30,10 @@ class Theme:
 
     def update(self):
         try:
+            # set wallpaper
+            if not autoWallpaper:
+                self.wallpaper.setWallpaper()
+
             # check current theme
             if not self.checkedTheme:
                 self.theme = str(
@@ -62,10 +67,11 @@ class Theme:
                         "dark",
                     ])
                     self.checkedTheme = False
-                    self.wallpaperChanged = self.wallpaper.updateWallpaper(
+                    if autoWallpaper:
+                        self.wallpaperChanged = self.wallpaper.updateWallpaper(
                         "dark")
                 # change wallpaper
-                if (not self.wallpaperChanged):
+                if (autoWallpaper and not self.wallpaperChanged):
                     self.wallpaperChanged = self.wallpaper.updateWallpaper(
                         "dark")
             elif (self.currentTime > self.sunrise) and (self.currentTime <
@@ -74,10 +80,11 @@ class Theme:
                 if ("dark" in self.theme):
                     run([home + "/.config/themes/themer.sh", "dark", "light"])
                     self.checkedTheme = False
-                    self.wallpaperChanged = self.wallpaper.updateWallpaper(
+                    if autoWallpaper:
+                        self.wallpaperChanged = self.wallpaper.updateWallpaper(
                         "light")
                 # change wallpaper
-                if (not self.wallpaperChanged):
+                if (autoWallpaper and not self.wallpaperChanged):
                     self.wallpaperChanged = self.wallpaper.updateWallpaper(
                         "light")
             self.launchTimer()

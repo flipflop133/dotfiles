@@ -27,7 +27,7 @@ class Wallpaper:
         try:
             response = requests.get(self.urls[theme], stream=True)
             if response.ok:
-                with open("{}/.config/themes/wallpaper.jpg".format(self.home),
+                with open("{}/.config/themes/wallpaper_image.jpg".format(self.home),
                           'wb') as handle:
                     for block in response.iter_content(1024):
                         if not block:
@@ -35,7 +35,7 @@ class Wallpaper:
                         handle.write(block)
                     run([
                         "swaymsg",
-                        "output * bg {}/.config/themes/wallpaper.jpg fill".
+                        "output * bg {}/.config/themes/wallpaper_image.jpg fill".
                         format(self.home)
                     ],
                         check=True,
@@ -44,3 +44,13 @@ class Wallpaper:
         except:
             pass
         return False
+
+    def setWallpaper(self):
+        run([
+            "swaymsg",
+            "output * bg {}/.config/themes/wallpaper_image.* fill".
+            format(self.home)
+        ],
+            check=True,
+            stdout=DEVNULL)
+Wallpaper().setWallpaper()

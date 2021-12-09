@@ -72,9 +72,3 @@ zinit wait lucid for \
 # colored-man-pages
 zinit wait"1" lucid for \
 	ael-code/zsh-colored-man-pages
-
-#######
-# NVM #
-#######
-# Set up Node Version Manager
-source /usr/share/nvm/init-nvm.sh

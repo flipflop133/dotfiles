@@ -1,8 +1,14 @@
+# Requirement:
+# - dbus-python (module)
+# - python-gobject (package)
 from os import wait, fork
 from subprocess import run, PIPE
 from json import dumps
 from time import sleep
 from sys import stdout
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
 from gi.repository import GLib
 from dbus.mainloop.glib import DBusGMainLoop
 try:
