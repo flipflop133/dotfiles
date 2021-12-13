@@ -151,6 +151,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
+    config = { "\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugins.treesitter\frequire\0" },
     loaded = true,
     path = "/home/francois/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -199,6 +200,10 @@ time([[Config for nvim-cmp]], false)
 time([[Config for github-nvim-theme]], true)
 try_loadstring("\27LJ\1\2x\0\0\2\0\b\0\v4\0\0\0007\0\1\0%\1\3\0:\1\2\0004\0\4\0%\1\5\0>\0\2\0027\0\6\0003\1\a\0>\0\2\1G\0\1\0\1\0\1\16theme_style\tdark\nsetup\17github-theme\frequire\tdark\15background\6o\bvim\0", "config", "github-nvim-theme")
 time([[Config for github-nvim-theme]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugins.treesitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugins.null_ls\frequire\0", "config", "null-ls.nvim")
