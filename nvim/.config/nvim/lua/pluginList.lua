@@ -50,15 +50,18 @@ return require('packer').startup(function()
 	-- Language server configs
 	use {
 		"neovim/nvim-lspconfig",
+		config = function()
+			require "plugins.lspconfig"
+		end,
 	}
 
 	-- Null language server
-		use {
-			"jose-elias-alvarez/null-ls.nvim",
-			config = function()
-				require "plugins.null_ls"
-			end,
-		}
+	use {
+		"jose-elias-alvarez/null-ls.nvim",
+		config = function()
+			require "plugins.null_ls"
+		end,
+	}
 
 	-- Language server installer
 	use {
@@ -93,5 +96,5 @@ return require('packer').startup(function()
 	}
 
 	-- Icons
-	use { "kyazdani42/nvim-web-devicons", module = "nvim-web-devicons" }
+	use { "kyazdani42/nvim-web-devicons" }
 end)
