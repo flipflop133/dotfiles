@@ -15,9 +15,10 @@ export SUDO_EDITOR="nvim"
 
 # Default editor
 export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Default terminal
-export TERM="foot"
+export TERM="kitty"
 
 # Fix for java applications
 export _JAVA_AWT_WM_NONREPARENTING=1

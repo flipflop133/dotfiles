@@ -41,7 +41,7 @@ bindkey "^E" vi-end-of-line
 autoload -Uz colors && colors
 
 # Change prompt
-PS1=$'%(4~|%-1~/…/%3~|%~)\n%F{blue}\uf303%f '
+PS1=$'%(4~|%-1~/…/%3~|%~)\n%F{blue}> '
 
 # Completion configuration
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'

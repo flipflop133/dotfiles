@@ -1,31 +1,32 @@
 # Automatically change the system theme in function of the sunrise and sunset.
+from wallpaper import Wallpaper
+from threading import Timer
+from time import sleep
+import datetime
+from sunsetSunrise import get_sunset_sunrise
 from subprocess import run
 from pathlib import Path
 home = str(Path.home())
-from sunsetSunrise import get_sunset_sunrise
-import datetime
-from time import sleep
-from threading import Timer
-from wallpaper import Wallpaper
 
 autoWallpaper = False
 
+
 class Theme:
-    lastChecked = -1
-    checkedTheme = False
+    last_checked = -1
+    checked_theme = False
     sunrise = 600
     sunset = 1800
-    theme = ''
+    current_theme = ''
     wallpaper = Wallpaper()
-    wallpaperChanged = False
-    currentTime = -1
-    secondsNow = -1
+    wallpaper_changed = False
+    current_time = -1
+    seconds_now = -1
 
     def __init__(self):
         self.update()
 
-    def launchTimer(self):
-        Timer(self.determineSleepTime(self.currentTime, self.secondsNow),
+    def launch_timer(self):
+        Timer(self.determine_sleep_time(self.current_time, self.seconds_now),
               self.update).start()
 
     def update(self):
@@ -35,83 +36,86 @@ class Theme:
                 self.wallpaper.setWallpaper()
 
             # check current theme
-            if not self.checkedTheme:
-                self.theme = str(
+            if not self.checked_theme:
+                self.current_theme = str(
                     run([
                         "gsettings", "get", "org.gnome.desktop.interface",
                         "gtk-theme"
                     ],
                         capture_output=True,
                         encoding='utf-8').stdout)
-                self.checkedTheme = True
+                self.checked_theme = True
 
             # check if sunrise and sunset are still valid
-            if self.lastChecked != datetime.date.today():
+            if self.last_checked != datetime.date.today():
                 data = get_sunset_sunrise()
                 self.sunrise = int(data[0])
                 self.sunset = int(data[1])
-                self.lastChecked = datetime.date.today()
+                self.last_checked = datetime.date.today()
             # retrieve current time
-            self.currentTime = int(
+            self.current_time = int(
                 datetime.datetime.now().strftime("%H:%M").replace(':', ''))
-            self.secondsNow = (int((str(self.currentTime)[-2:])) * 60) + (int(
-                (str(self.currentTime)[:-2])) * 3600)
+            self.seconds_now = (int((str(self.current_time)[-2:])) * 60) + (int(
+                (str(self.current_time)[:-2])) * 3600)
             # check which theme to apply
-            if (self.currentTime < self.sunrise) or (self.currentTime >
-                                                     self.sunset):
+            if (self.current_time < self.sunrise) or (self.current_time
+                                                      > self.sunset):
                 # change theme
-                if ("light" in self.theme):
+                if ("light" in self.current_theme):
                     run([
                         home + "/.config/themes/themer.sh",
                         "light",
                         "dark",
                     ])
-                    self.checkedTheme = False
+                    self.checked_theme = False
                     if autoWallpaper:
-                        self.wallpaperChanged = self.wallpaper.updateWallpaper(
-                        "dark")
+                        self.wallpaper_changed = self.wallpaper.updateWallpaper(
+                            "dark")
                 # change wallpaper
-                if (autoWallpaper and not self.wallpaperChanged):
-                    self.wallpaperChanged = self.wallpaper.updateWallpaper(
+                if (autoWallpaper and not self.wallpaper_changed):
+                    self.wallpaper_changed = self.wallpaper.updateWallpaper(
                         "dark")
-            elif (self.currentTime > self.sunrise) and (self.currentTime <
-                                                        self.sunset):
+            elif (self.current_time > self.sunrise) and (self.current_time
+                                                         < self.sunset):
                 # change theme
-                if ("dark" in self.theme):
+                if ("dark" in self.current_theme):
                     run([home + "/.config/themes/themer.sh", "dark", "light"])
-                    self.checkedTheme = False
+                    self.checked_theme = False
                     if autoWallpaper:
-                        self.wallpaperChanged = self.wallpaper.updateWallpaper(
-                        "light")
+                        self.wallpaper_changed = self.wallpaper.updateWallpaper(
+                            "light")
                 # change wallpaper
-                if (autoWallpaper and not self.wallpaperChanged):
-                    self.wallpaperChanged = self.wallpaper.updateWallpaper(
+                if (autoWallpaper and not self.wallpaper_changed):
+                    self.wallpaper_changed = self.wallpaper.updateWallpaper(
                         "light")
-            self.launchTimer()
+            self.launch_timer()
         except:
             sleep(5)
             self.update()
 
-    def determineSleepTime(self, currentTime, secondsNow):
-        '''Determine how much time the script should sleep before changing theme again.
+    def determine_sleep_time(self, current_time, seconds_now):
+        '''Determine how much time the script should sleep before changing
+           theme again.
         '''
-        sleepTime = 5
+        sleep_time = 5
         # night time
-        if (currentTime < self.sunrise) or (currentTime > self.sunset):
+        if (current_time < self.sunrise) or (current_time > self.sunset):
             tmp = (int((str(self.sunrise)[-2:])) * 60) + (int(
                 (str(self.sunrise)[:-2])) * 3600)
-            if (currentTime > self.sunset):
-                sleepTime = tmp + ((24 * 3600) - secondsNow)
-            elif (currentTime < self.sunrise):
-                # if current time is less than sunrise, the script must sleep until sunrise.
-                sleepTime = tmp - secondsNow
+            if (current_time > self.sunset):
+                sleep_time = tmp + ((24 * 3600) - seconds_now)
+            elif (current_time < self.sunrise):
+                # if current time is less than sunrise, the script must sleep
+                # until sunrise.
+                sleep_time = tmp - seconds_now
         # day time
-        elif (currentTime > self.sunrise) and (currentTime < self.sunset):
+        elif (current_time > self.sunrise) and (current_time < self.sunset):
             # the script must sleep till sunset
             tmp = (int((str(self.sunset)[-2:])) * 60) + (int(
                 (str(self.sunset)[:2])) * 3600)
-            sleepTime = tmp - secondsNow
-        return sleepTime
+            sleep_time = tmp - seconds_now
+        print(sleep_time)
+        return sleep_time
 
 
 Theme()
