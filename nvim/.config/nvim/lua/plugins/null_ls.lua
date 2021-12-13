@@ -1,6 +1,5 @@
 local null_ls = require "null-ls"
 
-require("lspconfig")["null-ls"].setup {}
 null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.prettier.with {
