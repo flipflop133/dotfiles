@@ -30,7 +30,7 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "vsnip" },
 		{ name = "path" },
-		{ name = "tabnine" },
+		{ name = "cmp_tabnine" },
 	},
 
 	formatting = {

@@ -9,7 +9,7 @@ return require('packer').startup(function()
 	-- Status line
 	use {
 		'nvim-lualine/lualine.nvim',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true},
+		requires = {'kyazdani42/nvim-web-devicons'},
 		config = function()
 			require("lualine").setup {options = {theme = "github"}}
 		end
@@ -18,7 +18,7 @@ return require('packer').startup(function()
 	-- Theme
 	use {
 		"projekt0n/github-nvim-theme",
-		requires = {{"hoob3rt/lualine.nvim", opt = true}},
+		requires = {{"hoob3rt/lualine.nvim"}},
 		config = function()
 			vim.o.background = "dark"
 			require("github-theme").setup({theme_style = "dark"})
@@ -34,38 +34,35 @@ return require('packer').startup(function()
 	-- Completion
 	use {
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
 		config = function()
 			require "plugins.cmp"
 		end,
 		requires = {
-			{ "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" },
-			{ "hrsh7th/cmp-buffer", after = "nvim-cmp" },
-			{ "hrsh7th/cmp-path", after = "nvim-cmp" },
-			{ "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
-			{ "hrsh7th/cmp-vsnip", after = "nvim-cmp" },
-			{ "tzachar/cmp-tabnine",run='./install.sh', after = "nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "hrsh7th/cmp-cmdline" },
+			{ "hrsh7th/cmp-vsnip" },
+			{ "tzachar/cmp-tabnine",run='./install.sh' },
 		},
 	}
 
 	-- Language server configs
 	use {
 		"neovim/nvim-lspconfig",
-		event = "BufReadPre",
 	}
+
+	-- Null language server
+		use {
+			"jose-elias-alvarez/null-ls.nvim",
+			config = function()
+				require "plugins.null_ls"
+			end,
+		}
 
 	-- Language server installer
 	use {
 		"williamboman/nvim-lsp-installer"
-	}
-
-	-- Null language server
-	use {
-		"jose-elias-alvarez/null-ls.nvim",
-		after = "nvim-lspconfig",
-		config = function()
-			require "plugins.null_ls"
-		end,
 	}
 
 	-- Vscode-like pictograms
@@ -79,14 +76,12 @@ return require('packer').startup(function()
 	-- Better syntax highlighting
 	use {
 		"nvim-treesitter/nvim-treesitter",
-		event = "BufRead",
 		run = ":TSUpdate",
 	}
 
 	-- Snippets
 	use {
 		"hrsh7th/vim-vsnip",
-		event = "InsertCharPre",
 		requires = {
 			"rafamadriz/friendly-snippets",
 		},
@@ -95,7 +90,6 @@ return require('packer').startup(function()
 	-- Auto close pairs
 	use {
 		"windwp/nvim-autopairs",
-		after = "nvim-cmp",
 	}
 
 	-- Icons
