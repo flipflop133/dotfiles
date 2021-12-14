@@ -1,19 +1,18 @@
 {
-	// General
 	"position": "bottom",
 	"height": 35,
 
-	// Modules order
+
 	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
 	"modules-center": ["custom/media", "mpd"],
-	"modules-right": ["pulseaudio", "network", "backlight", "battery", "clock#date", "clock", "tray"],
+	"modules-right": ["custom/weather", "pulseaudio", "network", "backlight", "battery", "clock#date", "clock", "tray"],
 
-	// Modules configuration
+
 	"sway/mode": {
 		"interval": 1,
 		"format": "<span style=\"italic\">{}</span>"
 	},
-	"sway/window":{
+	"sway/window": {
 		"interval": 1,
 		"max-length": 35
 	},
@@ -34,7 +33,7 @@
 	"backlight": {
 		"interval": 1,
 		"format": "{percent}% {icon}",
-		"format-icons": ["\uf5d9","\uf5da","\uf5db","\uf5dc","\uf5dd","\uf5de","\uf5df"]
+		"format-icons": ["\uf5d9", "\uf5da", "\uf5db", "\uf5dc", "\uf5dd", "\uf5de", "\uf5df"]
 	},
 	"battery": {
 		"interval": 10,
@@ -47,7 +46,7 @@
 		"format-charging": "{capacity}% {icon}\uf22f \uf0e7",
 		"format-plugged": "{capacity}% {icon}\uf22f \ufba3",
 		"format-alt": "{time} {icon}\uf22f",
-		"format-icons": ["\uf244","\uf243","\uf242","\uf241","\uf240"],
+		"format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
 	},
 	"network": {
 		"interval": 10,
@@ -86,9 +85,9 @@
 		"on-click": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
 		"on-click-right": "killall spotify",
 		"format-icons": {
-      			"Playing": "\uf144",
-      			"Paused": "\uf28b",
-    		},
+			"Playing": "\uf144",
+			"Paused": "\uf28b"
+		}
 	},
 	"mpd": {
 		"format": "<span style=\"italic\">{stateIcon}  {consumeIcon}{randomIcon} {repeatIcon}{singleIcon}{artist} - {title}</span>",
@@ -115,4 +114,9 @@
 		"tooltip-format": "{album}",
 		"max-length": 40
 	},
+	"custom/weather": {
+		"format": "{}",
+		"exec": "python -OO $HOME/.config/weather-script/weather.py",
+		"on-click": "exec firefox \"meteo.be\""
+	}
 }

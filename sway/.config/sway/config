@@ -180,14 +180,14 @@ exec_always {
 set $notifications $HOME/.config/scripts/bash/notifications.sh
 
 # volume control
-bindsym XF86AudioRaiseVolume exec pamixer -i 2;exec $notifications volume
-bindsym XF86AudioLowerVolume exec pamixer -d 2;exec $notifications volume
-bindsym XF86AudioMute exec pamixer -t;exec $notifications volume
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +1%;exec $notifications volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -1%;exec $notifications volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle;exec $notifications volume
 
 # microphone control
-bindsym XF86AudioRaiseVolume+alt exec pamixer --source 5 -i 2;exec $notifications microphone
-bindsym XF86AudioLowerVolume+alt exec pamixer --source 5 -d 2;exec $notifications microphone
-bindsym XF86AudioMicMute exec pamixer --source 5 -t;exec $notifications microphone
+bindsym XF86AudioRaiseVolume+alt exec pactl set-source-volume 0 +1%;exec $notifications microphone
+bindsym XF86AudioLowerVolume+alt exec pactl set-source-volume 0 -1%;exec $notifications microphone
+bindsym XF86AudioMicMute exec pactl set-source-mute 0 toggle;exec $notifications microphone
 
 # media control
 bindsym XF86AudioPlay exec playerctl play-pause || mpc toggle

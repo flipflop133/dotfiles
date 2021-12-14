@@ -34,11 +34,12 @@ volume(){
 	volume_high="notification-audio-volume-high.svg"
 
 	sleep 0.1 # This gives time to get accurate status
-	mute_status=$(pamixer --get-mute)
-	volume=$(pamixer --get-volume)
+	mute_status=$(pactl get-sink-mute 0 | awk '{print $2}')
+	volume=$(pactl get-sink-volume 0 | awk '{print $5}')
+	volume=$(echo "$volume" | sed 's/%//')
 
 	# Set the icon depending on the volume level
-	if [ "$mute_status" = "true" ]; then
+	if [ "$mute_status" = "yes" ]; then
 		icon=$icon_path$volume_muted
 		level="muted"
 		# Send the notification
@@ -64,11 +65,12 @@ microphone(){
 	mic_on="mic-ready.svg"
 
 	sleep 0.1 # This gives time to get accurate status
-	volume=$(pamixer --source 5 --get-volume)
-	status=$(pamixer --source 5 --get-mute)
+	volume=$(pactl get-source-volume 0 | awk '{print $5}')
+	volume=$(echo "$volume" | sed 's/%//')
+	status=$(pactl get-source-mute 0 | awk '{print $2}')
 
 	# Set the icon depending on the volume level
-	if [ "$status" = "true" ]; then
+	if [ "$status" = "yes" ]; then
 		icon=$icon_path$mic_off
 		micro="muted"
 		# Send the notification
