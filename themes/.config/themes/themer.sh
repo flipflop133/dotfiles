@@ -38,7 +38,7 @@ theme() {
   # theme zathura
   sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/zathura/zathurarc
   # theme nvim
-  sed -i "s/\"${1}\"/\"${2}\"/g" "$HOME"/.config/nvim/lua/plugins.lua
+  sed -i "s/\"${1}\"/\"${2}\"/g" "$HOME"/.config/nvim/lua/pluginList.lua
   nvim +PackerCompile +qall!
 }
 
