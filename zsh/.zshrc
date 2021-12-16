@@ -15,7 +15,7 @@ autoload -Uz _zinit
 # GENERAL #
 ###########
 # Aliases
-source $HOME/aliases
+source $HOME/.aliases
 
 # History
 HISTFILE=$HOME/.zsh_history
