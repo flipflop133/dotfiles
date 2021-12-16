@@ -20,8 +20,8 @@ return require('packer').startup(function()
 		"projekt0n/github-nvim-theme",
 		requires = {{"hoob3rt/lualine.nvim"}},
 		config = function()
-			vim.o.background = "dark"
-			require("github-theme").setup({theme_style = "dark"})
+			vim.o.background = "light"
+			require("github-theme").setup({theme_style = "light"})
 		end
 	}
 

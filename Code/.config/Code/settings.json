@@ -1,0 +1,32 @@
+{
+    "tabnine.experimentalAutoImports": true,
+    "window.autoDetectColorScheme": true,
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.languageServer": "Jedi",
+    "editor.suggestSelection": "first",
+    "python.linting.pylintCategorySeverity.refactor": "Warning",
+    "python.linting.pylintCategorySeverity.convention": "Warning",
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontFamily": "Monospace",
+    "editor.bracketPairColorization.enabled": true,
+    "python.linting.prospectorEnabled": false,
+    "python.formatting.provider": "yapf",
+    "sonarlint.ls.javaHome": "/home/francois/.vscode/extensions/sonarsource.sonarlint_managed-jre/jre/jdk-11.0.13+8-jre",
+    "workbench.colorTheme": "Default Light+",
+    "python.linting.banditEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": false,
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.pydocstyleEnabled": false,
+    "python.linting.pylamaEnabled": false,
+}

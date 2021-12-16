@@ -17,7 +17,6 @@ input * {
   xkb_layout "be"
   xkb_numlock enabled
   tap enabled
-  natural_scroll enabled
   pointer_accel 0.2
 }
 
@@ -46,7 +45,7 @@ smart_borders on
 font pango:Roboto 18px
 
 # colors
-include darkTheme
+include lightTheme
 
 ####################
 # WINDOWS CONTROLS #
@@ -167,8 +166,8 @@ bindsym $mod+Shift+agrave move container to workspace number $ws10
 #######
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-  gsettings set $gnome-schema gtk-theme 'WhiteSur-dark'
-  gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+  gsettings set $gnome-schema gtk-theme 'WhiteSur-light'
+  gsettings set $gnome-schema icon-theme 'Papirus-Light'
   gsettings set $gnome-schema cursor-theme 'volantes_light_cursors'
   gsettings set $gnome-schema font-name 'Roboto 18px'
 }
@@ -230,7 +229,7 @@ bindsym XF86Calculator exec foot python -i $HOME/.config/sway/calculator.py
 bindsym $mod+Shift+f exec $TERM -T "file manager" nnn
 
 # app launcher
-include darkFuzzel
+include lightFuzzel
 
 # notification daemon
 exec mako
@@ -258,4 +257,4 @@ exec python -OO $HOME/.config/themes/main.py
 exec waybar
 
 # nm-applet
-exec nm-applet --indicator
+#exec nm-applet --indicator
