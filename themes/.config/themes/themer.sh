@@ -13,6 +13,8 @@ theme() {
   killall -SIGUSR1 kitty
   # Atom
   sed -i "s|${1}|${2}|g" "$HOME"/.atom/config.cson
+  # Bitwarden
+  sed -i "s|${1}|${2}|g" "$HOME"/.config/Bitwarden/data.json
   # theme swayidle & swaylock
   sed -i "s|${1}|${2}|g" "$HOME"/.config/sway/swayidle
   sed -i "s|${1}|${2}|g" "$HOME"/.config/sway/swaylock
@@ -27,6 +29,8 @@ theme() {
   sway reload 1>/dev/null
   python "$HOME"/.config/themes/themeSway.py "${1}"
   sway reload 1>/dev/null
+  # VSCODE
+  sed -i "s|$capitalizedCurr1|$capitalizedCurr2|g" "$HOME"/.config/Code/User/settings.json
   # theme bemenu
   sed -i "s|${1}Bemenu|${2}Bemenu|g" "$HOME"/.config/scripts/bash/bemenupower.sh
   sed -i "s|${1}Bemenu|${2}Bemenu|g" "$HOME"/.config/scripts/bash/bemenuscreenrecord.sh
