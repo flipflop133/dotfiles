@@ -1,5 +1,5 @@
 #!/bin/bash
-source $HOME/.config/scripts/bash/lightBemenu
+source $HOME/.config/scripts/bash/darkBemenu
 
 logoff_cmd() { sway exit; }
 

@@ -11,6 +11,7 @@ from time import sleep
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
+import threading
 
 
 class Dbus:
@@ -30,6 +31,7 @@ class Spotify:
     loop = 0
 
     def __init__(self):
+        self.thread = threading.Thread(target=self.wait)
         # initialize the signal handler
         DBusGMainLoop(set_as_default=True)
         self.session_bus = dbus.SessionBus()
@@ -45,8 +47,9 @@ class Spotify:
                 dbus_interface='org.mpris.MediaPlayer2.spotify',
                 arg0="test_signal")
         except dbus.exceptions.DBusException:
-            sleep(3)
-            print("Error connecting")
+            thread = threading.Thread(target=self.wait)
+            thread.start()
+            thread.join()
             self.run_main_loop()
         self.session_bus.add_signal_receiver(
             handler_function=self.signal_handler,
@@ -54,8 +57,16 @@ class Spotify:
         )
         self.loop = GLib.MainLoop()
         self.loop.run()
-        # Run the main loop again when loop.quit() is invoked
+        self.clean()
         self.run_main_loop()
+
+    def wait(self):
+        sleep(3)
+
+    def clean(self):
+        # Clean output when Spotify is unavailable
+        output = {'text': ''}
+        self.output(output)
 
     def test_signal_handler(self, test_signal):
         print(
@@ -72,10 +83,7 @@ class Spotify:
             self.formatSongOutput()
             # check and block ads
             self.block_ads()
-        except dbus.exceptions.DBusException as e:
-            # Clean output when Spotify is unavailable
-            output = {'text': ''}
-            self.output(output)
+        except dbus.exceptions.DBusException:
             self.loop.quit()
 
     def output(self, output):
