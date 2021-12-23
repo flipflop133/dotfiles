@@ -2,10 +2,15 @@
 theme() {
   theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
   newTheme=${theme/$1/$2}
+  capitalizedCurr1="$(tr '[:lower:]' '[:upper:]' <<<${1:0:1})${1:1}"
+  capitalizedCurr2="$(tr '[:lower:]' '[:upper:]' <<<${2:0:1})${2:1}"
   # theme tutanota (tutanota needs to be closed for this to work)
   sed -i "s|\"selectedTheme\": \"${1}\"|\"selectedTheme\": \"${2}\"|g" "$HOME"/.config/tutanota-desktop/conf.json
   # theme bpytop
-  bpytop "$1"
+  #bpytop "$1"
+  # theme gtk-3.0 settings.ini
+  sed -i "s|${1}|${2}|g" "$HOME"/.config/gtk-3.0/settings.ini
+  sed -i "s|Papirus-$capitalizedCurr1|Papirus-$capitalizedCurr2|g" "$HOME"/.config/gtk-3.0/settings.ini
   # theme foot
   sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/foot/foot.ini
   # theme kitty
@@ -20,8 +25,6 @@ theme() {
   sed -i "s|${1}|${2}|g" "$HOME"/.config/sway/swaylock
   # theme sway
   sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/sway/config
-  capitalizedCurr1="$(tr '[:lower:]' '[:upper:]' <<<${1:0:1})${1:1}"
-  capitalizedCurr2="$(tr '[:lower:]' '[:upper:]' <<<${2:0:1})${2:1}"
   sed -i "s|Papirus-$capitalizedCurr1|Papirus-$capitalizedCurr2|g" "$HOME"/.config/sway/config
   sed -i "s|${1}Fuzzel|${2}Fuzzel|g" "$HOME"/.config/sway/config
   sed -i "s|wallpaper/${1}|wallpaper/${2}|g" "$HOME"/.config/sway/config

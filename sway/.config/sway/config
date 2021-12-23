@@ -7,7 +7,7 @@ set $mod Mod4
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# xwayland support
+# Xwayland support
 xwayland enable
 
 #########
@@ -24,7 +24,7 @@ input * {
 # hide cursor after some time
 seat * hide_cursor 5000
 
-# hide cursor on keypress
+# hide cursor on key press
 seat * hide_cursor when-typing enable
 
 ##########
@@ -46,7 +46,7 @@ smart_borders on
 font pango:Roboto 18px
 
 # colors
-include darkTheme
+include lightTheme
 
 ####################
 # WINDOWS CONTROLS #
@@ -167,8 +167,8 @@ bindsym $mod+Shift+agrave move container to workspace number $ws10
 #######
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-  gsettings set $gnome-schema gtk-theme 'WhiteSur-dark'
-  gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+  gsettings set $gnome-schema gtk-theme 'WhiteSur-light'
+  gsettings set $gnome-schema icon-theme 'Papirus-Light'
   gsettings set $gnome-schema font-name 'Roboto 18px'
 }
 
@@ -200,14 +200,15 @@ bindsym $mod+KP_Add exec light -A 1;exec $notifications brightness
 bindsym $mod+KP_Subtract exec light -U 1;exec $notifications brightness
 
 # lockscreen
-bindsym $mod+x exec swaylock --no-unlock-indicator -i $HOME/.config/themes/wallpaper_image.*
+bindsym $mod+x exec swaylock --no-unlock-indicator -i $HOME/.config/sway/wallpaper.*
 
 # power management
-exec_always swayidle -w timeout 330 'swaylock -f --no-unlock-indicator --image $HOME/.config/sway/wallpaper.*'\
-                 timeout 300 'swaymsg "output * dpms off"'\
-                 resume 'swaymsg "output * dpms on"'\
-                 before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/.config/sway/wallpaper.*'\
-                 timeout 600 'systemctl suspend'
+exec_always swayidle -w \
+            timeout 330 'swaylock -f --no-unlock-indicator --image $HOME/.config/sway/wallpaper.*' \
+            timeout 300 'swaymsg "output * dpms off"' \
+            resume 'swaymsg "output * dpms on"' \
+            before-sleep 'swaylock -f --no-unlock-indicator --image $HOME/.config/sway/wallpaper.*' \
+            timeout 600 'systemctl suspend'
 
 # powermenu
 bindsym $mod+p exec $HOME/.config/scripts/bash/bemenupower.sh
@@ -218,18 +219,18 @@ bindsym $mod+Return exec $TERM -T terminal
 # screenshot
 bindsym Print exec $HOME/.config/scripts/bash/bemenuscreenshot.sh
 
-# screenrecorder
+# screen recorder
 bindsym $mod+Shift+r exec $HOME/.config/scripts/bash/bemenuscreenrecord.sh
 bindsym $mod+alt+r exec killall -s SIGINT wf-recorder & killall -s SIGINT ffmpeg & notify-send "Stopped recording" "Record is located in ~/Videos"
 
 # calculator
-bindsym XF86Calculator exec foot python -i $HOME/.config/sway/calculator.py
+bindsym XF86Calculator exec $TERM python -i $HOME/.config/sway/calculator.py
 
 # file manager
 bindsym $mod+Shift+f exec $TERM -T "file manager" nnn
 
 # app launcher
-include darkFuzzel
+include lightFuzzel
 
 # notification daemon
 exec mako
@@ -255,6 +256,3 @@ exec python -OO $HOME/.config/themes/main.py
 
 # bar
 exec waybar
-
-# nm-applet
-#exec nm-applet --indicator
