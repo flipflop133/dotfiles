@@ -4,7 +4,7 @@
 
 
 	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-	"modules-center": ["custom/spotify"],
+	"modules-center": ["custom/media"],
 	"modules-right": ["pulseaudio", "pulseaudio#source", "network", "backlight", "battery", "clock#date", "clock", "tray"],
 
 
@@ -99,18 +99,17 @@
 			"default": ["\uf026", "\uf027", "\uf028"]
 		}
 	},
-	"custom/spotify": {
+	"custom/media": {
 		"format": "<span style=\"italic\">{icon}  {}</span>",
 		"escape": true,
 		"return-type": "json",
 		"max-length": 40,
-		"on-click": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
+		"on-click": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.playerctld /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
 		"on-click-right": "killall spotify",
 		"smooth-scrolling-threshold": 10,
-		"on-scroll-up": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next",
-		"on-scroll-down": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous",
+		"on-scroll-up": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.playerctld /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next",
+		"on-scroll-down": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.playerctld /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous",
 		"exec": "python -OO $HOME/.config/waybar/mediaplayer.py",
-		"exec-if": "pgrep spotify",
 		"format-icons": {
 			"Playing": "\uf144",
 			"Paused": "\uf28b"
