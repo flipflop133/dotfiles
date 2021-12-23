@@ -10,7 +10,7 @@ from time import mktime, process_time, sleep, thread_time, time
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
-from pytz import UTC
+import pytz
 from suntime import Sun
 import multiprocessing
 
@@ -27,7 +27,6 @@ class Theme:
     current_theme = ''
     current_time = -1
     seconds_now = -1
-    utc = UTC
     loop = 0
     next_run_thread = 0
 
@@ -110,7 +109,7 @@ class Theme:
             self.retrieve_sunset_sunrise()
             self.last_checked = date.today()
         # retrieve current time
-        self.current_time = self.utc.localize(dt=datetime.now())
+        self.current_time = datetime.now(pytz.utc)
         # check which theme to apply
         if (self.current_time < self.sunrise) or (self.current_time >
                                                   self.sunset):
