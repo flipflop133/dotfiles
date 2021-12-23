@@ -4,8 +4,8 @@
 
 
 	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-	"modules-center": ["custom/media", "mpd"],
-	"modules-right": ["custom/weather", "pulseaudio","pulseaudio#source", "network", "backlight", "battery", "clock#date", "clock", "tray"],
+	"modules-center": ["custom/media"],
+	"modules-right": ["pulseaudio","pulseaudio#source", "network", "backlight", "battery", "clock#date", "clock", "tray"],
 
 
 	"sway/mode": {
