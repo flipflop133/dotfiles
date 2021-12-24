@@ -27,12 +27,14 @@ class Theme:
     current_theme = ''
     current_time = -1
     seconds_now = -1
-    loop = 0
-    next_run_thread = 0
+    loop = None
+    next_run_thread = None
+    test_time = 0
 
     def __init__(self):
         """Initialize the theme script."""
         self.update()
+        self.setup_scheduler()
 
     def retrieve_sunset_sunrise(self):
         """Retrieve the current sunrise and sunset times\
@@ -46,20 +48,31 @@ class Theme:
 
     def setup_scheduler(self):
         """Setup the theme scheduler."""
+        print("scheduler setup...")
         self.handle_system_suspension()
         self.launch_scheduler()
         self.loop.run()
 
     def launch_scheduler(self):
         """Launch the scheduler for the next theme update."""
+        print("creating new scheduler...")
         scheduler = sched_scheduler(time)
         next_run_date = self.determine_next_time()
+        self.test_time += 1
+        next_run_date = datetime.strptime(
+            'Dec 24 2021  11:20AM',
+            '%b %d %Y %I:%M%p') + timedelta(minutes=self.test_time)
+
         next_run_date = mktime(next_run_date.timetuple())
-        scheduler.enterabs(next_run_date, 0, self.update)
+        scheduler.enterabs(next_run_date, 0, self.setup_new_update)
         # Run the scheduler on another thread so we can run the DBusGMainLoop on the main thread
         # to receive the suspend signal.
         self.next_run_thread = multiprocessing.Process(target=scheduler.run)
         self.next_run_thread.start()
+
+    def setup_new_update(self):
+        self.update()
+        self.launch_scheduler()
 
     def handle_system_suspension(self):
         """Handle system suspension.
@@ -74,7 +87,8 @@ class Theme:
         login1 = dbus.Interface(proxy, 'org.freedesktop.login1.Manager')
         for signal in ['PrepareForSleep', 'PrepareForShutdown']:
             login1.connect_to_signal(signal, self.signal_handler, None)
-        login1.connect_to_signal('SessionRemoved', self.session_signal_handler, None)
+        login1.connect_to_signal('SessionRemoved', self.session_signal_handler,
+                                 None)
 
     def session_signal_handler(self):
         """Stop the whole script when user disconnect from the session."""
@@ -88,6 +102,7 @@ class Theme:
         """
         if before == 0:  # If before is 0, then the signal was sent after suspend.
             # Adjust the next run time that was paused during suspend.
+            print("system suspend ended...")
             self.next_run_thread.terminate()
             self.launch_scheduler()
 
@@ -127,7 +142,6 @@ class Theme:
             if "dark" in self.current_theme:
                 run([HOME + "/.config/themes/themer.sh", "dark", "light"])
                 self.checked_theme = False
-        self.setup_scheduler()
 
     def determine_next_time(self):
         """Determine how much time the script should sleep\

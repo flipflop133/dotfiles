@@ -50,7 +50,7 @@ class MediaPlayer():
             track_info = f'{player.get_artist()[:40]} - {player.get_title()[:40]}'
             if player.props.player_name == 'spotify' and self.muted:
                 time.sleep(
-                    1)  # Spotify mix end of ad with beginning of next song.
+                    2)  # Spotify mix end of ad with beginning of next song.
                 self.mute_spotify('false')
         else:
             track_info = player.get_title()

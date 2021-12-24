@@ -1,11 +1,11 @@
 # colors
 # define colors
-set $bg	#333333
-set $fg	#dedede
-set $black	#dedede
-set $sel_bg_color	#0860f2
+set $bg	#353535
+set $fg	#eeeeec
+set $black	#eeeeec
+set $sel_bg_color	#15539e
 set $sel_fg_color	#ffffff
-set $red	#fc4138
+set $red	#cc0000
 
 # set colors
 # class                 border  backgr. text    indicator child_border
