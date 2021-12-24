@@ -29,7 +29,6 @@ class Theme:
     seconds_now = -1
     loop = None
     next_run_thread = None
-    test_time = 0
 
     def __init__(self):
         """Initialize the theme script."""
@@ -48,21 +47,14 @@ class Theme:
 
     def setup_scheduler(self):
         """Setup the theme scheduler."""
-        print("scheduler setup...")
         self.handle_system_suspension()
         self.launch_scheduler()
         self.loop.run()
 
     def launch_scheduler(self):
         """Launch the scheduler for the next theme update."""
-        print("creating new scheduler...")
         scheduler = sched_scheduler(time)
         next_run_date = self.determine_next_time()
-        self.test_time += 1
-        next_run_date = datetime.strptime(
-            'Dec 24 2021  11:20AM',
-            '%b %d %Y %I:%M%p') + timedelta(minutes=self.test_time)
-
         next_run_date = mktime(next_run_date.timetuple())
         scheduler.enterabs(next_run_date, 0, self.setup_new_update)
         # Run the scheduler on another thread so we can run the DBusGMainLoop on the main thread
