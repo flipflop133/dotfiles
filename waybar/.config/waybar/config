@@ -33,13 +33,11 @@
 			"warning": 15,
 			"critical": 5
 		},
-		"format": "{icon}\uf22f",
-		"format-charging": "{capacity}% {icon}\uf22f \uf0e7",
-		"format-plugged": "{capacity}% {icon}\uf22f \ufba3",
+		"format": "{icon}",
+		"format-charging": "{capacity}% {icon}\uDB85\uDC25",
+		"format-plugged": "{capacity}% {icon}\ufba3",
 		"format-alt": "{capacity}% {icon}\uf22f",
-		"format-icons": ["\uf244", "\uf243", "\uf243", "\uf243", "\uf243", "\uf243", "\uf243",
-			             "\uf242", "\uf242", "\uf242", "\uf242", "\uf242", "\uf242", "\uf241",
-						 "\uf241", "\uf241", "\uf241", "\uf241", "\uf241", "\uf240"]
+		"format-icons": ["\uf58d","\uf579","\uf57a","\uf57b","\uf57c","\uf57d","\uf57e","\uf57f","\uf580","\uf581","\uf578"]
 	},
 	"network": {
 		"format-wifi": "{icon}",
