@@ -18,7 +18,6 @@ tooltip {
 
 tooltip label {
   color: @theme_fg_color;
-  font-weight: 300;
 }
 
 /* MODULES LEFT */

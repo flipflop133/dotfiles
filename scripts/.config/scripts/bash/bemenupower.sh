@@ -1,5 +1,5 @@
 #!/bin/bash
-source $HOME/.config/scripts/bash/lightBemenu
+source $HOME/.config/scripts/bash/darkBemenu
 
 logoff_cmd() { sway exit; }
 
@@ -56,7 +56,7 @@ case $select in
 		systemctl hibernate
 		;;
 	" PowerMode")
-		foot sudo "$HOME"/.config/scripts/bash/Tools/powersave.sh
+		$TERM sudo "$HOME"/.config/scripts/bash/Tools/powersave.sh
 		;;
 	"祥 Screen timeout")
 		timeout=$(printf "鈴 Enable screen timeout\n零 Disable screen timeout" | menu)

@@ -1,28 +1,21 @@
 {
 	"position": "bottom",
 	"height": 35,
-
-
 	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
 	"modules-center": ["custom/media"],
-	"modules-right": ["pulseaudio", "pulseaudio#source", "network", "backlight", "battery", "clock#date", "clock", "tray"],
-
+	"modules-right": ["backlight", "pulseaudio", "pulseaudio#source", "network", "battery", "clock#date", "clock", "tray"],
 
 	"sway/mode": {
-		"interval": 1,
 		"format": "<span style=\"italic\">{}</span>"
 	},
 	"sway/window": {
-		"interval": 1,
 		"max-length": 35
 	},
 	"tray": {
-		"interval": 5,
 		"icon-size": 25,
 		"spacing": 10
 	},
 	"clock": {
-		"interval": 5,
 		"format": "{:%I:%M %p}"
 	},
 	"clock#date": {
@@ -31,34 +24,33 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"backlight": {
-		"interval": 1,
 		"format": "{percent}% {icon}",
 		"format-icons": ["\uf5d9", "\uf5da", "\uf5db", "\uf5dc", "\uf5dd", "\uf5de", "\uf5df"]
 	},
 	"battery": {
-		"interval": 10,
 		"states": {
 			"good": 95,
 			"warning": 15,
 			"critical": 5
 		},
-		"format": "{capacity}% {icon}\uf22f",
+		"format": "{icon}\uf22f",
 		"format-charging": "{capacity}% {icon}\uf22f \uf0e7",
 		"format-plugged": "{capacity}% {icon}\uf22f \ufba3",
-		"format-alt": "{time} {icon}\uf22f",
-		"format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+		"format-alt": "{capacity}% {icon}\uf22f",
+		"format-icons": ["\uf244", "\uf243", "\uf243", "\uf243", "\uf243", "\uf243", "\uf243",
+			             "\uf242", "\uf242", "\uf242", "\uf242", "\uf242", "\uf242", "\uf241",
+						 "\uf241", "\uf241", "\uf241", "\uf241", "\uf241", "\uf240"]
 	},
 	"network": {
-		"interval": 10,
-		"format-wifi": "{signalStrength}% \uf1eb ",
-		"format-ethernet": "\uf700",
-		"format-linked": "{ifname} (No IP) \uf700",
-		"format-disconnected": "Disconnected \uf701",
+		"format-wifi": "{icon}",
+		"format-ethernet": "\uF700",
+		"format-linked": "{ifname} (No IP) \uF700",
+		"format-disconnected": "\uDB82\uDD2E",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
-		"tooltip-format-wifi": "{essid}"
+		"tooltip-format-wifi": "{essid}: {signalStrength}%",
+		"format-icons": ["\uDB82\uDD2F", "\uDB82\uDD1F", "\uDB82\uDD22", "\uDB82\uDD25", "\uDB82\uDD28"]
 	},
 	"pulseaudio": {
-		"interval": 1,
 		"scroll-step": 2,
 		"on-click": "pactl set-sink-mute 0 toggle",
 		"format": "{volume}% {icon}",
@@ -78,7 +70,6 @@
 		}
 	},
 	"pulseaudio#source": {
-		"interval": 1,
 		"scroll-step": 2,
 		"on-scroll-up": "pactl set-source-volume 0 +1%",
 		"on-scroll-down": "pactl set-source-volume 0 -1%",

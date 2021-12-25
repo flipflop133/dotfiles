@@ -1,6 +1,5 @@
 #!/bin/bash
 # Script to enable or disable some power saving features on the lenovo Ideapad 5
-# Dependency: cpupower
 # Tool used to find right settings: powertop & TLP
 # Tool to control the lenovo fan: thinkfan
 # References:
@@ -15,13 +14,11 @@ power_save_mode(){
 	rmmod btusb
 	rfkill block bluetooth
 
-	#####################
-	# cpupower commands #
-	#####################
-	cpupower idle-set -E
-	cpupower set --perf-bias 15
-	cpupower frequency-set -u 1GHz
-	cpupower frequency-set -g powersave
+	#######
+	# CPU #
+	#######
+	echo 1000000 > tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq
+	echo powersave > tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
 	#################
 	# INTEL P-STATE #

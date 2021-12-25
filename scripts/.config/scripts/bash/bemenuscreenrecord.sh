@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $HOME/.config/scripts/bash/lightBemenu
+source $HOME/.config/scripts/bash/darkBemenu
 
 menu() { bemenu --fn "$font"\
 	-i\
