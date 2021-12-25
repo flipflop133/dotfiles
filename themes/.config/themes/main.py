@@ -96,10 +96,12 @@ class Theme:
             # Adjust the next run time that was paused during suspend.
             print("system suspend ended...")
             self.next_run_thread.terminate()
+            self.update()
             self.launch_scheduler()
 
     def update(self):
         """Update the system theme."""
+        print("updating...")
         # check current theme
         if not self.checked_theme:
             self.current_theme = str(
