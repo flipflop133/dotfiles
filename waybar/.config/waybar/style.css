@@ -1,7 +1,6 @@
 /* GENERAL */
 * {
-  font-family: Roboto, JetBrainsMono Nerd Font;
-  font-size: 20px;
+  font: 18px Roboto, JetBrainsMono Nerd Font;
   border: none;
   border-radius: 0;
   min-height: 0;
@@ -9,14 +8,6 @@
 
 window#waybar {
   background: @theme_bg_color;
-  color: @theme_fg_color;
-}
-
-tooltip {
-  background: @theme_bg_color;
-}
-
-tooltip label {
   color: @theme_fg_color;
 }
 
@@ -46,21 +37,13 @@ tooltip label {
 /* MODULES right */
 #tray,
 #clock,
-#idle_inhibitor,
-#disk,
-#disk.home,
-#custom-cpu,
-#memory,
-#temperature,
 #pulseaudio,
 #network,
 #backlight,
 #battery,
-#custom-calendar,
-#custom-notifications,
 #tray {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #temperature.critical {

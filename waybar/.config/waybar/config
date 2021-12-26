@@ -24,6 +24,9 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"backlight": {
+		"on-scroll-up": "light -U 1",
+		"on-scroll-down": "light -A 1",
+		"smooth-scrolling-threshold": 5,
 		"format": "{percent}% {icon}",
 		"format-icons": ["\uf5d9", "\uf5da", "\uf5db", "\uf5dc", "\uf5dd", "\uf5de", "\uf5df"]
 	},
@@ -36,7 +39,8 @@
 		"format": "{icon}",
 		"format-charging": "{capacity}% {icon}\uDB85\uDC25",
 		"format-plugged": "{capacity}% {icon}\ufba3",
-		"format-alt": "{capacity}% {icon}\uf22f",
+		"format-alt": "{power}W {icon}\uf22f",
+		"tooltip-format": "{capacity}%",
 		"format-icons": ["\uf58d","\uf579","\uf57a","\uf57b","\uf57c","\uf57d","\uf57e","\uf57f","\uf580","\uf581","\uf578"]
 	},
 	"network": {
@@ -49,35 +53,35 @@
 		"format-icons": ["\uDB82\uDD2F", "\uDB82\uDD1F", "\uDB82\uDD22", "\uDB82\uDD25", "\uDB82\uDD28"]
 	},
 	"pulseaudio": {
-		"scroll-step": 2,
+		"on-scroll-up": "pactl set-sink-volume 0 -1%",
+		"on-scroll-down": "pactl set-sink-volume 0 +1%",
+		"smooth-scrolling-threshold": 5,
 		"on-click": "pactl set-sink-mute 0 toggle",
 		"format": "{volume}% {icon}",
 		"format-bluetooth": "{volume}% {icon}\uf5ae",
 		"format-bluetooth-muted": "{icon}\uf5b1",
-		"format-muted": "\ufa80",
-		"format-source": "",
-		"format-source-muted": "",
+		"format-muted": "\ufc5d",
 		"format-icons": {
-			"headphone": "\uf025",
+			"headphone": "\uf7ca",
 			"hands-free": "\uf256",
 			"headset": "\uf7cd",
 			"phone": "\uf8f1",
 			"portable": "\uf61b",
 			"car": "\uf1b9",
-			"default": ["\uf026", "\uf027", "\uf028"]
+			"default": ["\ufa7e", "\ufa7f", "\ufa7d"]
 		}
 	},
 	"pulseaudio#source": {
-		"scroll-step": 2,
-		"on-scroll-up": "pactl set-source-volume 0 +1%",
-		"on-scroll-down": "pactl set-source-volume 0 -1%",
+		"on-scroll-up": "pactl set-source-volume 0 -1%",
+		"on-scroll-down": "pactl set-source-volume 0 +1%",
+		"smooth-scrolling-threshold": 5,
 		"on-click": "pactl set-source-mute 0 toggle",
 		"format": "{format_source}",
 		"format-bluetooth": "{volume}% {icon}\uf5ae {format_source}",
 		"format-bluetooth-muted": "{icon}\uf5b1 {format_source}",
 		"format-muted": "{format_source}",
-		"format-source": "{volume}% \uf130",
-		"format-source-muted": "\uf131",
+		"format-source": "{volume}% \uf86b",
+		"format-source-muted": "\uf86c",
 		"format-icons": {
 			"headphone": "\uf025",
 			"hands-free": "\uf256",
@@ -89,7 +93,7 @@
 		}
 	},
 	"custom/media": {
-		"format": "<span style=\"italic\">{icon}  {}</span>",
+		"format": "{icon} <span style=\"italic\">{}</span>",
 		"escape": true,
 		"return-type": "json",
 		"max-length": 40,
@@ -100,8 +104,8 @@
 		"on-scroll-down": "exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.playerctld /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous",
 		"exec": "python -OO $HOME/.config/waybar/mediaplayer.py",
 		"format-icons": {
-			"Playing": "\uf144",
-			"Paused": "\uf28b"
+			"Playing": "\uf90c",
+			"Paused": "\uf8e5"
 		}
 	},
 	"mpd": {
