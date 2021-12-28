@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. "$HOME"/.config/scripts/bash/lightBemenu
+. "$HOME"/.config/scripts/sh/lightBemenu
 
 # menu
 menu() { 

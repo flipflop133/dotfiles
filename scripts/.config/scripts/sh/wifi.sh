@@ -2,10 +2,18 @@
 # Description: manage network with iwctl
 # Dependencies: dmenu, iwd
 # Shell: POSIX compliant
+# Author: @mortezadadgar
 
 INTERFACE="wlan0"
 
-SELECT=$(printf "Connect to a network\nDisconnect current network\nForget a network" | dmenu)
+. "$HOME"/.config/scripts/sh/lightBemenu
+
+# menu
+menu() {
+    bemenu -i -l 10 --prompt="Wifi menu" --fn "$font" $colors
+}
+
+SELECT=$(printf "Connect to a network\nDisconnect current network\nForget a network" | menu)
 
 case $SELECT in
 "Connect to a network")
@@ -80,4 +88,3 @@ case $SELECT in
     iwctl known-networks "$network" forget
     ;;
 esac
-

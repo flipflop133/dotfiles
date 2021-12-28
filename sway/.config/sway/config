@@ -178,7 +178,8 @@ exec_always {
 # OTHER CONTROLS AND STARTUP STUFF #
 ####################################
 # notifications script path
-set $notifications $HOME/.config/scripts/bash/notifications.sh
+set $script_path $HOME/.config/scripts/sh
+set $notifications $script_path/notifications.sh
 
 # volume control
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +1%;exec $notifications volume
@@ -213,16 +214,16 @@ exec_always swayidle -w \
             timeout 600 'systemctl suspend'
 
 # powermenu
-bindsym $mod+p exec $HOME/.config/scripts/bash/bemenupower.sh
+bindsym $mod+p exec $script_path/bemenupower.sh
 
 # terminal
 bindsym $mod+Return exec $TERM -T terminal
 
 # screenshot
-bindsym Print exec $HOME/.config/scripts/bash/bemenuscreenshot.sh
+bindsym Print exec $script_path/bemenuscreenshot.sh
 
 # screen recorder
-bindsym $mod+Shift+r exec $HOME/.config/scripts/bash/bemenuscreenrecord.sh
+bindsym $mod+Shift+r exec $script_path/bemenuscreenrecord.sh
 bindsym $mod+alt+r exec killall -s SIGINT wf-recorder & killall -s SIGINT ffmpeg & notify-send "Stopped recording" "Record is located in ~/Videos"
 
 # calculator
