@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ## Grimshot: a helper for screenshots within sway
+## Credits: https://github.com/swaywm/sway/blob/master/contrib/grimshot
 ## Requirements:
 ##  - `grim`: screenshot utility for wayland
 ##  - `slurp`: to select an area

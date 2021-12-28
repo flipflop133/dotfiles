@@ -1,8 +1,7 @@
-#!/bin/bash
-
+#!/bin/sh
 # Dependencies: libnotify, light, Papirus icon pack, Pulseaudio-ctl
 
-brightness(){
+brightness() {
 	icon_path="/usr/share/icons/Papirus/48x48/status/"
 	brightness_low="notification-display-brightness-low.svg"
 	brightness_medium="notification-display-brightness-medium.svg"
@@ -26,14 +25,15 @@ brightness(){
 	# Send the notification
 	notify-send -c brightness "Brightness [$brightness] " -h int:value:"$brightness" --icon $icon
 }
-volume(){
+
+volume() {
 	icon_path="/usr/share/icons/Papirus/48x48/status/"
 	volume_muted="notification-audio-volume-muted.svg"
 	volume_low="notification-audio-volume-low.svg"
 	volume_medium="notification-audio-volume-medium.svg"
 	volume_high="notification-audio-volume-high.svg"
 
-	sleep 0.1 # This gives time to get accurate status
+	# Retrieve current volume level
 	mute_status=$(pactl get-sink-mute 0 | awk '{print $2}')
 	volume=$(pactl get-sink-volume 0 | awk '{print $5}')
 	volume=$(echo "$volume" | sed 's/%//')
@@ -41,13 +41,12 @@ volume(){
 	# Set the icon depending on the volume level
 	if [ "$mute_status" = "yes" ]; then
 		icon=$icon_path$volume_muted
-		level="muted"
 		# Send the notification
 		notify-send -c audio "Volume" "Muted" --icon $icon
 		exit
-	elif [ $volume -lt 34 ]; then
+	elif [ "$volume" -lt 34 ]; then
 		icon=$icon_path$volume_low
-	elif [ $volume -lt 67 ]; then
+	elif [ "$volume" -lt 67 ]; then
 		icon=$icon_path$volume_medium
 	else
 		icon=$icon_path$volume_high
@@ -56,15 +55,15 @@ volume(){
 	# Send the notification
 	notify-send -c audio "Volume" "$volume%" -h int:value:"$volume" --icon $icon
 }
-microphone(){
+
+microphone() {
 	icon_path="/usr/share/icons/Papirus/48x48/status/"
 	volume_low="notification-audio-volume-low.svg"
 	volume_medium="notification-audio-volume-medium.svg"
 	volume_high="notification-audio-volume-high.svg"
 	mic_off="mic-off.svg"
-	mic_on="mic-ready.svg"
 
-	sleep 0.1 # This gives time to get accurate status
+	# Retrieve current volume level
 	volume=$(pactl get-source-volume 0 | awk '{print $5}')
 	volume=$(echo "$volume" | sed 's/%//')
 	status=$(pactl get-source-mute 0 | awk '{print $2}')
@@ -76,9 +75,9 @@ microphone(){
 		# Send the notification
 		notify-send -c audio "Microphone status" "$micro" --icon $icon
 		exit
-	elif [ $volume -lt 34 ]; then
+	elif [ "$volume" -lt 34 ]; then
 		icon=$icon_path$volume_low
-	elif [ $volume -lt 67 ]; then
+	elif [ "$volume" -lt 67 ]; then
 		icon=$icon_path$volume_medium
 	else
 		icon=$icon_path$volume_high
@@ -89,13 +88,13 @@ microphone(){
 }
 
 case "$1" in
-	microphone)
-		microphone
-		;;
-	volume)
-		volume
-		;;
-	brightness)
-		brightness
-		;;
+microphone)
+	microphone
+	;;
+volume)
+	volume
+	;;
+brightness)
+	brightness
+	;;
 esac

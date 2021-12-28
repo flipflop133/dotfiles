@@ -1,12 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 
-source $HOME/.config/scripts/bash/lightBemenu
+. "$HOME"/.config/scripts/bash/lightBemenu
 
-menu() { bemenu --fn "$font"\
-	-i\
-	-l 10\
-	--prompt=$1\
-	$colors;
+# menu
+menu() { 
+	options="-i -l 10 --prompt=ScreenrecordMenu $font $colors"
+	bemenu $options
 }
 
 options() {
@@ -65,12 +64,12 @@ case $thirdSelect in
 esac
 
 
-if [[ $secondChoice == "slurp" ]];then
-	exec wf-recorder "$choice" -g "$(slurp)" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4") & notify-send "Recording $choiceName"
+if [ "$secondChoice" = "slurp" ];then
+	exec wf-recorder "$choice" -g "$(slurp)" -f ~/Videos/recording_"$(date +"%Y-%m-%d_%H:%M:%S.mp4")" & notify-send "Recording $choiceName"
 else
-	exec wf-recorder "$choice" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4") & notify-send "Recording $choiceName"
+	exec wf-recorder "$choice" -f ~/Videos/recording_"$(date +"%Y-%m-%d_%H:%M:%S.mp4")" & notify-send "Recording $choiceName"
 fi
 
-if [[ $thirdChoice == "yes" ]];then
-	ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -c:v libx264 -preset ultrafast ~/Videos/camera_$(date +"%Y-%m-%d_%H:%M:%S.mp4")
+if [ $thirdChoice = "yes" ];then
+	ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 -c:v libx264 -preset ultrafast ~/Videos/camera_"$(date +"%Y-%m-%d_%H:%M:%S.mp4")"
 fi

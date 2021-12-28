@@ -33,7 +33,7 @@ theme() {
   python "$HOME"/.config/themes/themeSway.py "${1}"
   sway reload 1>/dev/null
   # VSCODE
-  sed -i "s|$capitalizedCurr1|$capitalizedCurr2|g" "$HOME"/.config/Code/User/settings.json
+  vscode "$1"
   # theme bemenu
   sed -i "s|${1}Bemenu|${2}Bemenu|g" "$HOME"/.config/scripts/bash/bemenupower.sh
   sed -i "s|${1}Bemenu|${2}Bemenu|g" "$HOME"/.config/scripts/bash/bemenuscreenrecord.sh
@@ -62,6 +62,14 @@ bpytop() {
     sed -i 's/flat-remix-light/default/g' "$HOME"/.config/bpytop/bpytop.conf
   else
     sed -i 's/default/flat-remix-light/g' "$HOME"/.config/bpytop/bpytop.conf
+  fi
+}
+
+vscode() {
+  if [[ $1 = "light" ]]; then
+    sed -i 's/Atom One Light/One Dark Pro/g' "$HOME"/.config/Code/User/settings.json
+  else
+    sed -i 's/One Dark Pro/Atom One Light/g' "$HOME"/.config/Code/User/settings.json
   fi
 }
 

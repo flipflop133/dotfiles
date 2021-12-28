@@ -1,11 +1,10 @@
-#!/bin/bash
-source $HOME/.config/scripts/bash/lightBemenu
+#!/bin/sh
+. "$HOME"/.config/scripts/bash/lightBemenu
 
-menu() { bemenu --fn "$font"\
-	-i\
-	-l 10\
-	--prompt="ScreenshotMenu"\
-	$colors;
+# menu
+menu() { 
+	options="-i -l 10 --prompt=ScreenshotMenu $font $colors"
+	bemenu $options
 }
 
 options() {
@@ -57,4 +56,4 @@ case $subSelect in
 		exit 1
 esac
 
-$HOME/.config/scripts/bash/grimshot.sh --notify $choice $secondChoice
+"$HOME"/.config/scripts/bash/grimshot.sh --notify $choice $secondChoice

@@ -258,3 +258,6 @@ exec python -OO $HOME/.config/themes/main.py
 
 # bar
 exec waybar
+
+# battery monitor
+exec python -OO $HOME/.config/scripts/python/battery_notification/battery_notification.py
