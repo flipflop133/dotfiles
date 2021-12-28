@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. "$HOME"/.config/scripts/sh/lightBemenu
+. "$HOME"/.config/scripts/sh/bemenu_theme
 
 logoff_cmd() { sway exit; }
 
@@ -15,7 +15,7 @@ screen_icon="cs-screen.svg"
 
 # menu
 menu() { 
-	bemenu -i -l 10 --prompt="$1" --fn "$font" $colors;
+	bemenu -i -l 10 --prompt="$1" --fn "$font" $theme;
 }
 
 options() {

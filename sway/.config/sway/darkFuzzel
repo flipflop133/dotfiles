@@ -1,1 +1,7 @@
-bindsym $mod+d exec fuzzel -f 'Roboto:style=Regular:size=14' -b '333333ff' -t 'dededeff' -s '0860f2ff' -S 'ffffffff' -m 'fc4138ff' -i 'Papirus-Light'
+bindsym $mod+d exec fuzzel -f 'Roboto:style=Regular:size=14'\
+                           -b '353535ff'\
+                           -t 'eeeeecff'\
+                           -s '15539eff'\
+                           -S 'ffffffff'\
+                           -m 'cc0000ff'\
+                           -i 'Papirus-Light'

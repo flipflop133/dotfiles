@@ -12,7 +12,7 @@ theme() {
   sed -i "s|${1}|${2}|g" "$HOME"/.config/gtk-3.0/settings.ini
   sed -i "s|Papirus-$capitalizedCurr1|Papirus-$capitalizedCurr2|g" "$HOME"/.config/gtk-3.0/settings.ini
   # theme foot
-  sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/foot/foot.ini
+  #sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/foot/foot.ini
   # theme kitty
   sed -i "s|${1}Theme|${2}Theme|g" "$HOME"/.config/kitty/kitty.conf
   killall -SIGUSR1 kitty
@@ -35,9 +35,7 @@ theme() {
   # VSCODE
   vscode "$1"
   # theme bemenu
-  sed -i "s|${1}Bemenu|${2}Bemenu|g" "$HOME"/.config/scripts/bash/bemenupower.sh
-  sed -i "s|${1}Bemenu|${2}Bemenu|g" "$HOME"/.config/scripts/bash/bemenuscreenrecord.sh
-  sed -i "s|${1}Bemenu|${2}Bemenu|g" "$HOME"/.config/scripts/bash/bemenuscreenshot.sh
+  sed -i "s|theme=\$${1}|theme=\$${2}|g" "$HOME"/.config/scripts/sh/bemenu_theme
   # theme ncmcpp
   ncmcpp "$1"
   # theme mako

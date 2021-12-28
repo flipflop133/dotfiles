@@ -1,4 +1,4 @@
-include lightTheme
+include darkTheme
 set font "RobotoMono Nerd Font 12"
 set selection-clipboard clipboard
 set highlight-transparency 0.3

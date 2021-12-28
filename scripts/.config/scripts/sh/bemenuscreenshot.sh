@@ -1,9 +1,9 @@
 #!/bin/sh
-. "$HOME"/.config/scripts/sh/lightBemenu
+. "$HOME"/.config/scripts/sh/bemenu_theme
 
 # menu
 menu() { 
-	bemenu -i -l 10 --prompt="Screenshot menu" --fn "$font" $colors;
+	bemenu -i -l 10 --prompt="Screenshot menu" --fn "$font" $theme;
 }
 
 options() {

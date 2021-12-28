@@ -1,10 +1,10 @@
 #!/bin/sh
 
-. "$HOME"/.config/scripts/sh/lightBemenu
+. "$HOME"/.config/scripts/sh/bemenu_theme
 
 # menu
 menu() { 
-	bemenu -i -l 10 --prompt="Screen recorder" --fn "$font" $colors;
+	bemenu -i -l 10 --prompt="Screen recorder" --fn "$font" $theme;
 }
 
 options() {

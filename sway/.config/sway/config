@@ -47,7 +47,7 @@ smart_borders on
 font pango:Roboto 18px
 
 # colors
-include lightTheme
+include darkTheme
 
 ####################
 # WINDOWS CONTROLS #
@@ -168,9 +168,9 @@ bindsym $mod+Shift+agrave move container to workspace number $ws10
 #######
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-  gsettings set $gnome-schema gtk-theme 'Adwaita-light'
+  gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
   gsettings set $gnome-schema cursor-theme 'Adwaita'
-  gsettings set $gnome-schema icon-theme 'Papirus-Light'
+  gsettings set $gnome-schema icon-theme 'Papirus-Dark'
   gsettings set $gnome-schema font-name 'Roboto 18px'
 }
 
@@ -233,7 +233,7 @@ bindsym XF86Calculator exec $TERM python -i $HOME/.config/sway/calculator.py
 bindsym $mod+Shift+f exec $TERM -T "file manager" nnn
 
 # app launcher
-include lightFuzzel
+include darkFuzzel
 
 # notification daemon
 exec mako

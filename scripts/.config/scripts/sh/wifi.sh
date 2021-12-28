@@ -6,11 +6,11 @@
 
 INTERFACE="wlan0"
 
-. "$HOME"/.config/scripts/sh/lightBemenu
+. "$HOME"/.config/scripts/sh/bemenu_theme
 
 # menu
 menu() {
-    bemenu -i -l 10 --prompt="Wifi menu" --fn "$font" $colors
+    bemenu -i -l 10 --prompt="Wifi menu" --fn "$font" $theme
 }
 
 SELECT=$(printf "Connect to a network\nDisconnect current network\nForget a network" | menu)

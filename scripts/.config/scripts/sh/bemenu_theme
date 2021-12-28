@@ -1,0 +1,23 @@
+dark_theme='
+	--tb=#353535\
+	--tf=#eeeeec\
+	--fb=#353535\
+	--ff=#eeeeec\
+	--nb=#353535\
+	--nf=#eeeeec\
+	--hb=#15539e\
+	--hf=#ffffff\
+'
+light_theme='
+	--tb=#f5f5f5\
+	--tf=#242424\
+	--fb=#f5f5f5\
+	--ff=#242424\
+	--nb=#f5f5f5\
+	--nf=#242424\
+	--hb=#0860f2\
+	--hf=#ffffff\
+'
+
+theme=$dark_theme
+font='Roboto 14'
