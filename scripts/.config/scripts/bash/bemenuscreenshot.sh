@@ -3,8 +3,7 @@
 
 # menu
 menu() { 
-	options="-i -l 10 --prompt=ScreenshotMenu $font $colors"
-	bemenu $options
+	bemenu -i -l 10 --prompt="Screenshot menu" --fn "$font" $colors;
 }
 
 options() {

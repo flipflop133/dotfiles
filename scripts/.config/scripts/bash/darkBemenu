@@ -1,4 +1,4 @@
-colors="
+colors='
 	--tb=#333333\
 	--tf=#dedede\
 	--fb=#333333\
@@ -7,6 +7,6 @@ colors="
 	--nf=#dedede\
 	--hb=#0860f2\
 	--hf=#ffffff\
-"
+'
 
-font="--fn Roboto 14"
+font='Roboto 14'

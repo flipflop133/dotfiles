@@ -4,8 +4,7 @@
 
 # menu
 menu() { 
-	options="-i -l 10 --prompt=ScreenrecordMenu $font $colors"
-	bemenu $options
+	bemenu -i -l 10 --prompt="Screen recorder" --fn "$font" $colors;
 }
 
 options() {
