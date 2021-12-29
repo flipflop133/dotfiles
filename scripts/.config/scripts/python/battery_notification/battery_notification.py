@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Battery monitor that send notifications on battery low."""
 import subprocess
-
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
+from tendo import singleton
 
 ALERT_PERCENTAGES = [5, 10, 15]
 
@@ -16,10 +16,10 @@ class BatteryMonitor:
     reset = False
 
     def __init__(self):
+        me = singleton.SingleInstance() # ensure that there is only one instance of the script
         self.battery = '/org/freedesktop/UPower/devices/battery_BAT0'
         self.upower_name = "org.freedesktop.UPower"
         self.upower_path = "/org/freedesktop/UPower"
-
         self.dbus_properties = "org.freedesktop.DBus.Properties"
         self.set_notifications_sent()
         self.on_property_change()
@@ -74,8 +74,10 @@ class BatteryMonitor:
 
     def get_state(self):
         battery_proxy = self.bus.get_object(self.upower_name, self.battery)
-        battery_proxy_interface = dbus.Interface(battery_proxy, self.dbus_properties)
-        state = int(battery_proxy_interface.Get(self.upower_name + ".Device", "State"))
+        battery_proxy_interface = dbus.Interface(battery_proxy,
+                                                 self.dbus_properties)
+        state = int(
+            battery_proxy_interface.Get(self.upower_name + ".Device", "State"))
         if (state == 0):
             return "Unknown"
         elif (state == 1):

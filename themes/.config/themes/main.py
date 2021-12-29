@@ -1,6 +1,7 @@
 """Change system theme depending on current time.
 Thanks to D-Feet utility for its convenience when dealing with dbus.
 """
+import multiprocessing
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from sched import scheduler as sched_scheduler
@@ -8,11 +9,11 @@ from subprocess import run
 from time import mktime, process_time, sleep, thread_time, time
 
 import dbus
+import pytz
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
-import pytz
 from suntime import Sun
-import multiprocessing
+from tendo import singleton
 
 HOME = str(Path.home())
 
@@ -32,6 +33,8 @@ class Theme:
 
     def __init__(self):
         """Initialize the theme script."""
+        me = singleton.SingleInstance(
+        )  # ensure that there is only one instance of the script
         self.update()
         self.setup_scheduler()
 

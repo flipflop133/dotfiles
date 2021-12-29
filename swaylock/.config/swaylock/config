@@ -1,0 +1,43 @@
+# General
+clock
+indicator
+effect-blur=30x5
+fade-in=0.2
+scaling=fill
+image=$HOME/.config/sway/wallpaper.*
+indicator-radius=350
+
+# Text
+timestr=%I:%M %p
+datestr=%A, %d %b
+font-size=120
+text-color=ffffff
+text-ver-color=00000000
+text-clear-color=00000000
+text-wrong-color=00000000
+
+# Inside
+inside-color=00000099
+inside-ver-color=00000000
+inside-clear-color=00000000
+inside-wrong-color=00000000
+inside-caps-lock-color=00000000
+
+# Ring
+ring-color=00000000
+ring-ver-color=00000000
+ring-clear-color=00000000
+ring-wrong-color=cc0000
+
+# Line
+line-color=00000000
+line-ver-color=00000000
+line-clear-color=00000000
+line-wrong-color=cc0000
+
+# Various
+key-hl-color=ffffff
+bs-hl-color=00000000
+caps-lock-bs-hl-color=00000000
+caps-lock-key-hl-color=00000000
+separator-color=00000000
