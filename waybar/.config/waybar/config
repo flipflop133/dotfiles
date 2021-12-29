@@ -27,7 +27,7 @@
 		"on-scroll-up": "light -U 1",
 		"on-scroll-down": "light -A 1",
 		"smooth-scrolling-threshold": 5,
-		"format": "{percent}% {icon}",
+		"format": "{icon}  {percent}%",
 		"format-icons": ["\uf5d9", "\uf5da", "\uf5db", "\uf5dc", "\uf5dd", "\uf5de", "\uf5df"]
 	},
 	"battery": {
@@ -57,8 +57,8 @@
 		"on-scroll-down": "pactl set-sink-volume 0 +1%",
 		"smooth-scrolling-threshold": 5,
 		"on-click": "pactl set-sink-mute 0 toggle",
-		"format": "{volume}% {icon}",
-		"format-bluetooth": "{volume}% {icon}\uf5ae",
+		"format": "{icon}  {volume}%",
+		"format-bluetooth": "{icon}\uf5ae  {volume}%",
 		"format-bluetooth-muted": "{icon}\uf5b1",
 		"format-muted": "\ufc5d",
 		"format-icons": {
@@ -77,10 +77,10 @@
 		"smooth-scrolling-threshold": 5,
 		"on-click": "pactl set-source-mute 0 toggle",
 		"format": "{format_source}",
-		"format-bluetooth": "{volume}% {icon}\uf5ae {format_source}",
+		"format-bluetooth": "{icon}\uf5ae {volume}% {format_source}",
 		"format-bluetooth-muted": "{icon}\uf5b1 {format_source}",
 		"format-muted": "{format_source}",
-		"format-source": "{volume}% \uf86b",
+		"format-source": "\uf86b {volume}% ",
 		"format-source-muted": "\uf86c",
 		"format-icons": {
 			"headphone": "\uf025",
@@ -93,7 +93,7 @@
 		}
 	},
 	"custom/media": {
-		"format": "{icon} <span font='Merriweather Italic'>{}</span>",
+		"format": "{icon}  {}",
 		"escape": true,
 		"return-type": "json",
 		"max-length": 40,
@@ -104,8 +104,8 @@
 		"on-scroll-down": "playerctl previous",
 		"exec": "python -OO $HOME/.config/waybar/mediaplayer.py",
 		"format-icons": {
-			"Playing": "\uf90c",
-			"Paused": "\uf8e5"
+			"Playing": "\uf144",
+			"Paused": "\uf28b"
 		}
 	},
 	"mpd": {
