@@ -1,0 +1,50 @@
+{
+    "kitty": {
+        "path": "/.config/kitty/kitty.conf",
+        "light": ["lightTheme"],
+        "dark": ["darkTheme"],
+        "commands": ["killall -SIGUSR1 kitty"]
+    },
+    "bitwarden": {
+        "path": "/.config/Bitwarden/data.json",
+        "light": ["light"],
+        "dark": ["dark"]
+    },
+    "sway": {
+        "path": "/.config/sway/config",
+        "light": ["lightTheme", "lightFuzzel", "Papirus-Light"],
+        "dark": ["darkTheme", "darkFuzzel", "Papirus-Dark"],
+        "commands": ["sway reload"]
+    },
+    "gtk-3.0": {
+        "path": "/.config/gtk-3.0/settings.ini",
+        "light": ["light", "Papirus-Light"],
+        "dark": ["dark", "Papirus-Dark"]
+    },
+    "bemenu": {
+        "path": "/.config/scripts/sh/bemenu_theme",
+        "light": ["theme=$light"],
+        "dark": ["theme=$dark"]
+    },
+    "vscode": {
+        "path": "/.config/Code/User/settings.json",
+        "light": ["Atom One Light"],
+        "dark": ["Atom Two Dark"]
+    },
+    "ncmpcpp": {
+        "path": "/.config/ncmpcpp/config",
+        "light": ["white"],
+        "dark": ["black"]
+    },
+    "bpytop": {
+        "path": "/.config/bpytop/bpytop.conf",
+        "light": ["flat-remix-light"],
+        "dark": ["default"]
+    },
+    "mako": {
+        "path": "/.config/mako/config",
+        "light": ["background-color=#f5f5f5","text-color=#242424","border-color=#242424","progress-color=#5895f9"],
+        "dark": ["background-color=#333333","text-color=#dedede","border-color=#dedede","progress-color=#0860f2"],
+        "commands": ["makoctl reload"]
+    }
+}

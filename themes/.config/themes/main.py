@@ -1,13 +1,14 @@
 """Change system theme depending on current time.
 Thanks to D-Feet utility for its convenience when dealing with dbus.
 """
+import json
 import multiprocessing
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from sched import scheduler as sched_scheduler
 from subprocess import run
-from time import mktime, process_time, sleep, thread_time, time
-
+from time import mktime, time
+from sys import exit
 import dbus
 import pytz
 from dbus.mainloop.glib import DBusGMainLoop
@@ -33,7 +34,7 @@ class Theme:
 
     def __init__(self):
         """Initialize the theme script."""
-        me = singleton.SingleInstance(
+        singleton.SingleInstance(
         )  # ensure that there is only one instance of the script
         self.update()
         self.setup_scheduler()
@@ -89,7 +90,7 @@ class Theme:
         """Stop the whole script when user disconnect from the session."""
         self.next_run_thread.terminate()
         self.loop.quit()
-        sys.exit(0)
+        exit(0)
 
     def signal_handler(self, before):
         """Terminate the next run thread and schedule a new one to correct the time
@@ -122,23 +123,9 @@ class Theme:
             self.last_checked = date.today()
         # retrieve current time
         self.current_time = datetime.now(pytz.utc)
-        # check which theme to apply
-        if (self.current_time < self.sunrise) or (self.current_time >
-                                                  self.sunset):
-            # change theme
-            if "light" in self.current_theme:
-                run([
-                    HOME + "/.config/themes/themer.sh",
-                    "light",
-                    "dark",
-                ])
-                self.checked_theme = False
-        elif (self.current_time > self.sunrise) and (self.current_time <
-                                                     self.sunset):
-            # change theme
-            if "dark" in self.current_theme:
-                run([HOME + "/.config/themes/themer.sh", "dark", "light"])
-                self.checked_theme = False
+        # change theme
+        self.theme_applications(self.current_theme)
+        self.checked_theme = False
 
     def determine_next_time(self):
         """Determine how much time the script should sleep\
@@ -156,6 +143,26 @@ class Theme:
         elif self.sunset > self.current_time > self.sunrise:
             next_time = self.sunset
         return next_time
+
+    def theme_applications(self, previous_theme):
+        new_theme = 'dark' if previous_theme != 'dark' else 'light'
+        file = open("config.json", "r")
+        data = json.loads(file.read())
+        file.close()
+        for application in data.keys():
+            # Replace theme name in application config file
+            for previous_value, new_value in zip(
+                    data[application][previous_theme],
+                    data[application][new_theme]):
+                run([
+                    "sed", "-i", f"s|{previous_value}|{new_value}|g",
+                    f"{HOME}{data[application]['path']}"
+                ])
+
+            # Run optional commands
+            if 'commands' in data[application]:
+                for command in data[application]['commands']:
+                    run(command.split())
 
 
 Theme()
