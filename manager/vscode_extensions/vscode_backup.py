@@ -15,7 +15,7 @@ def backup():
                            check=False))
 
     # Write vscode extensions list to file
-    with open(EXTENSIONSPATH, "a", encoding="utf-8") as file:
+    with open(EXTENSIONSPATH, "w", encoding="utf-8") as file:
         file.write(extensions_list.stdout.decode('utf-8'))
         file.close()
     print(f"Extensions list written to {EXTENSIONSPATH}")

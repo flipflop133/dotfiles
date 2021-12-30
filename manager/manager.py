@@ -34,24 +34,27 @@ def restore():
     if which("stow") is None:
         subprocess.run(["sudo", "pacman", "-S", "stow", "--noconfirm"])
         os.system("clear")
-    subprocess.run(["stow", "*"])
+    os.chdir("..")
+    subprocess.run("stow $(find * -maxdepth 0 -type d -not -name manager)", shell=True)
+    os.chdir(f'{SCRIPTPATH}')
     # Restore packages
     if which("paru") is None:
         install_paru()
     f = open(PACKAGESPATH, 'r')
     for package in f.readlines():
-        subprocess.run(["paru", "-S", package.strip('\n'),"--noconfirm"])
+        subprocess.run(["paru", "-S", package.strip('\n'), "--noconfirm"])
         os.system("clear")
 
 
 def install_paru():
     print("Paru is not installed.\nInstalling Paru...")
-    subprocess.run(["sudo","pacman", "-S","--needed","base-devel"])
-    subprocess.run(["git","clone", "https://aur.archlinux.org/paru.git"])
+    subprocess.run(["sudo", "pacman", "-S", "--needed", "base-devel"])
+    subprocess.run(["git", "clone", "https://aur.archlinux.org/paru.git"])
     os.chdir(f'{SCRIPTPATH}/paru')
-    subprocess.run(["makepkg","-si"])
+    subprocess.run(["makepkg", "-si"])
     os.chdir(f'{SCRIPTPATH}')
     os.system("clear")
+
 
 def menu():
     os.system("clear")
