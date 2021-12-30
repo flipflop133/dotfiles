@@ -15,7 +15,7 @@ from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 from suntime import Sun
 from tendo import singleton
-
+import os
 HOME = str(Path.home())
 
 
@@ -123,8 +123,20 @@ class Theme:
             self.last_checked = date.today()
         # retrieve current time
         self.current_time = datetime.now(pytz.utc)
-        # change theme
-        self.theme_applications(self.current_theme)
+
+        # check which theme to apply
+        if ((self.current_time < self.sunrise) or
+            (self.current_time > self.sunset)) and ("light"
+                                                    in self.current_theme):
+            # change theme
+            self.theme_applications("light")
+            self.checked_theme = False
+        elif (self.current_time > self.sunrise) and (
+                self.current_time < self.sunset) and ("dark"
+                                                      in self.current_theme):
+            # change theme
+            self.theme_applications("dark")
+            self.checked_theme = False
         self.checked_theme = False
 
     def determine_next_time(self):
@@ -145,8 +157,9 @@ class Theme:
         return next_time
 
     def theme_applications(self, previous_theme):
+        print(previous_theme)
         new_theme = 'dark' if previous_theme != 'dark' else 'light'
-        file = open("config.json", "r")
+        file = open(f"{os.path.dirname(os.path.realpath(__file__))}/config.json", "r")
         data = json.loads(file.read())
         file.close()
         for application in data.keys():

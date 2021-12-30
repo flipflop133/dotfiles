@@ -1,23 +1,24 @@
 """Handle backup and restore of vscode extensions."""
 from subprocess import run, PIPE
 import sys
+import os
 
 VSCODEPATH = "/usr/bin/code"
-
+EXTENSIONSPATH = f"{os.path.dirname(os.path.realpath(__file__))}/extensions.txt"
 
 def backup():
     """Backup vscode extensions."""
-    print("Running backup...")
+    print("Running extensions backup...")
     # Retrieve vscode extensions list
     extensions_list = (run([VSCODEPATH, "--list-extensions"],
                            stdout=PIPE,
                            check=False))
 
     # Write vscode extensions list to file
-    with open("extensions.txt", "a", encoding="utf-8") as file:
+    with open(EXTENSIONSPATH, "a", encoding="utf-8") as file:
         file.write(extensions_list.stdout.decode('utf-8'))
         file.close()
-    print("Extensions list written to extensions.txt")
+    print(f"Extensions list written to {EXTENSIONSPATH}")
 
 
 def restore():
@@ -29,7 +30,7 @@ def restore():
                            check=False))
     # Retrieve vscode extensions list
     try:
-        with open("extensions.txt", "r", encoding="utf-8") as file:
+        with open(EXTENSIONSPATH, "r", encoding="utf-8") as file:
             extensions = file.read().split()
             up_to_date = True
             for extension in extensions:
@@ -48,14 +49,3 @@ def restore():
         print("You are already up to date!")
     else:
         print("successfully restore extensions!")
-
-
-def main():
-    """Determine which function to run."""
-    if sys.argv[1] == "restore":
-        restore()
-    elif sys.argv[1] == "backup":
-        backup()
-
-
-main()

@@ -2,7 +2,6 @@
 clock
 indicator
 effect-blur=30x5
-fade-in=0.2
 scaling=fill
 image=$HOME/.config/sway/wallpaper.*
 indicator-radius=350

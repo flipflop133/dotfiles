@@ -12,8 +12,8 @@
     },
     "sway": {
         "path": "/.config/sway/config",
-        "light": ["lightTheme", "lightFuzzel", "Papirus-Light"],
-        "dark": ["darkTheme", "darkFuzzel", "Papirus-Dark"],
+        "light": ["Adwaita-dark","lightTheme", "lightFuzzel", "Papirus-Light"],
+        "dark": ["Adwaita","darkTheme", "darkFuzzel", "Papirus-Dark"],
         "commands": ["sway reload"]
     },
     "gtk-3.0": {
