@@ -37,8 +37,8 @@
 			"critical": 5
 		},
 		"format": "{icon}",
-		"format-charging": "{capacity}% {icon}\uDB85\uDC25",
-		"format-plugged": "{capacity}% {icon}\ufba3",
+		"format-charging": "{icon}\uf0e7{capacity}%",
+		"format-plugged": "{icon}\uDB85\uDC25{capacity}%",
 		"format-alt": "{power}W {icon}\uf22f",
 		"tooltip-format": "{capacity}%",
 		"format-icons": ["\uf58d","\uf579","\uf57a","\uf57b","\uf57c","\uf57d","\uf57e","\uf57f","\uf580","\uf581","\uf578"]

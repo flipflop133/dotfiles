@@ -3,19 +3,21 @@ Thanks to D-Feet utility for its convenience when dealing with dbus.
 """
 import json
 import multiprocessing
+import os
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from sched import scheduler as sched_scheduler
 from subprocess import run
-from time import mktime, time
 from sys import exit
+from time import mktime, time
+
 import dbus
 import pytz
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
 from suntime import Sun
 from tendo import singleton
-import os
+
 HOME = str(Path.home())
 
 
@@ -105,7 +107,6 @@ class Theme:
 
     def update(self):
         """Update the system theme."""
-        print("updating...")
         # check current theme
         if not self.checked_theme:
             self.current_theme = str(
@@ -125,17 +126,19 @@ class Theme:
         self.current_time = datetime.now(pytz.utc)
 
         # check which theme to apply
-        if ((self.current_time < self.sunrise) or
-            (self.current_time > self.sunset)) and ("light"
-                                                    in self.current_theme):
+        print("runi")
+        if (((self.current_time < self.sunrise) or
+             (self.current_time > self.sunset))
+                and ("light" in self.current_theme)):
             # change theme
-            self.theme_applications("light")
+            print("ok")
+            self.theme_applications("dark")
             self.checked_theme = False
         elif (self.current_time > self.sunrise) and (
                 self.current_time < self.sunset) and ("dark"
                                                       in self.current_theme):
             # change theme
-            self.theme_applications("dark")
+            self.theme_applications("light")
             self.checked_theme = False
         self.checked_theme = False
 
@@ -156,10 +159,10 @@ class Theme:
             next_time = self.sunset
         return next_time
 
-    def theme_applications(self, previous_theme):
-        print(previous_theme)
-        new_theme = 'dark' if previous_theme != 'dark' else 'light'
-        file = open(f"{os.path.dirname(os.path.realpath(__file__))}/config.json", "r")
+    def theme_applications(self, new_theme):
+        previous_theme = 'dark' if new_theme != 'dark' else 'light'
+        file = open(
+            f"{os.path.dirname(os.path.realpath(__file__))}/config.json", "r")
         data = json.loads(file.read())
         file.close()
         for application in data.keys():

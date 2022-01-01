@@ -20,12 +20,10 @@ choice=""
 case $select in
 	" save")
 		choice="save"
-		echo "save selected"
 		subSelect=$(subOptions | menu)
 		;;
 	" copy")
 		choice="copy"
-		echo "copy selected"
 		subSelect=$(subOptions | menu)
 		;;
 	*)
@@ -55,4 +53,4 @@ case $subSelect in
 		exit 1
 esac
 
-"$HOME"/.config/scripts/bash/grimshot.sh --notify $choice $secondChoice
+"$HOME"/.config/scripts/sh/grimshot.sh --notify $choice $secondChoice

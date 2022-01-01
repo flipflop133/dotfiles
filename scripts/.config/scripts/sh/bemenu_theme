@@ -19,5 +19,5 @@ light_theme='
 	--hf=#ffffff\
 '
 
-theme=$light_theme
+theme=$dark_theme
 font='Roboto 14'

@@ -12,8 +12,8 @@
     },
     "sway": {
         "path": "/.config/sway/config",
-        "light": ["Adwaita-dark","lightTheme", "lightFuzzel", "Papirus-Light"],
-        "dark": ["Adwaita","darkTheme", "darkFuzzel", "Papirus-Dark"],
+        "light": ["Adwaita-light","lightTheme", "lightFuzzel", "Papirus-Light"],
+        "dark": ["Adwaita-dark","darkTheme", "darkFuzzel", "Papirus-Dark"],
         "commands": ["sway reload"]
     },
     "gtk-3.0": {
@@ -29,7 +29,7 @@
     "vscode": {
         "path": "/.config/Code/User/settings.json",
         "light": ["Atom One Light"],
-        "dark": ["Atom Two Dark"]
+        "dark": ["Atom One Dark"]
     },
     "ncmpcpp": {
         "path": "/.config/ncmpcpp/config",

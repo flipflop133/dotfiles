@@ -1,5 +1,5 @@
 # Default browser
-export BROWSER="firefox"
+export BROWSER="firefox-beta"
 
 # Chrome
 export CHROME_EXECUTABLE="chromium"
