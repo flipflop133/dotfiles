@@ -182,13 +182,15 @@ set $script_path $HOME/.config/scripts/sh
 set $notifications $script_path/notifications.sh
 
 # volume control
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +1%;exec $notifications volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -1%;exec $notifications volume
+bindsym XF86AudioRaiseVolume exec volume=$(pactl get-sink-volume 0 | awk '{print $5}' | sed 's/%//') && \
+                             [ $volume -lt 100 ] && pactl set-sink-volume 0 +2%;exec $notifications volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%;exec $notifications volume
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle;exec $notifications volume
 
 # microphone control
-bindsym XF86AudioRaiseVolume+alt exec pactl set-source-volume 0 +1%;exec $notifications microphone
-bindsym XF86AudioLowerVolume+alt exec pactl set-source-volume 0 -1%;exec $notifications microphone
+bindsym XF86AudioRaiseVolume+alt exec volume=$(pactl get-source-volume 0 | awk '{print $5}' | sed 's/%//') && \
+                             [ $volume -lt 100 ] && pactl set-source-volume 0 +2%;exec $notifications microphone
+bindsym XF86AudioLowerVolume+alt exec pactl set-source-volume 0 -2%;exec $notifications microphone
 bindsym XF86AudioMicMute exec pactl set-source-mute 0 toggle;exec $notifications microphone
 
 # media control

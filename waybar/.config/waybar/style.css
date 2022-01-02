@@ -1,6 +1,6 @@
 /* GENERAL */
 * {
-  font: 18px Roboto, JetBrainsMono Nerd Font;
+  font: 18px Roboto Mono, JetBrainsMono Nerd Font;
   border: none;
   border-radius: 0;
   min-height: 0;
@@ -30,8 +30,14 @@ window#waybar {
 
 #mode,
 #window {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Roboto;
+}
+
+/* MODULES center */
+#custom-media {
+  font-family: Roboto Slab, JetBrainsMono Nerd Font;
 }
 
 /* MODULES right */
@@ -40,8 +46,7 @@ window#waybar {
 #pulseaudio,
 #network,
 #backlight,
-#battery,
-#tray {
+#battery {
   padding-left: 10px;
   padding-right: 10px;
 }

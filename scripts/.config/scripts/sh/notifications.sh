@@ -35,8 +35,7 @@ volume() {
 
 	# Retrieve current volume level
 	mute_status=$(pactl get-sink-mute 0 | awk '{print $2}')
-	volume=$(pactl get-sink-volume 0 | awk '{print $5}')
-	volume=$(echo "$volume" | sed 's/%//')
+	volume=$(pactl get-sink-volume 0 | awk '{print $5}' | sed 's/%//')
 
 	# Set the icon depending on the volume level
 	if [ "$mute_status" = "yes" ]; then
@@ -64,9 +63,8 @@ microphone() {
 	mic_off="mic-off.svg"
 
 	# Retrieve current volume level
-	volume=$(pactl get-source-volume 0 | awk '{print $5}')
-	volume=$(echo "$volume" | sed 's/%//')
 	status=$(pactl get-source-mute 0 | awk '{print $2}')
+	volume=$(pactl get-source-volume 0 | awk '{print $5}' | sed 's/%//')
 
 	# Set the icon depending on the volume level
 	if [ "$status" = "yes" ]; then

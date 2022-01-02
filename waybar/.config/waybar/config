@@ -27,7 +27,7 @@
 		"on-scroll-up": "light -U 1",
 		"on-scroll-down": "light -A 1",
 		"smooth-scrolling-threshold": 5,
-		"format": "{icon}  {percent}%",
+		"format": "{icon} {percent}%",
 		"format-icons": ["\uf5d9", "\uf5da", "\uf5db", "\uf5dc", "\uf5dd", "\uf5de", "\uf5df"]
 	},
 	"battery": {
@@ -37,11 +37,11 @@
 			"critical": 5
 		},
 		"format": "{icon}",
-		"format-charging": "{icon}\uf0e7{capacity}%",
+		"format-charging": "\uf583 {capacity}%",
 		"format-plugged": "{icon}\uDB85\uDC25{capacity}%",
 		"format-alt": "{power}W {icon}\uf22f",
 		"tooltip-format": "{capacity}%",
-		"format-icons": ["\uf58d","\uf579","\uf57a","\uf57b","\uf57c","\uf57d","\uf57e","\uf57f","\uf580","\uf581","\uf578"]
+		"format-icons": ["\uf58d", "\uf579", "\uf57a", "\uf57b", "\uf57c", "\uf57d", "\uf57e", "\uf57f", "\uf580", "\uf581", "\uf578"]
 	},
 	"network": {
 		"format-wifi": "{icon}",
@@ -57,7 +57,7 @@
 		"on-scroll-down": "pactl set-sink-volume 0 +1%",
 		"smooth-scrolling-threshold": 5,
 		"on-click": "pactl set-sink-mute 0 toggle",
-		"format": "{icon}  {volume}%",
+		"format": "{icon} {volume}%",
 		"format-bluetooth": "{icon}\uf5ae  {volume}%",
 		"format-bluetooth-muted": "{icon}\uf5b1",
 		"format-muted": "\ufc5d",
@@ -80,7 +80,7 @@
 		"format-bluetooth": "{icon}\uf5ae {volume}% {format_source}",
 		"format-bluetooth-muted": "{icon}\uf5b1 {format_source}",
 		"format-muted": "{format_source}",
-		"format-source": "\uf86b {volume}% ",
+		"format-source": "\uf86b {volume}%",
 		"format-source-muted": "\uf86c",
 		"format-icons": {
 			"headphone": "\uf025",
