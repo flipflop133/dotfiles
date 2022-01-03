@@ -28,3 +28,5 @@ def getThemeColors():
     for colorCode in gtkColorsCodes:
         gtkColorsCodes[colorCode] = getHexColor(colorCode)
     return gtkColorsCodes
+
+print(getThemeColors())

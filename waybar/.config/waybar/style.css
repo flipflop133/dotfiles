@@ -1,6 +1,6 @@
 /* GENERAL */
 * {
-  font: 18px Roboto Mono, JetBrainsMono Nerd Font;
+  font: 18px Open Sans, JetBrainsMono Nerd Font;
   border: none;
   border-radius: 0;
   min-height: 0;
@@ -28,16 +28,11 @@ window#waybar {
   color: @theme_selected_fg_color;
 }
 
-#mode,
-#window {
+#mode {
   padding-left: 10px;
   padding-right: 10px;
-  font-family: Roboto;
-}
-
-/* MODULES center */
-#custom-media {
-  font-family: Roboto Slab, JetBrainsMono Nerd Font;
+  background: @error_color;
+  color: @theme_selected_fg_color;
 }
 
 /* MODULES right */

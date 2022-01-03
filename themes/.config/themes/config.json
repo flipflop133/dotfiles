@@ -1,8 +1,8 @@
 {
     "kitty": {
         "path": "/.config/kitty/kitty.conf",
-        "light": ["lightTheme"],
-        "dark": ["darkTheme"],
+        "light": ["AtomOneLight"],
+        "dark": ["AtomOneDark"],
         "commands": ["killall -SIGUSR1 kitty"]
     },
     "bitwarden": {

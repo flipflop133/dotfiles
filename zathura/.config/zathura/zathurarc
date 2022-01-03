@@ -1,5 +1,5 @@
 include darkTheme
-set font "RobotoMono Nerd Font 12"
+set font "$FONT 12"
 set selection-clipboard clipboard
 set highlight-transparency 0.3
 set guioptions none # hide status bar

@@ -1,15 +1,12 @@
 {
 	"position": "bottom",
 	"height": 35,
-	"modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+	"modules-left": ["sway/workspaces", "sway/mode"],
 	"modules-center": ["custom/media"],
 	"modules-right": ["backlight", "pulseaudio", "pulseaudio#source", "network", "battery", "clock#date", "clock", "tray"],
 
 	"sway/mode": {
-		"format": "<span style=\"italic\">{}</span>"
-	},
-	"sway/window": {
-		"max-length": 35
+		"format": "{}"
 	},
 	"tray": {
 		"icon-size": 25,
@@ -28,7 +25,7 @@
 		"on-scroll-down": "light -A 1",
 		"smooth-scrolling-threshold": 5,
 		"format": "{icon} {percent}%",
-		"format-icons": ["\uf5d9", "\uf5da", "\uf5db", "\uf5dc", "\uf5dd", "\uf5de", "\uf5df"]
+		"format-icons": ["\uf5da", "\uf5db", "\uf5dc ", "\uf5dd ", "\uf5de ", "\uf5df "]
 	},
 	"battery": {
 		"states": {
@@ -58,7 +55,7 @@
 		"smooth-scrolling-threshold": 5,
 		"on-click": "pactl set-sink-mute 0 toggle",
 		"format": "{icon} {volume}%",
-		"format-bluetooth": "{icon}\uf5ae  {volume}%",
+		"format-bluetooth": "{icon}\uf5ae {volume}%",
 		"format-bluetooth-muted": "{icon}\uf5b1",
 		"format-muted": "\ufc5d",
 		"format-icons": {

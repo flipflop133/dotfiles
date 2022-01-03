@@ -32,7 +32,8 @@ seat * hide_cursor when-typing enable
 ##########
 output * {
   bg $HOME/.config/sway/wallpaper.* fill
-  max_render_time 500
+  adaptive_sync on
+  subpixel rgb
 }
 
 ##################
@@ -171,7 +172,7 @@ exec_always {
   gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
   gsettings set $gnome-schema cursor-theme 'Adwaita'
   gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-  gsettings set $gnome-schema font-name 'Roboto 18px'
+  gsettings set $gnome-schema font-name "$FONT 18px"
 }
 
 ####################################
@@ -229,7 +230,7 @@ bindsym $mod+Shift+r exec $script_path/bemenuscreenrecord.sh
 bindsym $mod+alt+r exec killall -s SIGINT wf-recorder & killall -s SIGINT ffmpeg & notify-send "Stopped recording" "Record is located in ~/Videos"
 
 # calculator
-bindsym XF86Calculator exec $TERM python -i $HOME/.config/sway/calculator.py
+bindsym XF86Calculator exec $TERM -T "calculator" python -i $HOME/.config/sway/calculator.py
 
 # file manager
 bindsym $mod+Shift+f exec $TERM -T "file manager" nnn

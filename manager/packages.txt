@@ -17,7 +17,7 @@ efibootmgr
 ethtool
 exa
 fakeroot
-firefox
+firefox-beta-bin
 flex
 fuzzel
 gcc
@@ -38,6 +38,7 @@ light-git
 lighttpd
 linux
 linux-firmware
+lxappearance
 m4
 make
 mako
@@ -83,7 +84,11 @@ telegram-desktop
 texinfo
 thunderbird
 traceroute
+ttf-courier-prime
+ttf-lato
 ttf-roboto
+ttf-roboto-mono
+ttf-roboto-slab
 tutanota-desktop-bin
 upower
 visual-studio-code-bin

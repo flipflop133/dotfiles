@@ -1,4 +1,4 @@
-bindsym $mod+d exec fuzzel -f 'Roboto:style=Regular:size=14'\
+bindsym $mod+d exec fuzzel -f "$FONT:style=Regular:size=14"\
                            -b '353535ff'\
                            -t 'eeeeecff'\
                            -s '15539eff'\

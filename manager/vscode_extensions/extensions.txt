@@ -1,7 +1,9 @@
 aaron-bond.better-comments
 abusaidm.html-snippets
+akamud.vscode-theme-onedark
 akamud.vscode-theme-onelight
 apedroed.Happy-Flasker
+arcticicestudio.nord-visual-studio-code
 austin.code-gnu-global
 cschlosser.doxdocgen
 cstrap.flask-snippets
@@ -37,6 +39,7 @@ mtxr.sqltools
 naumovs.color-highlight
 PKief.material-icon-theme
 redhat.java
+rozbo.papercolor-vscode
 shd101wyy.markdown-preview-enhanced
 shengchen.vscode-checkstyle
 SonarSource.sonarlint-vscode
