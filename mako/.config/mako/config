@@ -1,13 +1,15 @@
 # general
-background-color=#353535
-text-color=#eeeeec
-progress-color=#15539e
-border-color=#eeeeec
+background-color=#f5f5f5
+text-color=#242424
+progress-color=#85b2f9
+border-color=#242424
 font=$FONT 18px
 anchor=bottom-right
 layer=overlay
 default-timeout=15000
 
+# light theme
+[mode=light]
 # audio
 [category=audio]
 default-timeout=2000

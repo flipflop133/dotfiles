@@ -13,11 +13,11 @@
 		"spacing": 10
 	},
 	"clock": {
-		"format": "{:%I:%M %p}"
+		"format": "{:%-I:%M %p}"
 	},
 	"clock#date": {
 		"interval": 600,
-		"format": "{:%a %d}",
+		"format": "{:%a %-d}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"backlight": {
@@ -137,5 +137,13 @@
 		"on-click": "exec firefox \"meteo.be\"",
 		"return-type": "json",
 		"format-alt": "{status}"
+	},
+	"custom/pomodoro":{
+		"format": "\ufa1a {}",
+		"exec": "python -OO $HOME/.config/scripts/python/pomodoro/pomodoro.py",
+		"on-click": "python -OO $HOME/.config/scripts/python/pomodoro/pomodoro.py start",
+		"on-click-right": "python -OO $HOME/.config/scripts/python/pomodoro/pomodoro.py stop",
+		"return-type": "json",
+		"escape": true
 	}
 }

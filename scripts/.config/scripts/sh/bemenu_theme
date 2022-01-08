@@ -19,5 +19,5 @@ light_theme='
 	--hf=#ffffff\
 '
 
-theme=$dark_theme
+theme=$light_theme
 font="$FONT 14"

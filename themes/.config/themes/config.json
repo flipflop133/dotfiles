@@ -12,8 +12,8 @@
     },
     "sway": {
         "path": "/.config/sway/config",
-        "light": ["Adwaita-light","lightTheme", "lightFuzzel", "Papirus-Light"],
-        "dark": ["Adwaita-dark","darkTheme", "darkFuzzel", "Papirus-Dark"],
+        "light": ["Adwaita-light", "lightTheme", "lightFuzzel", "Papirus-Light"],
+        "dark": ["Adwaita-dark", "darkTheme", "darkFuzzel", "Papirus-Dark"],
         "commands": ["sway reload"]
     },
     "gtk-3.0": {
@@ -43,8 +43,13 @@
     },
     "mako": {
         "path": "/.config/mako/config",
-        "light": ["background-color=#f5f5f5","text-color=#242424","border-color=#242424","progress-color=#85b2f9"],
-        "dark": ["background-color=#353535","text-color=#eeeeec","border-color=#eeeeec","progress-color=#15539e"],
+        "light": ["background-color=#f5f5f5", "text-color=#242424", "border-color=#242424", "progress-color=#85b2f9"],
+        "dark": ["background-color=#353535", "text-color=#eeeeec", "border-color=#eeeeec", "progress-color=#15539e"],
         "commands": ["makoctl reload"]
+    },
+    "microsoft-teams": {
+        "path": "/.config/Microsoft/Microsoft Teams/desktop-config.json",
+        "light": ["defaultV2"],
+        "dark": ["darkV2"]
     }
 }

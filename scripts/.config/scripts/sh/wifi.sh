@@ -1,6 +1,6 @@
 #!/bin/sh
 # Description: manage network with iwctl
-# Dependencies: dmenu, iwd
+# Dependencies: bemenu, iwd
 # Shell: POSIX compliant
 # Author: @mortezadadgar
 
@@ -10,7 +10,7 @@ INTERFACE="wlan0"
 
 # menu
 menu() {
-    bemenu -i -l 10 --prompt="Wifi menu" --fn "$font" $theme
+    bemenu -i -l 10 --prompt="Wifi menu" --fn "$font" $theme "$@"
 }
 
 SELECT=$(printf "Connect to a network\nDisconnect current network\nForget a network" | menu)
@@ -35,11 +35,11 @@ case $SELECT in
     [ -z "$networks" ] && notify-send "IWCTL" "No access point found!" -i \
         notification-network-wireless-disconnected && exit 1
 
-    network=$(echo "$networks" | dmenu -l 6)
+    network=$(echo "$networks" | menu -l 6)
 
     [ -z "$network" ] && exit 1
 
-    password=$(printf 'No\nYes' | dmenu -p "Password required?")
+    password=$(printf 'No\nYes' | menu -p "Password required?")
 
     [ -z "$password" ] && exit 1
 
@@ -51,7 +51,7 @@ case $SELECT in
         notify-send "IWCTL" "Failed connecting to $network" \
             -i notification-network-wireless-disconnected
     elif [ "$password" = "Yes" ]; then
-        dmenu -p "enter password" -P <&- |
+        menu -p "Enter password" < /dev/null |
             xargs -r -I{} iwctl station -P {} "$INTERFACE" connect "$network" &&
             notify-send "IWCTL" "Connected to $network" -i wifi-radar && exit 0
 
@@ -81,7 +81,7 @@ case $SELECT in
     [ -z "$networks" ] && notify-send "IWCTL" "No access point found!" \
         -i notification-network-wireless-disconnected && exit 1
 
-    network=$(echo "$networks" | dmenu -l 6)
+    network=$(echo "$networks" | menu -l 6)
 
     [ -z "$network" ] && exit 1
 

@@ -18,9 +18,12 @@ evgeniypeshkov.syntax-highlighter
 formulahendry.code-runner
 foxundermoon.shell-format
 GitHub.github-vscode-theme
+haskell.haskell
 HookyQR.beautify
+hoovercj.haskell-linter
 James-Yu.latex-workshop
 jeff-hykin.better-cpp-syntax
+justusadam.language-haskell
 mads-hartmann.bash-ide-vscode
 mathiasfrohlich.Kotlin
 mitaki28.vscode-clang

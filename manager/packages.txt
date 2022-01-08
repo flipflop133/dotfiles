@@ -1,4 +1,6 @@
 aic94xx-firmware
+android-studio
+android-tools
 autoconf
 automake
 base
@@ -6,6 +8,7 @@ bemenu-wayland
 bison
 bitwarden
 bpytop
+cabal-install
 clang
 d-feet
 dash
@@ -26,9 +29,12 @@ gnome-themes-extra
 grim
 groff
 grub
+haskell-language-server
+hlint
 htop
 intel-gpu-tools
 intel-media-driver
+intel-ucode
 iwd
 jdk-openjdk
 kitty
@@ -49,7 +55,9 @@ ncmpcpp
 neofetch
 neovim
 nerd-fonts-jetbrains-mono
+nextcloud-client
 nnn-nerd
+noto-fonts-emoji
 npm
 ntfs-3g
 os-prober
@@ -64,6 +72,7 @@ pipewire-pulse
 pkgconf
 playerctl
 powertop
+pycharm-community-edition
 python-flask
 python-fonttools
 python-gobject
@@ -74,6 +83,7 @@ shfmt
 slurp
 sof-firmware
 spotify
+stack
 stow
 sudo
 sway
@@ -102,4 +112,6 @@ xorg-xfd
 xorg-xwayland
 yapf
 yt-dlp
+zathura
+zathura-pdf-mupdf
 zsh

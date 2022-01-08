@@ -7,8 +7,8 @@ image=$HOME/.config/sway/wallpaper.*
 indicator-radius=350
 
 # Text
-timestr=%I:%M %p
-datestr=%A, %d %b
+timestr=%-I:%M %p
+datestr=%A %-d
 font-size=120
 text-color=ffffff
 text-ver-color=00000000
