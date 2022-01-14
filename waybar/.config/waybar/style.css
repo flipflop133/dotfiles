@@ -7,14 +7,14 @@
 }
 
 window#waybar {
-  background: @theme_bg_color;
-  color: @theme_fg_color;
+  background: #f6f5f4;
+  color: #535353;
 }
 
 /* MODULES LEFT */
 #workspaces button.focused {
-  color: @theme_selected_fg_color;
-  background: @theme_selected_bg_color;
+  color: #f6f5f4;
+  background: #4040bf;
 }
 
 /* Disable hover effect */
@@ -24,15 +24,15 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  background: @error_color;
-  color: @theme_selected_fg_color;
+  background: #923131;
+  color: #f6f5f4;
 }
 
 #mode {
   padding-left: 10px;
   padding-right: 10px;
-  background: @error_color;
-  color: @theme_selected_fg_color;
+  background: #923131;
+  color: #f6f5f4;
 }
 
 /* MODULES right */
@@ -47,14 +47,14 @@ window#waybar {
 }
 
 #temperature.critical {
-  color: @error_color;
+  color: #923131;
 }
 
 #battery.warning:not(.charging) {
-  color: @error_color;
+  color: #923131;
 }
 
 #battery.critical:not(.charging) {
-  background: @error_color;
-  color: @theme_selected_fg_color;
+  background: #923131;
+  color: #f6f5f4;
 }

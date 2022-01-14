@@ -1,0 +1,560 @@
+[
+  {
+    "settings": {
+      "openEditInWindow": false,
+      "openEditInWindow.popup": false,
+      "windowPosition": {},
+      "show-badge": true,
+      "disableAll": false,
+      "exposeIframes": false,
+      "newStyleAsUsercss": false,
+      "styleViaXhr": false,
+      "patchCsp": false,
+      "config.autosave": true,
+      "popup.breadcrumbs": true,
+      "popup.breadcrumbs.usePath": false,
+      "popup.enabledFirst": true,
+      "popup.stylesFirst": true,
+      "popup.autoResort": false,
+      "popup.borders": false,
+      "popup.findStylesInline": true,
+      "popup.findSort": "u",
+      "manage.onlyEnabled": false,
+      "manage.onlyLocal": false,
+      "manage.onlyUsercss": false,
+      "manage.onlyEnabled.invert": false,
+      "manage.onlyLocal.invert": false,
+      "manage.onlyUsercss.invert": false,
+      "manage.actions.expanded": true,
+      "manage.backup.expanded": true,
+      "manage.filters.expanded": true,
+      "manage.newUI": true,
+      "manage.newUI.favicons": false,
+      "manage.newUI.faviconsGray": true,
+      "manage.newUI.targets": 3,
+      "manage.newUI.sort": "title,asc",
+      "editor.options": {},
+      "editor.toc.expanded": true,
+      "editor.options.expanded": true,
+      "editor.lint.expanded": true,
+      "editor.publish.expanded": true,
+      "editor.lineWrapping": true,
+      "editor.smartIndent": true,
+      "editor.indentWithTabs": false,
+      "editor.tabSize": 4,
+      "editor.keyMap": "default",
+      "editor.theme": "default",
+      "editor.beautify": {
+        "selector_separator_newline": true,
+        "newline_before_open_brace": false,
+        "newline_after_open_brace": true,
+        "newline_between_properties": true,
+        "newline_before_close_brace": true,
+        "newline_between_rules": false,
+        "preserve_newlines": true,
+        "end_with_newline": false,
+        "indent_conditional": true
+      },
+      "editor.beautify.hotkey": "",
+      "editor.lintDelay": 300,
+      "editor.linter": "csslint",
+      "editor.lintReportDelay": 500,
+      "editor.matchHighlight": "token",
+      "editor.autoCloseBrackets": true,
+      "editor.autocompleteOnTyping": false,
+      "editor.contextDelete": null,
+      "editor.selectByTokens": true,
+      "editor.appliesToLineWidget": true,
+      "editor.livePreview": true,
+      "editor.colorpicker": true,
+      "editor.colorpicker.hexUppercase": false,
+      "editor.colorpicker.hotkey": "",
+      "editor.colorpicker.color": "",
+      "editor.colorpicker.maxHeight": 300,
+      "hotkey._execute_browser_action": "",
+      "hotkey.openManage": "",
+      "hotkey.styleDisableAll": "",
+      "sync.enabled": "none",
+      "iconset": 0,
+      "badgeDisabled": "#8B0000",
+      "badgeNormal": "#006666",
+      "popupWidth": 246,
+      "updateInterval": 24
+    }
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1641737079886,
+    "name": "webcampus.unamur.be",
+    "sections": [
+      {
+        "code": ".fixed-top pos-f-t-lowers navbar navbar-receptic navbar-expand moodle-has-zindex {\n    top: 0px;\n}\n.navbar-receptic {\n    top: 0px;\n}\n\n#page {\n    margin-top: 35px;\n}\n\nbody.path-my #page {\n    margin-top: 60px;\n}\n\n#nav-drawer {\n    top: 60px;\n}\n\na {\n    color: #3391ff;\n}\n\n.block-region .block.block_myoverview [data-region=\"course-content\"] a.coursename,\n.block-region .block.block_myoverview [data-region=\"course-content\"] a.coursename .h5 {\n    color: #000000;\n}",
+        "urlPrefixes": [
+          "https://webcampus.unamur.be"
+        ]
+      }
+    ],
+    "updateDate": 1641750992849,
+    "_id": "f7498be6-efc9-4f15-8ad3-d3c7b4e8f544",
+    "_rev": 1641750992849,
+    "id": 1,
+    "_usw": {}
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1641742418407,
+    "name": "https://webcampus.unamur.be/login",
+    "sections": [
+      {
+        "code": ".col-sm-4{\n    flex:10;\n    max-width:100%;\n}\n\n.card{\n    max-width:30%;\n    margin:auto;\n}\n",
+        "urlPrefixes": [
+          "https://webcampus.unamur.be/login"
+        ]
+      }
+    ],
+    "updateDate": 1641742880141,
+    "_id": "16576f45-af0c-4811-b12b-8442cd3e7ca2",
+    "_rev": 1641742880141,
+    "id": 2,
+    "_usw": {}
+  },
+  {
+    "enabled": true,
+    "updateUrl": "https://userstyles.world/api/style/1791.user.css",
+    "url": "https://userstyles.world/style/1791",
+    "installDate": 1641745448990,
+    "sections": [
+      {
+        "code": "/*logo*/\n\tyt-icon.ytd-topbar-logo-renderer {\n\tfill-opacity: 0;\n\tbackground: url(\"https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Dunkin%27_Donuts_logo.svg/1200px-Dunkin%27_Donuts_logo.svg.png\") center center/100% no-repeat!important;\n\tmax-width: 100%;\n\tmax-height: 100px;\n\twidth: 105px;\n\tleft: 29px;\n\tanimation: yadlogo22 9s steps(136) infinite!important\n}\t\n\t/*compatibility*/\n\t#logo .ytd-topbar-logo-renderer svg {\n\tbackground: none!important\n\t}\n\t[d*=\"M27.9727 3.12324C27.6435 1.89323 26\"],\n\t[d*=\"M11.4253 14.2854L18.8477 10.0004L11.4253\"] {\n\tstroke: transparent!important\n\t}\n\t/*animator*/\n\t@keyframes none {\n\t0% {filter: hue-rotate(360deg) saturate(2);}\n}\n\t/*country*/\n\t#country-code.ytd-topbar-logo-renderer {\n\topacity: 0;\n\tcolor: transparent!important;/*change this color if you want to show it*/\n\tmargin: 12px 0 0 2px;\n\tfont-size: 70%\n}\n\t/*inverter*/\n\t#logo #logo.ytd-topbar-logo-renderer, ytd-yoodle-renderer.ytd-topbar-logo-renderer {\n\tfilter: invert(0) saturate(1);\n\tmix-blend-mode: normal;\n\t}\n\t#logo {\n\tmix-blend-mode: normal;\n\tanimation: yadlogo22 9s steps(136) infinite!important\n\t}\n\ttp-yt-app-drawer[opened] #logo-icon{\n\tmax-width: 120px;\n\tleft: 0;\n\tmargin-left: 10px;\n\tfilter: invert(0) saturate(1);\n\t}\n\t\n\t#scrim {\n\tbackdrop-filter: blur(5px);\t\n\t}\n\t#logo:hover yt-icon.ytd-topbar-logo-renderer {\n\t\tbackground: url(\"https://i.gifer.com/YAg6.gif\") center center/100% no-repeat!important;\n\t\twidth: 90px!important;\n\t\ttransition-delay: 20s\n\t}",
+        "start": 6331,
+        "domains": [
+          "youtube.com"
+        ]
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           Youtube Logo Changer\n@namespace      https://userstyles.world/user/xyadx\n@version        1.2.7\n@description    change youtube's logo with added controls\n@author         YAD\n@license        CC-BY-NC-4.0\n@advanced dropdown logoniyad \"Logo Presets\" {\n1 \"Default*\" <<<EOT data:image/svg+xml,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 488.31 109.2'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:url(%23Spectrum_);%7D.cls-2%7Bfill:%23fff;%7D.cls-3%7Bfill:url(%23Spectrum_2);%7D.cls-4%7Bfill:url(%23Spectrum_3);%7D.cls-5%7Bfill:url(%23Spectrum_4);%7D.cls-6%7Bfill:url(%23Spectrum_5);%7D%3C/style%3E%3ClinearGradient id='Spectrum_' x1='397.33' y1='-92.5' x2='-153.67' y2='163.5' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2300a8de'/%3E%3Cstop offset='0.2' stop-color='%23333391'/%3E%3Cstop offset='0.4' stop-color='%23e91388'/%3E%3Cstop offset='0.6' stop-color='%23eb2d2e'/%3E%3Cstop offset='0.8' stop-color='%23fde92b'/%3E%3Cstop offset='1' stop-color='%23009e54'/%3E%3C/linearGradient%3E%3ClinearGradient id='Spectrum_2' x1='440.95' y1='1.4' x2='-110.05' y2='257.4' xlink:href='%23Spectrum_'/%3E%3ClinearGradient id='Spectrum_3' x1='439.56' y1='-1.59' x2='-111.44' y2='254.41' xlink:href='%23Spectrum_'/%3E%3ClinearGradient id='Spectrum_4' x1='448.83' y1='18.36' x2='-102.17' y2='274.36' xlink:href='%23Spectrum_'/%3E%3ClinearGradient id='Spectrum_5' x1='453.57' y1='28.56' x2='-97.43' y2='284.56' xlink:href='%23Spectrum_'/%3E%3C/defs%3E%3Cpath class='cls-1' d='M154.3,17.5A19.62,19.62,0,0,0,140.5,3.7C128.4.4,79.7.4,79.7.4S31,.5,18.9,3.8A19.62,19.62,0,0,0,5.1,17.6C1.4,39.1,0,71.9,5.2,92.5A19.62,19.62,0,0,0,19,106.3c12.1,3.3,60.8,3.3,60.8,3.3s48.7,0,60.8-3.3a19.62,19.62,0,0,0,13.8-13.8C158.3,71,159.4,38.2,154.3,17.5Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath class='cls-2' d='M64.2,78.4,104.6,55,64.2,31.6Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath class='cls-3' d='M227.9,99.7c-3.1-2.1-5.3-5.3-6.6-9.7s-1.9-10.2-1.9-17.5V62.6c0-7.3.7-13.3,2.2-17.7s3.8-7.7,7-9.7A23,23,0,0,1,241,32.1c5,0,9.1,1,12.1,3.1a18.08,18.08,0,0,1,6.7,9.7c1.4,4.4,2.1,10.3,2.1,17.6v9.9c0,7.3-.7,13.1-2.1,17.5s-3.6,7.6-6.7,9.7-7.3,3.1-12.5,3.1C235.2,102.8,231,101.7,227.9,99.7ZM245.2,89c.9-2.2,1.3-5.9,1.3-10.9V56.8c0-4.9-.4-8.5-1.3-10.7s-2.4-3.4-4.5-3.4-3.5,1.1-4.4,3.4S235,51.9,235,56.8V78.1c0,5,.4,8.7,1.2,10.9a4.48,4.48,0,0,0,4.5,3.3Q243.85,92.3,245.2,89ZM464.4,72.7v3.5l.4,9.9a10,10,0,0,0,1.6,4.8,4.62,4.62,0,0,0,3.8,1.5c2.3,0,3.9-.9,4.7-2.7s1.3-4.8,1.4-8.9l13.3.8a16.27,16.27,0,0,1,.1,2.4c0,6.3-1.7,11-5.2,14.1s-8.3,4.7-14.6,4.7c-7.6,0-12.9-2.4-15.9-7.1s-4.6-12.1-4.6-22V61.6c.3-17,3.3-29.5,20.9-29.5,5.3,0,9.3,1,12.1,2.9s4.8,4.9,6,9,1.7,9.7,1.7,16.9V72.6l-25.7.1Zm2-28.8a9.51,9.51,0,0,0-1.6,4.7c-.3,2.2-.4,10-.4,10v4.9h11.2V58.6c0,4.9-.1-7.7-.4-10s-.8-3.9-1.6-4.8a4.59,4.59,0,0,0-3.6-1.4A4.67,4.67,0,0,0,466.4,43.9ZM190.5,71.4,173,8.2h15.3s7.1,31.7,9.6,46.6h.4c2.8-15.8,9.8-46.6,9.8-46.6h15.3L205.7,71.3v30.3H190.6V71.4Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath id='A' class='cls-4' d='M311.5,33.4v68.3h-12l-1.3-8.4h-.3c-3.3,6.3-8.2,9.5-14.7,9.5-11.8,0-13.1-10-13.2-18.4v-51h15.4V83.5c0,3,.3,5.2,1,6.5,1.4,2.8,5.1,2.1,7.1.7a8.12,8.12,0,0,0,2.7-3.1V33.4Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath class='cls-5' d='M353.3,20.6H338v81.1H323V20.6H307.7V8.2h45.5l.1,12.4Zm87.9,23.7c-.9-4.3-2.4-7.4-4.5-9.4s-4.9-2.9-8.6-2.9a13.87,13.87,0,0,0-7.9,2.4,16.46,16.46,0,0,0-5.7,6.3h-.1V4.7H399.6v96.9h12.7l1.6-6.5h.3a14,14,0,0,0,5.3,5.5,16.26,16.26,0,0,0,7.9,2c5.2,0,9-2.4,11.5-7.2s3.7-12.3,3.7-22.4V62.2A91.61,91.61,0,0,0,441.2,44.3ZM427.1,72.2a87.7,87.7,0,0,1-.6,11.7q-.6,4.2-2.1,6a4.84,4.84,0,0,1-3.9,1.8,6.7,6.7,0,0,1-6.1-3.6V49.3a9.27,9.27,0,0,1,2.7-4.6c2.2-2.5,6-2.5,7.7,0,.9,1.2,1.4,3.3,1.8,6.2s.5,7,.5,12.4Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath id='A-2' data-name='A' class='cls-6' d='M390.4,33.4v68.3h-12l-1.3-8.4h-.3c-3.3,6.3-8.2,9.5-14.7,9.5-11.8,0-13.1-10-13.2-18.4v-51h15.4V83.5c0,3,.3,5.2,1,6.5,1.4,2.8,5.1,2.1,7.1.7a8.12,8.12,0,0,0,2.7-3.1V33.4Z' transform='translate(-1.79 -0.4)'/%3E%3C/svg%3E EOT;\n2 \"Coca Cola\" <<<EOT https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg EOT;\n3 \"Minecraft\" <<<EOT https://i.pinimg.com/originals/57/19/c4/5719c4ed7e4352b646d3c9c1fa463b3e.png EOT;\n4 \"Google\" <<<EOT https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png EOT;\n5 \"Twitch\" <<<EOT https://i.ibb.co/M1twnJX/Twitch.png EOT;\n6 \"Dunkin Donuts\" <<<EOT https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Dunkin%27_Donuts_logo.svg/1200px-Dunkin%27_Donuts_logo.svg.png EOT;\n7 \"Facebook\" <<<EOT https://cdn.worldvectorlogo.com/logos/facebook-7.svg EOT;\n8 \"Spotify\" <<<EOT https://www.gizmodo.com.au/content/uploads/sites/2/2019/09/13/gaoxnwalj2yjdiv1ap0m.png EOT;\n9 \"Netflix\" <<<EOT https://1000logos.net/wp-content/uploads/2017/05/Netflix-Logo.png EOT;\n10 \"Pepsi\" <<<EOT https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Pepsi_logo_new.svg/2560px-Pepsi_logo_new.svg.png EOT;\n\tlogoniyad-custom-dropdown \"Custom\" <<<EOT /*[[logoniyad-custom]]*\\/ EOT;\n\n}\n\n@advanced text logoniyad-custom \"Custom Logo URL\" \"https://example.com/image.png\"\n@var range    logosize      'Logo Size' [60, 60, 350, 1, 'px']\n@var range    leftright      'Left/Right' [16, -100, 200, 1, '']\n@advanced dropdown yadcolorize22 \"Logo Changing Color\" {\n\t1 \"OFF*\" <<<EOT none EOT;\n2 \"ON\" <<<EOT yadlogo22 EOT;\n}\n@advanced dropdown yadinvert \"Invert Color\" {\n\t1 \"OFF*\" <<<EOT 0 EOT;\n2 \"ON\" <<<EOT 1 EOT;\n}\n@advanced dropdown yadsatur \"Monochrome\" {\n\t1 \"OFF*\" <<<EOT 1 EOT;\n2 \"ON\" <<<EOT 0 EOT;\n}\n@advanced dropdown yadblend \"Blend Modes\" {\n\t1 \"Normal*\" <<<EOT normal EOT;\n2 \"Darken\" <<<EOT darken EOT;\n3 \"Multiply\" <<<EOT multiply EOT;\n4 \"Color Burn\" <<<EOT color-burn EOT;\n5 \"Lighten\" <<<EOT lighten EOT;\n6 \"Screen\" <<<EOT screen EOT;\n7 \"Color Dodge\" <<<EOT color-dodge EOT;\n8 \"Overlay\" <<<EOT overlay EOT;\n9 \"Soft Light\" <<<EOT soft-light EOT;\n10 \"Hard Light\" <<<EOT hard-light EOT;\n11 \"Difference\" <<<EOT difference EOT;\n12 \"Exclusion\" <<<EOT exclusion EOT;\n13 \"Hue\" <<<EOT hue EOT;\n14 \"Saturation\" <<<EOT saturation EOT;\n15 \"Color\" <<<EOT color EOT;\n16 \"Luminosity\" <<<EOT luminosity EOT;\n\n}\n==/UserStyle== */\n\n@-moz-document domain(\"youtube.com\") {\n\t/*logo*/\n\tyt-icon.ytd-topbar-logo-renderer {\n\tfill-opacity: 0;\n\tbackground: url(\"/*[[logoniyad]]*/\") center center/100% no-repeat!important;\n\tmax-width: 100%;\n\tmax-height: 100px;\n\twidth: /*[[logosize]]*/;\n\tleft: /*[[leftright]]*/px;\n\tanimation: yadlogo22 9s steps(136) infinite!important\n}\t\n\t/*compatibility*/\n\t#logo .ytd-topbar-logo-renderer svg {\n\tbackground: none!important\n\t}\n\t[d*=\"M27.9727 3.12324C27.6435 1.89323 26\"],\n\t[d*=\"M11.4253 14.2854L18.8477 10.0004L11.4253\"] {\n\tstroke: transparent!important\n\t}\n\t/*animator*/\n\t@keyframes /*[[yadcolorize22]]*/ {\n\t0% {filter: hue-rotate(360deg) saturate(2);}\n}\n\t/*country*/\n\t#country-code.ytd-topbar-logo-renderer {\n\topacity: 0;\n\tcolor: transparent!important;/*change this color if you want to show it*/\n\tmargin: 12px 0 0 2px;\n\tfont-size: 70%\n}\n\t/*inverter*/\n\t#logo #logo.ytd-topbar-logo-renderer, ytd-yoodle-renderer.ytd-topbar-logo-renderer {\n\tfilter: invert(/*[[yadinvert]]*/) saturate(/*[[yadsatur]]*/);\n\tmix-blend-mode: /*[[yadblend]]*/;\n\t}\n\t#logo {\n\tmix-blend-mode: /*[[yadblend]]*/;\n\tanimation: yadlogo22 9s steps(136) infinite!important\n\t}\n\ttp-yt-app-drawer[opened] #logo-icon{\n\tmax-width: 120px;\n\tleft: 0;\n\tmargin-left: 10px;\n\tfilter: invert(/*[[yadinvert]]*/) saturate(/*[[yadsatur]]*/);\n\t}\n\t\n\t#scrim {\n\tbackdrop-filter: blur(5px);\t\n\t}\n\t#logo:hover yt-icon.ytd-topbar-logo-renderer {\n\t\tbackground: url(\"https://i.gifer.com/YAg6.gif\") center center/100% no-repeat!important;\n\t\twidth: 90px!important;\n\t\ttransition-delay: 20s\n\t}\n\t\n\n}",
+    "usercssData": {
+      "name": "Youtube Logo Changer",
+      "namespace": "https://userstyles.world/user/xyadx",
+      "version": "1.2.7",
+      "description": "change youtube's logo with added controls",
+      "author": "YAD",
+      "license": "CC-BY-NC-4.0",
+      "vars": {
+        "logoniyad": {
+          "type": "select",
+          "label": "Logo Presets",
+          "name": "logoniyad",
+          "value": "6",
+          "default": "1",
+          "options": [
+            {
+              "name": "1",
+              "label": "Default*",
+              "value": "data:image/svg+xml,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 488.31 109.2'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:url(%23Spectrum_);%7D.cls-2%7Bfill:%23fff;%7D.cls-3%7Bfill:url(%23Spectrum_2);%7D.cls-4%7Bfill:url(%23Spectrum_3);%7D.cls-5%7Bfill:url(%23Spectrum_4);%7D.cls-6%7Bfill:url(%23Spectrum_5);%7D%3C/style%3E%3ClinearGradient id='Spectrum_' x1='397.33' y1='-92.5' x2='-153.67' y2='163.5' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2300a8de'/%3E%3Cstop offset='0.2' stop-color='%23333391'/%3E%3Cstop offset='0.4' stop-color='%23e91388'/%3E%3Cstop offset='0.6' stop-color='%23eb2d2e'/%3E%3Cstop offset='0.8' stop-color='%23fde92b'/%3E%3Cstop offset='1' stop-color='%23009e54'/%3E%3C/linearGradient%3E%3ClinearGradient id='Spectrum_2' x1='440.95' y1='1.4' x2='-110.05' y2='257.4' xlink:href='%23Spectrum_'/%3E%3ClinearGradient id='Spectrum_3' x1='439.56' y1='-1.59' x2='-111.44' y2='254.41' xlink:href='%23Spectrum_'/%3E%3ClinearGradient id='Spectrum_4' x1='448.83' y1='18.36' x2='-102.17' y2='274.36' xlink:href='%23Spectrum_'/%3E%3ClinearGradient id='Spectrum_5' x1='453.57' y1='28.56' x2='-97.43' y2='284.56' xlink:href='%23Spectrum_'/%3E%3C/defs%3E%3Cpath class='cls-1' d='M154.3,17.5A19.62,19.62,0,0,0,140.5,3.7C128.4.4,79.7.4,79.7.4S31,.5,18.9,3.8A19.62,19.62,0,0,0,5.1,17.6C1.4,39.1,0,71.9,5.2,92.5A19.62,19.62,0,0,0,19,106.3c12.1,3.3,60.8,3.3,60.8,3.3s48.7,0,60.8-3.3a19.62,19.62,0,0,0,13.8-13.8C158.3,71,159.4,38.2,154.3,17.5Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath class='cls-2' d='M64.2,78.4,104.6,55,64.2,31.6Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath class='cls-3' d='M227.9,99.7c-3.1-2.1-5.3-5.3-6.6-9.7s-1.9-10.2-1.9-17.5V62.6c0-7.3.7-13.3,2.2-17.7s3.8-7.7,7-9.7A23,23,0,0,1,241,32.1c5,0,9.1,1,12.1,3.1a18.08,18.08,0,0,1,6.7,9.7c1.4,4.4,2.1,10.3,2.1,17.6v9.9c0,7.3-.7,13.1-2.1,17.5s-3.6,7.6-6.7,9.7-7.3,3.1-12.5,3.1C235.2,102.8,231,101.7,227.9,99.7ZM245.2,89c.9-2.2,1.3-5.9,1.3-10.9V56.8c0-4.9-.4-8.5-1.3-10.7s-2.4-3.4-4.5-3.4-3.5,1.1-4.4,3.4S235,51.9,235,56.8V78.1c0,5,.4,8.7,1.2,10.9a4.48,4.48,0,0,0,4.5,3.3Q243.85,92.3,245.2,89ZM464.4,72.7v3.5l.4,9.9a10,10,0,0,0,1.6,4.8,4.62,4.62,0,0,0,3.8,1.5c2.3,0,3.9-.9,4.7-2.7s1.3-4.8,1.4-8.9l13.3.8a16.27,16.27,0,0,1,.1,2.4c0,6.3-1.7,11-5.2,14.1s-8.3,4.7-14.6,4.7c-7.6,0-12.9-2.4-15.9-7.1s-4.6-12.1-4.6-22V61.6c.3-17,3.3-29.5,20.9-29.5,5.3,0,9.3,1,12.1,2.9s4.8,4.9,6,9,1.7,9.7,1.7,16.9V72.6l-25.7.1Zm2-28.8a9.51,9.51,0,0,0-1.6,4.7c-.3,2.2-.4,10-.4,10v4.9h11.2V58.6c0,4.9-.1-7.7-.4-10s-.8-3.9-1.6-4.8a4.59,4.59,0,0,0-3.6-1.4A4.67,4.67,0,0,0,466.4,43.9ZM190.5,71.4,173,8.2h15.3s7.1,31.7,9.6,46.6h.4c2.8-15.8,9.8-46.6,9.8-46.6h15.3L205.7,71.3v30.3H190.6V71.4Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath id='A' class='cls-4' d='M311.5,33.4v68.3h-12l-1.3-8.4h-.3c-3.3,6.3-8.2,9.5-14.7,9.5-11.8,0-13.1-10-13.2-18.4v-51h15.4V83.5c0,3,.3,5.2,1,6.5,1.4,2.8,5.1,2.1,7.1.7a8.12,8.12,0,0,0,2.7-3.1V33.4Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath class='cls-5' d='M353.3,20.6H338v81.1H323V20.6H307.7V8.2h45.5l.1,12.4Zm87.9,23.7c-.9-4.3-2.4-7.4-4.5-9.4s-4.9-2.9-8.6-2.9a13.87,13.87,0,0,0-7.9,2.4,16.46,16.46,0,0,0-5.7,6.3h-.1V4.7H399.6v96.9h12.7l1.6-6.5h.3a14,14,0,0,0,5.3,5.5,16.26,16.26,0,0,0,7.9,2c5.2,0,9-2.4,11.5-7.2s3.7-12.3,3.7-22.4V62.2A91.61,91.61,0,0,0,441.2,44.3ZM427.1,72.2a87.7,87.7,0,0,1-.6,11.7q-.6,4.2-2.1,6a4.84,4.84,0,0,1-3.9,1.8,6.7,6.7,0,0,1-6.1-3.6V49.3a9.27,9.27,0,0,1,2.7-4.6c2.2-2.5,6-2.5,7.7,0,.9,1.2,1.4,3.3,1.8,6.2s.5,7,.5,12.4Z' transform='translate(-1.79 -0.4)'/%3E%3Cpath id='A-2' data-name='A' class='cls-6' d='M390.4,33.4v68.3h-12l-1.3-8.4h-.3c-3.3,6.3-8.2,9.5-14.7,9.5-11.8,0-13.1-10-13.2-18.4v-51h15.4V83.5c0,3,.3,5.2,1,6.5,1.4,2.8,5.1,2.1,7.1.7a8.12,8.12,0,0,0,2.7-3.1V33.4Z' transform='translate(-1.79 -0.4)'/%3E%3C/svg%3E"
+            },
+            {
+              "name": "2",
+              "label": "Coca Cola",
+              "value": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg"
+            },
+            {
+              "name": "3",
+              "label": "Minecraft",
+              "value": "https://i.pinimg.com/originals/57/19/c4/5719c4ed7e4352b646d3c9c1fa463b3e.png"
+            },
+            {
+              "name": "4",
+              "label": "Google",
+              "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
+            },
+            {
+              "name": "5",
+              "label": "Twitch",
+              "value": "https://i.ibb.co/M1twnJX/Twitch.png"
+            },
+            {
+              "name": "6",
+              "label": "Dunkin Donuts",
+              "value": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Dunkin%27_Donuts_logo.svg/1200px-Dunkin%27_Donuts_logo.svg.png"
+            },
+            {
+              "name": "7",
+              "label": "Facebook",
+              "value": "https://cdn.worldvectorlogo.com/logos/facebook-7.svg"
+            },
+            {
+              "name": "8",
+              "label": "Spotify",
+              "value": "https://www.gizmodo.com.au/content/uploads/sites/2/2019/09/13/gaoxnwalj2yjdiv1ap0m.png"
+            },
+            {
+              "name": "9",
+              "label": "Netflix",
+              "value": "https://1000logos.net/wp-content/uploads/2017/05/Netflix-Logo.png"
+            },
+            {
+              "name": "10",
+              "label": "Pepsi",
+              "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Pepsi_logo_new.svg/2560px-Pepsi_logo_new.svg.png"
+            },
+            {
+              "name": "logoniyad-custom-dropdown",
+              "label": "Custom",
+              "value": "/*[[logoniyad-custom]]*/"
+            }
+          ]
+        },
+        "logoniyad-custom": {
+          "type": "text",
+          "label": "Custom Logo URL",
+          "name": "logoniyad-custom",
+          "value": "https://www.gnu.org/graphics/heckert_gnu.transp.small.png",
+          "default": "https://example.com/image.png",
+          "options": null
+        },
+        "logosize": {
+          "type": "range",
+          "label": "Logo Size",
+          "name": "logosize",
+          "value": 105,
+          "default": 60,
+          "options": null,
+          "min": 60,
+          "max": 350,
+          "step": 1,
+          "units": "px"
+        },
+        "leftright": {
+          "type": "range",
+          "label": "Left/Right",
+          "name": "leftright",
+          "value": 29,
+          "default": 16,
+          "options": null,
+          "min": -100,
+          "max": 200,
+          "step": 1,
+          "units": ""
+        },
+        "yadcolorize22": {
+          "type": "select",
+          "label": "Logo Changing Color",
+          "name": "yadcolorize22",
+          "value": "1",
+          "default": "1",
+          "options": [
+            {
+              "name": "1",
+              "label": "OFF*",
+              "value": "none"
+            },
+            {
+              "name": "2",
+              "label": "ON",
+              "value": "yadlogo22"
+            }
+          ]
+        },
+        "yadinvert": {
+          "type": "select",
+          "label": "Invert Color",
+          "name": "yadinvert",
+          "value": "1",
+          "default": "1",
+          "options": [
+            {
+              "name": "1",
+              "label": "OFF*",
+              "value": "0"
+            },
+            {
+              "name": "2",
+              "label": "ON",
+              "value": "1"
+            }
+          ]
+        },
+        "yadsatur": {
+          "type": "select",
+          "label": "Monochrome",
+          "name": "yadsatur",
+          "value": "1",
+          "default": "1",
+          "options": [
+            {
+              "name": "1",
+              "label": "OFF*",
+              "value": "1"
+            },
+            {
+              "name": "2",
+              "label": "ON",
+              "value": "0"
+            }
+          ]
+        },
+        "yadblend": {
+          "type": "select",
+          "label": "Blend Modes",
+          "name": "yadblend",
+          "value": "1",
+          "default": "1",
+          "options": [
+            {
+              "name": "1",
+              "label": "Normal*",
+              "value": "normal"
+            },
+            {
+              "name": "2",
+              "label": "Darken",
+              "value": "darken"
+            },
+            {
+              "name": "3",
+              "label": "Multiply",
+              "value": "multiply"
+            },
+            {
+              "name": "4",
+              "label": "Color Burn",
+              "value": "color-burn"
+            },
+            {
+              "name": "5",
+              "label": "Lighten",
+              "value": "lighten"
+            },
+            {
+              "name": "6",
+              "label": "Screen",
+              "value": "screen"
+            },
+            {
+              "name": "7",
+              "label": "Color Dodge",
+              "value": "color-dodge"
+            },
+            {
+              "name": "8",
+              "label": "Overlay",
+              "value": "overlay"
+            },
+            {
+              "name": "9",
+              "label": "Soft Light",
+              "value": "soft-light"
+            },
+            {
+              "name": "10",
+              "label": "Hard Light",
+              "value": "hard-light"
+            },
+            {
+              "name": "11",
+              "label": "Difference",
+              "value": "difference"
+            },
+            {
+              "name": "12",
+              "label": "Exclusion",
+              "value": "exclusion"
+            },
+            {
+              "name": "13",
+              "label": "Hue",
+              "value": "hue"
+            },
+            {
+              "name": "14",
+              "label": "Saturation",
+              "value": "saturation"
+            },
+            {
+              "name": "15",
+              "label": "Color",
+              "value": "color"
+            },
+            {
+              "name": "16",
+              "label": "Luminosity",
+              "value": "luminosity"
+            }
+          ]
+        }
+      },
+      "preprocessor": "uso"
+    },
+    "author": "YAD",
+    "description": "change youtube's logo with added controls",
+    "name": "Youtube Logo Changer",
+    "installationUrl": "https://userstyles.world/style/1791",
+    "originalDigest": "3b39ff839ec3995bca35f34e81218c398ffdc738",
+    "_id": "786d00ae-f923-48f0-ba20-9c2906aadea4",
+    "_rev": 1641746133500,
+    "id": 98,
+    "_usw": {}
+  },
+  {
+    "enabled": true,
+    "updateUrl": "https://userstyles.world/api/style/1335.user.css",
+    "url": "https://codeberg.org/reizumi/userstyles",
+    "installDate": 1641746238411,
+    "sections": [
+      {
+        "code": ".rq0escxv.l9j0dhe7.du4w35lb.j83agx80.pfnyh3mw.i1fnvgqd.bp9cbjyn.owycx6da.btwxx1t3.jei6r52m.wkznzc2l.n851cfcs.dhix69tm.ahb00how {\n    opacity: 0;\n    height: 0;\n    margin: 10px 16px;\n    transition: 0.2s;\n  }\n  .rq0escxv.l9j0dhe7.du4w35lb.jbae33se.hv4rvrfc.dati1w0a.pybr56ya {\n    opacity: 0;\n    height: 0;\n    padding: 0 16px;\n    transition: 0.2s;\n  }\n  ._-kb h1 {\n    width: 150px;\n  }\n  .is6700om[data-visualcompletion=\"ignore\"] {\n    position: relative;\n    right: 102px;\n    transition-delay: 0.1s;\n  }\n  .o36gj0jk {\n    width: 90px;\n    min-width: 90px;\n    transition: width 0.2s ease;\n    transition-delay: 0.1s;\n  }\n  .o36gj0jk:hover {\n    width: 360px;\n    transition-delay: 0s;\n  }\n  .o36gj0jk:hover .rq0escxv.l9j0dhe7.du4w35lb.j83agx80.pfnyh3mw.i1fnvgqd.bp9cbjyn.owycx6da.btwxx1t3.jei6r52m.wkznzc2l.n851cfcs.dhix69tm.ahb00how {\n    opacity: 1;\n    height: auto;\n    margin: 20px 16px 12px 16px;\n  }\n  .o36gj0jk:hover .rq0escxv.l9j0dhe7.du4w35lb.jbae33se.hv4rvrfc.dati1w0a.pybr56ya {\n    opacity: 1;\n    height: auto;\n    padding: 12px 16px 24px 16px;\n  }\n  .o36gj0jk:hover .is6700om[data-visualcompletion=\"ignore\"] {\n    right: 0;\n    transition-delay: 0s;\n  }",
+        "start": 40,
+        "domains": [
+          "messenger.com"
+        ]
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           Messenger Dynamic Sidebar\n@description    Show and hide your chat sidebar seamlessly\n@author         reizumi\n@namespace      codeberg.org/reizumi\n@homepageURL    https://codeberg.org/reizumi/userstyles\n@updateURL      https://userstyles.world/api/style/1335.user.css\n@preprocessor   stylus\n@version        1.1.1\n@license        CC-BY-SA-4.0\n\n@var text       sidebarSpeed    \"Sidebar speed\"                 .2s\n@var text       sidebarDelay    \"Sidebar leave delay\"           .1s\n@var select     sidebarEase     \"Sidebar easing\" {\n    \"Ease*\"         : \"ease\",\n    \"Ease-in\"       : \"ease-in\",\n    \"Ease-out\"      : \"ease-out\",\n    \"Ease-in-out\"   : \"ease-in-out\"\n}\n@var text       sidebarWidth    \"Sidebar width (focused)\"       360px\n==/UserStyle== */\n\n@-moz-document domain(\"messenger.com\") {\n    /* Header */\n    .rq0escxv.l9j0dhe7.du4w35lb.j83agx80.pfnyh3mw.i1fnvgqd.bp9cbjyn.owycx6da.btwxx1t3.jei6r52m.wkznzc2l.n851cfcs.dhix69tm.ahb00how {\n        opacity: 0;\n        height: 0;\n        margin: 10px 16px;\n        transition: sidebarSpeed;\n    }\n    /* Search */\n    .rq0escxv.l9j0dhe7.du4w35lb.jbae33se.hv4rvrfc.dati1w0a.pybr56ya {\n        opacity: 0;\n        height: 0;\n        padding: 0 16px;\n        transition: sidebarSpeed;\n    }\n    /* Text Header */\n    ._-kb h1 {\n        width: 150px;\n    }\n    /* Unread Message Indicator */\n    .is6700om[data-visualcompletion=\"ignore\"] {\n        position: relative;\n        right: 102px;\n        transition-delay: sidebarDelay;\n    }\n    /* Sidebar (not focused) */\n    .o36gj0jk {\n        width: 90px;\n        min-width: 90px;\n        transition: width sidebarSpeed sidebarEase;\n        transition-delay: sidebarDelay;\n    }\n    /* Sidebar (focused) */\n    .o36gj0jk:hover {\n        width: sidebarWidth;\n        transition-delay: 0s;\n    }\n    /* Header (focused) */\n    .o36gj0jk:hover .rq0escxv.l9j0dhe7.du4w35lb.j83agx80.pfnyh3mw.i1fnvgqd.bp9cbjyn.owycx6da.btwxx1t3.jei6r52m.wkznzc2l.n851cfcs.dhix69tm.ahb00how {\n        opacity: 1;\n        height: auto;\n        margin: 20px 16px 12px 16px;\n    }\n    /* Search (focused) */\n    .o36gj0jk:hover .rq0escxv.l9j0dhe7.du4w35lb.jbae33se.hv4rvrfc.dati1w0a.pybr56ya {\n        opacity: 1;\n        height: auto;\n        padding: 12px 16px 24px 16px;\n    }\n    /* Unread Message Indicator (focused) */\n    .o36gj0jk:hover .is6700om[data-visualcompletion=\"ignore\"] {\n        right: 0;\n        transition-delay: 0s;\n    }\n}\n",
+    "usercssData": {
+      "name": "Messenger Dynamic Sidebar",
+      "description": "Show and hide your chat sidebar seamlessly",
+      "author": "reizumi",
+      "namespace": "codeberg.org/reizumi",
+      "homepageURL": "https://codeberg.org/reizumi/userstyles",
+      "updateURL": "https://userstyles.world/api/style/1335.user.css",
+      "preprocessor": "stylus",
+      "version": "1.1.1",
+      "license": "CC-BY-SA-4.0",
+      "vars": {
+        "sidebarSpeed": {
+          "type": "text",
+          "label": "Sidebar speed",
+          "name": "sidebarSpeed",
+          "value": null,
+          "default": ".2s",
+          "options": null
+        },
+        "sidebarDelay": {
+          "type": "text",
+          "label": "Sidebar leave delay",
+          "name": "sidebarDelay",
+          "value": null,
+          "default": ".1s",
+          "options": null
+        },
+        "sidebarEase": {
+          "type": "select",
+          "label": "Sidebar easing",
+          "name": "sidebarEase",
+          "value": null,
+          "default": "Ease",
+          "options": [
+            {
+              "name": "Ease",
+              "label": "Ease",
+              "value": "ease"
+            },
+            {
+              "name": "Ease-in",
+              "label": "Ease-in",
+              "value": "ease-in"
+            },
+            {
+              "name": "Ease-out",
+              "label": "Ease-out",
+              "value": "ease-out"
+            },
+            {
+              "name": "Ease-in-out",
+              "label": "Ease-in-out",
+              "value": "ease-in-out"
+            }
+          ]
+        },
+        "sidebarWidth": {
+          "type": "text",
+          "label": "Sidebar width (focused)",
+          "name": "sidebarWidth",
+          "value": null,
+          "default": "360px",
+          "options": null
+        }
+      }
+    },
+    "author": "reizumi",
+    "description": "Show and hide your chat sidebar seamlessly",
+    "name": "Messenger Dynamic Sidebar",
+    "originalDigest": "2066dd873aacbc8e402687905672fbb55dee5cd1",
+    "_id": "cef42a90-7b20-43df-9646-2a173d595b83",
+    "_rev": 1641746238412,
+    "id": 108,
+    "_usw": {}
+  },
+  {
+    "enabled": true,
+    "updateUrl": "https://userstyles.world/api/style/1564.user.css",
+    "url": "https://userstyles.world/style/1564",
+    "installDate": 1641746712612,
+    "sections": [
+      {
+        "code": ".stickied .score {\n    font-size: 0;\n}\n.stickied .score:after {\n    content: '•';\n    font-size: medium;\n    pointer-events: none;\n}\n\n.score {\n    font-size: 0;\n}\n.score:after {\n    content: '•';\n    font-size: small;\n    font-weight: bold;\n    pointer-events: none;\n}\n\n.res-nightmode div.score.unvoted {\n    color: #222222 !important;\n    text-shadow: 1px 1px 0.5px #484848, -1px -1px 0.5px #484848, 1px 0px 0.5px #484848, 0px 1px 0.5px #484848, 1px 0px 0.5px #484848, 0px -1px 0.5px #484848,\n    -1px 1px 0.5px #484848, 1px -1px 0.5px #484848;\n}\n\n.res-nightmode div.score.likes {\n    color: #eb4203 !important;\n}\n\n\n.linkinfo > .score {\n    display: none;\n}\n\n.date {\n    margin-bottom: 8px !important;\n    font-size: 13px;\n}\n\n.titlebox > .karma {\n    font-size: 0px !important;\n}\n.titlebox > .karma::before {\n    font-size: 0px !important;\n    content: 'NaN';\n}\n\nthing_t1_cih4b9q > .unvoted.entry > .tagline > .unvoted.score {\n    visibility: hidden;\n}\n\n.comment .tagline .score {\n    display: none;\n}\n\n.userkarma {\n    display: none;\n}\n.user a {\n    font-size: 10px;\n}\n\nspan.score-hidden {\n    display: none;\n}\n\nspan.rank {\n    margin-right: 14px;\n}\n\n#span.karma > text {\n    display: none;\n}\n\n.karma-breakdown {\n    display: none;\n}\n\n.snoovatar-link.linkinfo:before {\n    display: none;\n}\n\n.snoovatar-link.linkinfo {\n    display: none;\n}\n\n\n.titlebox .karma {\n    font-size: 0px;\n    font-weight: normal;\n}\n\n.titlebox {\n    font-size: 0px;\n}\n\n.titlebox h1 {\n    font-family: arial, verdana, helvetica, sans-serif;\n    font-weight: bold;\n    font-size: 19px;\n}\n\n.user {\n    color: transparent;\n    font-size: 0;\n}\n\n.subscribers {\n    font-size: 11px !important;\n}\n\n.users-online {\n    font-size: 11px !important;\n}\n\nform.toggle > label:nth-child(2) {\n    font-size: 11px !important;\n}\n\n.res-nightmode .arrow.up,\n.res-nightmode .arrow.upmod,\n.res-nightmode .arrow.down,\n.res-nightmode .arrow.downmod {\n    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAcCAMAAADC4sagAAABFFBMVEUjJCQiIiIjIyMkIiIkJCQlJSUlJicmJiYnIyEnJycnKCsoKCgpLC8rIyErKyssMDUvLy8wJCAwMDAxMTEyMjI0NDQ2NjY3JR83Nzc5OTk7Ozs8PDw9PT0+Pj4/Pz9AQEBBQUFCQkJDQ0NGRkZISEhKSkpKV2tLS0tMTExOTk5PT09QYHdSUlJTU1NVVVVWVlZXV1dXaINYWFhaWlpabYlbW1tecpBgYGBhYWFid5dkZGRle5xlfJ1pgKRrhKhshKlshapuLhZwirFyjbV0j7h4lL97mcZ9MBR/nsyCo9OOMxGcNQ+eNg+kNw6sOA2vOAy0OQy7Ogq/OwrBOwrDPAnLPQjPPQfTPgfbPwXjQQTrQgPzQwLKxGgxAAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlJREFUOMu9lF1TwjAQRTcMvmeQOi1QPmxFBQTxW1ERUUFEUVRU/P//w9yGmBTFyZPnpXNmbju76W6IJM8Uw49rLa6Tz4mpq/mCqY3Gvqnj6XQ61lp0mGd8favCwx2tow8wUlpwGWOZrNJKjXO+UVc6fJcMZzV7IswSOU/qej0l0rwyq33wphhAM1kWkcy70GB7mUfUNqG9V02PyPMTMs2Wig5RaTctwzxVXyPqvJh0VkJBIKJ4huncCRAvHOEZyGKegO4a6UDrIdLGCT4C6/QDsE7fA+v0HdAadWqk0SH9D3sgXkm4uJIDYKTFnwwXd3kMrNOnwDp9BmzS5QuTshN1iDRwfkxV9VJTJXLzSWYM+NzEEjWvFE2oGvCE7/2yDeL8riWzM8xmorRazLlNI2rdgNb3ZYLF1Es/t8VE7X6/39Yqlt4tLLwhiLq3XVNLfumP24fo3Opm+wLGCVa252Y8tQAAAABJRU5ErkJggg==);\n    background-repeat: no-repeat;\n}\n\n.user-subreddit-total-karma {\n    color: #a5a4a4;\n    font-size: 12px;\n    line-height: 18px;\n    font-family: \"Benton Sans\", Arial, sans-serif;\n    display: none;\n}\n\n.user-subreddit-author-name {\n    margin-bottom: 8.5px;\n}\n\n#profile--id-card--highlight-tooltip--karma {\n    display: none\n}\n\ndiv._2fN55zgax6VM7DyEl9pOmM:nth-child(1) > div:nth-child(2) > svg:nth-child(1) {\n    display: none;\n}\n\ndiv._2fN55zgax6VM7DyEl9pOmM:nth-child(1) {\n    display: none\n}\n\n.Eoj3NCGwtl7hQcr7Rnc0N,\n._3_GZIIN1xcMEC5AVuv4kfa {\n    -ms-flex: 0 0 auto;\n    flex: 0 0 auto;\n    padding-left: 4px;\n    display: none\n}\n\n.uMVXpG5M2xxHNW2g94S8K:before {\n    content: '• ';\n    font-style: normal !important;\n}\n\n.P8SGAKMtRxNwlmLz1zdJu.HZ-cv9q391bm8s7qT54B3 ._3ChHiOyYyUkpZ_Nm3ZyM2M {\n    margin: 4px;\n    width: auto;\n    display: none;\n}\n\n.t4Hq30BDzTeJ85vREX7_M {\n    padding-left: 8px;\n    font-size: 12px;\n    display: none;\n}\n\n._1rZYMD_4xY3gRcSS3p8ODO {\n    display: none;\n}\n\n.Rz5N3cHNgTGZsIQJqBfgk {\n    font-size: 12px;\n    font-weight: 500;\n    line-height: 16px;\n    color: #a8aaab;\n    display: none;\n}\n\n.author-tooltip__credentials-list .author-tooltip__karma,\n.author-tooltip__credentials-list .author-tooltip__karma-details {\n    display: none;\n}\n\n.author-tooltip__credentials-list .author-tooltip__karma-details {\n    display: none;\n    padding: 0px;\n}\n\n.author-tooltip__credentials-list li {\n    display: inline-block;\n    vertical-align: top;\n    min-width: 0px;\n    min-height: 32px;\n    margin-right: 0px;\n    padding: 8px 0;\n    border-right: 0px solid #e0e0e0;\n    white-space: nowrap;\n    line-height: 1.4;\n}\n\ndiv.fieldPair:nth-child(2),\ndiv.fieldPair:nth-child(3) {\n    display: none;\n}\n\n.link .score {\n    pointer-events: none;\n}\n\n.crosspost-preview-tagline > span:nth-child(1) {\n    display: none;\n}\n\n.give-gold,\n.give-gold-button {\n    color: #888 !important;\n    display: none !important;\n}\n\n.awarding-link[data-award-id^=\"award_\"] {\n    display: none !important;\n}\n\n.awarding-link[data-award-id^=\"gid_1\"] {\n    display: none !important;\n}\n\n.awarding-link[data-award-id^=\"gid_3\"] {\n    display: none !important;\n}\n\n.awarding-link[data-award-id^=\"gid_2\"] {\n    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAYAAAD0f5bSAAAABmJLR0QAGACJALpsgx2hAAACcUlEQVQoz22SXUhTcQDFz/3f7d5tztbc3dR9qTUXglgqWRhZGCQYWVCjHnqw0KhEegipJHQEElRE0EPiQ1JWRApmRF9KLsMIIi0x+0ARcW7Nu7nN5q67+7g9RJDi7+1wOA8HfhTWwOEAbV2XZ0635Mw5na7E6p76P7TU2Q4o05i2WCyZzzDyhCjGZSwrmxKEWOvljsnuFSOHA3SxsaCLZeX7aw5XqK25WSCEgiQBszM+9HUPRaJCvD/hxVFn91eRAEChrqA5K5uraWw6orbZzfDzYTSfuwOvJ4ANNiMamxxqi0W/F1yiDQDoplpzvoJV3D9+al+aSsUCAJ72fgKRcfB557GlJBeEENg2mZiPH74X7yjSPKEry/SOzcW2Kn2mVv7w3jBePR9BKLSMhks9GHh2F0NvvmBi3AOzNQOgILndgRmiYpU7TVa9ilDALw+P8j11uHh9GGnpGTh/9S12VTfC4/aBogCjSceoFEwlkWjIaUKQbdLhzNlqDL1sRzAwBwCILAbwuvcGTjZUwWLVg6YJQCQZiUbFd7NuXgAAQ+Z6SJKE32EeL3quIbzgRSqVhNHMAQC8s4G4GI0NEnky6fo2Np0SojEEFyKILi2h61Y9xMX36LxZi7gows+HsbwsYnRkMp5MSf20azQ4X1HKGXy+YFHJ1nw5Z9Dg4KHtKCzKwbZyOwwGDfI2ZqHv8bDg9wcfOdt/ttMAoOT8gxood4+PTetLy+yMVpcOiqL+fgDwoHMg4vHwnxNe6phrghdXaOSst52gGeaKlEppNRlqIRSKKAjBYiomtbR2/Li9pnv/uHDaqqWSxM5CnHJ2ePyr+z/2SvJvoolCUAAAAABJRU5ErkJggg==);\n\n    background-position: 0px;\n    background-repeat: no-repeat;\n    height: 14px;\n    width: 103px;\n    margin-right: 2px;\n    vertical-align: 0px;\n    position: relative;\n}\n\n.awarding-show-more-link {\n    display: none !important;\n}\n\n.giftgold {\n    display: none;\n}\n\n.server-seconds.rounded {\n    display: none;\n}\n\n.awarding-icon-container {\n    display: none;\n}\n\n.awardings-bar {\n    display: none;\n}\n\n._3XoW0oYd5806XiOr24gGdb {\n    display: none !important;\n}\n\n.n08B7PrU01wzgZYIh-s7N {\n    margin-left: 4px;\n    margin-right: 2px;\n    cursor: default;\n    vertical-align: middle;\n    max-height: 16px;\n    max-width: 16px;\n    display: none !important;\n}\n\n.TmlaIdEplCzZ0F1aRGYQh {\n    position: absolute;\n    z-index: 3;\n    overflow: hidden;\n    pointer-events: none;\n    border-radius: 8px;\n    background: none;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    max-height: 100px;\n}\n\n.oZjk-MiWCU7KVYej9wPSw {\n    display: none;\n}\n\na._1JNzvBgvzSnX27gUBKqqmJ:nth-child(10) {\n    display: none;\n}\n\na._1JNzvBgvzSnX27gUBKqqmJ:nth-child(9) {\n    display: none;\n}\n\n.jEUbSHJJx8vISKpWirlfx {\n    display: none;\n}\n\n#gildUser {\n    display: none\n}\n\n.sidecontentbox.trophy-area {\n    display: none;\n}\n\n.rounded.gold-accent.gold-expiration-info {\n    display: none;\n}\n\n.midcol,\n.comment .midcol {\n    display: none !important;\n}\n\n.comment.noncollapsed .usertext,\n.comment.noncollapsed .child,\n.comment.noncollapsed .buttons,\n.comment .author {\n    padding-left: 6px;\n}\n\n.res-nightmode .link.even,\n.res-nightmode .linkcompressed.even,\n.res-nightmode .link.odd,\n.res-nightmode .linkcompressed.odd,\n.res-nightmode .link.even + .link.odd {\n    padding-left: 8px !important;\n}\n\n.parent {\n    padding-left: 5px;\n}\n\n.voteButton,\n._2oM1YqCxIwkvwyeZamWwhW {\n    display: none;\n}\n\n._2pXW42IYsGP59qZnjAnkAx {\n    display: none;\n}\n\n._3mWek_rCoNZ3KHXxqDuM88 {\n    display: none;\n}\n\n.fuCmx3adjKY3tXA4Zfx2p {\n    min-width: 316px;\n}\n\n._2bWoGvMqVhMWwhp4Pgt4LP {\n    display: none;\n}",
+        "start": 242,
+        "domains": [
+          "reddit.com",
+          "old.reddit.com",
+          "new.reddit.com"
+        ]
+      },
+      {
+        "code": "button._14hLFU5cIJCyxH9DSgsCov._2hr3tRWszeMRQ0u_Whs7t8._374Hkkigy4E4srsI2WktEd:nth-of-type(2), ._28vEaVlLWeas1CDiLuTCap._1EWxiIupuIjiExPQeK4Kud._3yh2bniLq7bYr4BaiXowdO.YszYBnnIoNY8pZ6UwCivd._10K5i7NW6qcm-UoCtpB3aK {\ndisplay: none;\n}\n\n/* Mobile Site */\n\n.dayMode .PostFooter.m-redesign .PostFooter__votingBox {\n    display: none;\n}\n\n.nightMode .PostFooter.m-redesign .PostFooter__votingBox {\n    display: none;\n}\n\n\n.StandaloneVotingBox {display: none;}\n\n.VotingBox, ._3H4qDQeWDrSuPhQT4VfGyR {display: none;}\n\n._2OSerrGqsksmXpb-ulVmEG>svg {display: none;}\n\n.PostFooter.m-redesign .PostFooter__award-button, .PostFooter.m-redesign .PostFooter__award-wrapper {display: none;}\n\n#container > div > nav > ul > li:nth-child(4), #container > div > nav > ul > li:nth-child(5), #container > div > nav > ul > li:nth-child(6)  {display: none;}\n\n#container > div > div.AppMainPage > div.NavFrame > div > div > div > div > div > div.UserProfileSection > header > div.UserProfileHeader__banner > div.UserProfileHeader__banner-details > span > span.UserProfileHeader__banner-karma {display: none;}\n\n.UserProfileHeader__banner-detail-delimiter {display: none;}",
+        "start": 8316
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           Reddit - Hide Karma, Scores, Awards, and Votes\n@namespace      userstyles.world\n@version        1.0.0\n==/UserStyle== */\n@-moz-document domain(\"reddit.com\"), domain(\"old.reddit.com\"), domain(\"new.reddit.com\") {\n.stickied .score {\n    font-size: 0;\n}\n.stickied .score:after {\n    content: '•';\n    font-size: medium;\n    pointer-events: none;\n}\n\n.score {\n    font-size: 0;\n}\n.score:after {\n    content: '•';\n    font-size: small;\n    font-weight: bold;\n    pointer-events: none;\n}\n\n.res-nightmode div.score.unvoted {\n    color: #222222 !important;\n    text-shadow: 1px 1px 0.5px #484848, -1px -1px 0.5px #484848, 1px 0px 0.5px #484848, 0px 1px 0.5px #484848, 1px 0px 0.5px #484848, 0px -1px 0.5px #484848,\n    -1px 1px 0.5px #484848, 1px -1px 0.5px #484848;\n}\n\n.res-nightmode div.score.likes {\n    color: #eb4203 !important;\n}\n\n\n.linkinfo > .score {\n    display: none;\n}\n\n.date {\n    margin-bottom: 8px !important;\n    font-size: 13px;\n}\n\n.titlebox > .karma {\n    font-size: 0px !important;\n}\n.titlebox > .karma::before {\n    font-size: 0px !important;\n    content: 'NaN';\n}\n\nthing_t1_cih4b9q > .unvoted.entry > .tagline > .unvoted.score {\n    visibility: hidden;\n}\n\n.comment .tagline .score {\n    display: none;\n}\n\n.userkarma {\n    display: none;\n}\n.user a {\n    font-size: 10px;\n}\n\nspan.score-hidden {\n    display: none;\n}\n\nspan.rank {\n    margin-right: 14px;\n}\n\n#span.karma > text {\n    display: none;\n}\n\n.karma-breakdown {\n    display: none;\n}\n\n.snoovatar-link.linkinfo:before {\n    display: none;\n}\n\n.snoovatar-link.linkinfo {\n    display: none;\n}\n\n\n.titlebox .karma {\n    font-size: 0px;\n    font-weight: normal;\n}\n\n.titlebox {\n    font-size: 0px;\n}\n\n.titlebox h1 {\n    font-family: arial, verdana, helvetica, sans-serif;\n    font-weight: bold;\n    font-size: 19px;\n}\n\n.user {\n    color: transparent;\n    font-size: 0;\n}\n\n.subscribers {\n    font-size: 11px !important;\n}\n\n.users-online {\n    font-size: 11px !important;\n}\n\nform.toggle > label:nth-child(2) {\n    font-size: 11px !important;\n}\n\n.res-nightmode .arrow.up,\n.res-nightmode .arrow.upmod,\n.res-nightmode .arrow.down,\n.res-nightmode .arrow.downmod {\n    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAcCAMAAADC4sagAAABFFBMVEUjJCQiIiIjIyMkIiIkJCQlJSUlJicmJiYnIyEnJycnKCsoKCgpLC8rIyErKyssMDUvLy8wJCAwMDAxMTEyMjI0NDQ2NjY3JR83Nzc5OTk7Ozs8PDw9PT0+Pj4/Pz9AQEBBQUFCQkJDQ0NGRkZISEhKSkpKV2tLS0tMTExOTk5PT09QYHdSUlJTU1NVVVVWVlZXV1dXaINYWFhaWlpabYlbW1tecpBgYGBhYWFid5dkZGRle5xlfJ1pgKRrhKhshKlshapuLhZwirFyjbV0j7h4lL97mcZ9MBR/nsyCo9OOMxGcNQ+eNg+kNw6sOA2vOAy0OQy7Ogq/OwrBOwrDPAnLPQjPPQfTPgfbPwXjQQTrQgPzQwLKxGgxAAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlJREFUOMu9lF1TwjAQRTcMvmeQOi1QPmxFBQTxW1ERUUFEUVRU/P//w9yGmBTFyZPnpXNmbju76W6IJM8Uw49rLa6Tz4mpq/mCqY3Gvqnj6XQ61lp0mGd8favCwx2tow8wUlpwGWOZrNJKjXO+UVc6fJcMZzV7IswSOU/qej0l0rwyq33wphhAM1kWkcy70GB7mUfUNqG9V02PyPMTMs2Wig5RaTctwzxVXyPqvJh0VkJBIKJ4huncCRAvHOEZyGKegO4a6UDrIdLGCT4C6/QDsE7fA+v0HdAadWqk0SH9D3sgXkm4uJIDYKTFnwwXd3kMrNOnwDp9BmzS5QuTshN1iDRwfkxV9VJTJXLzSWYM+NzEEjWvFE2oGvCE7/2yDeL8riWzM8xmorRazLlNI2rdgNb3ZYLF1Es/t8VE7X6/39Yqlt4tLLwhiLq3XVNLfumP24fo3Opm+wLGCVa252Y8tQAAAABJRU5ErkJggg==);\n    background-repeat: no-repeat;\n}\n\n.user-subreddit-total-karma {\n    color: #a5a4a4;\n    font-size: 12px;\n    line-height: 18px;\n    font-family: \"Benton Sans\", Arial, sans-serif;\n    display: none;\n}\n\n.user-subreddit-author-name {\n    margin-bottom: 8.5px;\n}\n\n#profile--id-card--highlight-tooltip--karma {\n    display: none\n}\n\ndiv._2fN55zgax6VM7DyEl9pOmM:nth-child(1) > div:nth-child(2) > svg:nth-child(1) {\n    display: none;\n}\n\ndiv._2fN55zgax6VM7DyEl9pOmM:nth-child(1) {\n    display: none\n}\n\n.Eoj3NCGwtl7hQcr7Rnc0N,\n._3_GZIIN1xcMEC5AVuv4kfa {\n    -ms-flex: 0 0 auto;\n    flex: 0 0 auto;\n    padding-left: 4px;\n    display: none\n}\n\n.uMVXpG5M2xxHNW2g94S8K:before {\n    content: '• ';\n    font-style: normal !important;\n}\n\n.P8SGAKMtRxNwlmLz1zdJu.HZ-cv9q391bm8s7qT54B3 ._3ChHiOyYyUkpZ_Nm3ZyM2M {\n    margin: 4px;\n    width: auto;\n    display: none;\n}\n\n.t4Hq30BDzTeJ85vREX7_M {\n    padding-left: 8px;\n    font-size: 12px;\n    display: none;\n}\n\n._1rZYMD_4xY3gRcSS3p8ODO {\n    display: none;\n}\n\n.Rz5N3cHNgTGZsIQJqBfgk {\n    font-size: 12px;\n    font-weight: 500;\n    line-height: 16px;\n    color: #a8aaab;\n    display: none;\n}\n\n.author-tooltip__credentials-list .author-tooltip__karma,\n.author-tooltip__credentials-list .author-tooltip__karma-details {\n    display: none;\n}\n\n.author-tooltip__credentials-list .author-tooltip__karma-details {\n    display: none;\n    padding: 0px;\n}\n\n.author-tooltip__credentials-list li {\n    display: inline-block;\n    vertical-align: top;\n    min-width: 0px;\n    min-height: 32px;\n    margin-right: 0px;\n    padding: 8px 0;\n    border-right: 0px solid #e0e0e0;\n    white-space: nowrap;\n    line-height: 1.4;\n}\n\ndiv.fieldPair:nth-child(2),\ndiv.fieldPair:nth-child(3) {\n    display: none;\n}\n\n.link .score {\n    pointer-events: none;\n}\n\n.crosspost-preview-tagline > span:nth-child(1) {\n    display: none;\n}\n\n.give-gold,\n.give-gold-button {\n    color: #888 !important;\n    display: none !important;\n}\n\n.awarding-link[data-award-id^=\"award_\"] {\n    display: none !important;\n}\n\n.awarding-link[data-award-id^=\"gid_1\"] {\n    display: none !important;\n}\n\n.awarding-link[data-award-id^=\"gid_3\"] {\n    display: none !important;\n}\n\n.awarding-link[data-award-id^=\"gid_2\"] {\n    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAYAAAD0f5bSAAAABmJLR0QAGACJALpsgx2hAAACcUlEQVQoz22SXUhTcQDFz/3f7d5tztbc3dR9qTUXglgqWRhZGCQYWVCjHnqw0KhEegipJHQEElRE0EPiQ1JWRApmRF9KLsMIIi0x+0ARcW7Nu7nN5q67+7g9RJDi7+1wOA8HfhTWwOEAbV2XZ0635Mw5na7E6p76P7TU2Q4o05i2WCyZzzDyhCjGZSwrmxKEWOvljsnuFSOHA3SxsaCLZeX7aw5XqK25WSCEgiQBszM+9HUPRaJCvD/hxVFn91eRAEChrqA5K5uraWw6orbZzfDzYTSfuwOvJ4ANNiMamxxqi0W/F1yiDQDoplpzvoJV3D9+al+aSsUCAJ72fgKRcfB557GlJBeEENg2mZiPH74X7yjSPKEry/SOzcW2Kn2mVv7w3jBePR9BKLSMhks9GHh2F0NvvmBi3AOzNQOgILndgRmiYpU7TVa9ilDALw+P8j11uHh9GGnpGTh/9S12VTfC4/aBogCjSceoFEwlkWjIaUKQbdLhzNlqDL1sRzAwBwCILAbwuvcGTjZUwWLVg6YJQCQZiUbFd7NuXgAAQ+Z6SJKE32EeL3quIbzgRSqVhNHMAQC8s4G4GI0NEnky6fo2Np0SojEEFyKILi2h61Y9xMX36LxZi7gows+HsbwsYnRkMp5MSf20azQ4X1HKGXy+YFHJ1nw5Z9Dg4KHtKCzKwbZyOwwGDfI2ZqHv8bDg9wcfOdt/ttMAoOT8gxood4+PTetLy+yMVpcOiqL+fgDwoHMg4vHwnxNe6phrghdXaOSst52gGeaKlEppNRlqIRSKKAjBYiomtbR2/Li9pnv/uHDaqqWSxM5CnHJ2ePyr+z/2SvJvoolCUAAAAABJRU5ErkJggg==);\n\n    background-position: 0px;\n    background-repeat: no-repeat;\n    height: 14px;\n    width: 103px;\n    margin-right: 2px;\n    vertical-align: 0px;\n    position: relative;\n}\n\n.awarding-show-more-link {\n    display: none !important;\n}\n\n.giftgold {\n    display: none;\n}\n\n.server-seconds.rounded {\n    display: none;\n}\n\n.awarding-icon-container {\n    display: none;\n}\n\n.awardings-bar {\n    display: none;\n}\n\n._3XoW0oYd5806XiOr24gGdb {\n    display: none !important;\n}\n\n.n08B7PrU01wzgZYIh-s7N {\n    margin-left: 4px;\n    margin-right: 2px;\n    cursor: default;\n    vertical-align: middle;\n    max-height: 16px;\n    max-width: 16px;\n    display: none !important;\n}\n\n.TmlaIdEplCzZ0F1aRGYQh {\n    position: absolute;\n    z-index: 3;\n    overflow: hidden;\n    pointer-events: none;\n    border-radius: 8px;\n    background: none;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    max-height: 100px;\n}\n\n.oZjk-MiWCU7KVYej9wPSw {\n    display: none;\n}\n\na._1JNzvBgvzSnX27gUBKqqmJ:nth-child(10) {\n    display: none;\n}\n\na._1JNzvBgvzSnX27gUBKqqmJ:nth-child(9) {\n    display: none;\n}\n\n.jEUbSHJJx8vISKpWirlfx {\n    display: none;\n}\n\n#gildUser {\n    display: none\n}\n\n.sidecontentbox.trophy-area {\n    display: none;\n}\n\n.rounded.gold-accent.gold-expiration-info {\n    display: none;\n}\n\n.midcol,\n.comment .midcol {\n    display: none !important;\n}\n\n.comment.noncollapsed .usertext,\n.comment.noncollapsed .child,\n.comment.noncollapsed .buttons,\n.comment .author {\n    padding-left: 6px;\n}\n\n.res-nightmode .link.even,\n.res-nightmode .linkcompressed.even,\n.res-nightmode .link.odd,\n.res-nightmode .linkcompressed.odd,\n.res-nightmode .link.even + .link.odd {\n    padding-left: 8px !important;\n}\n\n.parent {\n    padding-left: 5px;\n}\n\n.voteButton,\n._2oM1YqCxIwkvwyeZamWwhW {\n    display: none;\n}\n\n._2pXW42IYsGP59qZnjAnkAx {\n    display: none;\n}\n\n._3mWek_rCoNZ3KHXxqDuM88 {\n    display: none;\n}\n\n.fuCmx3adjKY3tXA4Zfx2p {\n    min-width: 316px;\n}\n\n._2bWoGvMqVhMWwhp4Pgt4LP {\n    display: none;\n}\n}\n\nbutton._14hLFU5cIJCyxH9DSgsCov._2hr3tRWszeMRQ0u_Whs7t8._374Hkkigy4E4srsI2WktEd:nth-of-type(2), ._28vEaVlLWeas1CDiLuTCap._1EWxiIupuIjiExPQeK4Kud._3yh2bniLq7bYr4BaiXowdO.YszYBnnIoNY8pZ6UwCivd._10K5i7NW6qcm-UoCtpB3aK {\ndisplay: none;\n}\n\n/* Mobile Site */\n\n.dayMode .PostFooter.m-redesign .PostFooter__votingBox {\n    display: none;\n}\n\n.nightMode .PostFooter.m-redesign .PostFooter__votingBox {\n    display: none;\n}\n\n\n.StandaloneVotingBox {display: none;}\n\n.VotingBox, ._3H4qDQeWDrSuPhQT4VfGyR {display: none;}\n\n._2OSerrGqsksmXpb-ulVmEG>svg {display: none;}\n\n.PostFooter.m-redesign .PostFooter__award-button, .PostFooter.m-redesign .PostFooter__award-wrapper {display: none;}\n\n#container > div > nav > ul > li:nth-child(4), #container > div > nav > ul > li:nth-child(5), #container > div > nav > ul > li:nth-child(6)  {display: none;}\n\n#container > div > div.AppMainPage > div.NavFrame > div > div > div > div > div > div.UserProfileSection > header > div.UserProfileHeader__banner > div.UserProfileHeader__banner-details > span > span.UserProfileHeader__banner-karma {display: none;}\n\n.UserProfileHeader__banner-detail-delimiter {display: none;}\n",
+    "usercssData": {
+      "name": "Reddit - Hide Karma, Scores, Awards, and Votes",
+      "namespace": "userstyles.world",
+      "version": "1.0.0"
+    },
+    "name": "Reddit - Hide Karma, Scores, Awards, and Votes",
+    "installationUrl": "https://userstyles.world/style/1564",
+    "originalDigest": "c969432dd6c291e3b7494092c23449ffbf17fd56",
+    "_id": "c7a95dbb-2c79-40d8-847d-ef896672557f",
+    "_rev": 1641746712612,
+    "id": 153,
+    "_usw": {}
+  },
+  {
+    "enabled": true,
+    "updateUrl": "https://userstyles.world/api/style/563.user.css",
+    "url": "https://userstyles.world/style/563",
+    "installDate": 1641746773943,
+    "sections": [
+      {
+        "code": "#SHORTCUT_FOCUSABLE_DIV ._1BFbVxT49QnrAN3fqGZ1z8, ._2Xq-4oyrEvHjL5U_EeMnK8, ._20b4i5iUhjZQqDZ1BM_Q-9, ._3Kd8DQpBIbsr5E1JcrMFTY , ._1tvThPWQpORoc2taKebHx {\n        display: none !important;\n    }",
+        "start": 269,
+        "domains": [
+          "reddit.com"
+        ]
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           Hide new side bar\n@namespace      uso\n@author         northernlights\n@description    `Simply hide the new Reddit side bar`\n@version        20210805.15.40\n@license        CC-BY-4.0\n==/UserStyle== */\n\n@-moz-document domain(\"reddit.com\") {\n    #SHORTCUT_FOCUSABLE_DIV ._1BFbVxT49QnrAN3fqGZ1z8, ._2Xq-4oyrEvHjL5U_EeMnK8, ._20b4i5iUhjZQqDZ1BM_Q-9, ._3Kd8DQpBIbsr5E1JcrMFTY , ._1tvThPWQpORoc2taKebHx {\n        display: none !important;\n    }\n}",
+    "usercssData": {
+      "name": "Hide new side bar",
+      "namespace": "uso",
+      "author": "northernlights",
+      "description": "Simply hide the new Reddit side bar",
+      "version": "20210805.15.40",
+      "license": "CC-BY-4.0"
+    },
+    "author": "northernlights",
+    "description": "Simply hide the new Reddit side bar",
+    "name": "Hide new side bar",
+    "installationUrl": "https://userstyles.world/style/563",
+    "originalDigest": "181c29567ec4c749dc0cae3b277919aa5104e565",
+    "_id": "b2b6f37b-203a-4d57-8f96-2d5427041c91",
+    "_rev": 1641746773943,
+    "id": 160,
+    "_usw": {}
+  }
+]

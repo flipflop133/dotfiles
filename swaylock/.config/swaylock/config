@@ -1,22 +1,22 @@
 # General
 clock
 indicator
-effect-blur=30x5
+effect-blur=5x5
 scaling=fill
 image=$HOME/.config/sway/wallpaper.*
-indicator-radius=350
+indicator-radius=300
 
 # Text
 timestr=%-I:%M %p
 datestr=%A %-d
 font-size=120
-text-color=ffffff
+text-color=535353ff
 text-ver-color=00000000
 text-clear-color=00000000
 text-wrong-color=00000000
 
 # Inside
-inside-color=00000099
+inside-color=f6f5f4ff
 inside-ver-color=00000000
 inside-clear-color=00000000
 inside-wrong-color=00000000
@@ -35,7 +35,7 @@ line-clear-color=00000000
 line-wrong-color=cc0000
 
 # Various
-key-hl-color=ffffff
+key-hl-color=535353
 bs-hl-color=00000000
 caps-lock-bs-hl-color=00000000
 caps-lock-key-hl-color=00000000

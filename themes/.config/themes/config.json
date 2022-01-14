@@ -18,8 +18,8 @@
     },
     "gtk-3.0": {
         "path": "/.config/gtk-3.0/settings.ini",
-        "light": ["light", "Papirus-Light"],
-        "dark": ["dark", "Papirus-Dark"]
+        "light": ["Adwaita-light", "Papirus-Light","gtk-application-prefer-dark-theme=false"],
+        "dark": ["Adwaita-dark", "Papirus-Dark","gtk-application-prefer-dark-theme=true"]
     },
     "bemenu": {
         "path": "/.config/scripts/sh/bemenu_theme",
@@ -43,13 +43,24 @@
     },
     "mako": {
         "path": "/.config/mako/config",
-        "light": ["background-color=#f5f5f5", "text-color=#242424", "border-color=#242424", "progress-color=#85b2f9"],
-        "dark": ["background-color=#353535", "text-color=#eeeeec", "border-color=#eeeeec", "progress-color=#15539e"],
+        "light": ["background-color=#f6f5f4", "text-color=#535353", "border-color=#535353"],
+        "dark": ["background-color=#353535", "text-color=#c4c4c4", "border-color=#c4c4c4"],
         "commands": ["makoctl reload"]
     },
     "microsoft-teams": {
         "path": "/.config/Microsoft/Microsoft Teams/desktop-config.json",
         "light": ["defaultV2"],
         "dark": ["darkV2"]
+    },
+    "zathura": {
+        "path": "/.config/zathura/zathurarc",
+        "light": ["lightTheme"],
+        "dark": ["darkTheme"]
+    },
+    "waybar": {
+        "path": "/.config/waybar/style.css",
+        "light": ["#f6f5f4", "#535353", "#4040bf", "#923131"],
+        "dark": ["#353535", "#c4c4c4", "#7ad3d3", "#ffafaf"],
+        "commands": ["killall -SIGUSR2 waybar"]
     }
 }

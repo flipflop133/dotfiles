@@ -1,26 +1,27 @@
 # general
-background-color=#f5f5f5
-text-color=#242424
-progress-color=#85b2f9
-border-color=#242424
+background-color=#f6f5f4
+text-color=#535353
+border-color=#535353
 font=$FONT 18px
 anchor=bottom-right
 layer=overlay
 default-timeout=15000
 
-# light theme
-[mode=light]
 # audio
 [category=audio]
 default-timeout=2000
 group-by=category
-format=<b>%s</b>\n%b
+format=<span font_family="JetBrainsMono Nerd Font" size="25pt" gravity_hint="line">%s </span><span rise="6pt">%b</span>
+padding=20,5
+text-alignment=center
 
 # brightness
 [category=brightness]
 default-timeout=2000
 group-by=category
-format=<b>%s</b>\n%b
+format=<span font_family="JetBrainsMono Nerd Font" size="25pt" gravity_hint="line">%s </span><span rise="6pt">%b</span>
+padding=20,5
+text-alignment=center
 
 # screenshot
 [category=screenshot]

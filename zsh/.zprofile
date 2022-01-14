@@ -1,5 +1,5 @@
 # Browser
-export BROWSER="firefox-beta"
+export BROWSER="firefox"
 
 # Editor
 export SUDO_EDITOR="nvim"

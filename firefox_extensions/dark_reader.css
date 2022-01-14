@@ -1,0 +1,9 @@
+webcampus.unamur.be
+
+CSS
+a {
+    color: ${#000000} !important;
+}
+.navbar-receptic{
+    background-image: linear-gradient(to bottom,#000000 0%,#000000 100%)
+}

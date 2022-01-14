@@ -1,6 +1,7 @@
 aic94xx-firmware
 android-studio
 android-tools
+aria2
 autoconf
 automake
 base

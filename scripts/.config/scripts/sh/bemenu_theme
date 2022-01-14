@@ -1,22 +1,22 @@
 dark_theme='
 	--tb=#353535\
-	--tf=#eeeeec\
+	--tf=#c4c4c4\
 	--fb=#353535\
-	--ff=#eeeeec\
+	--ff=#c4c4c4\
 	--nb=#353535\
-	--nf=#eeeeec\
-	--hb=#15539e\
-	--hf=#ffffff\
+	--nf=#c4c4c4\
+	--hb=#7ad3d3\
+	--hf=#353535\
 '
 light_theme='
-	--tb=#f5f5f5\
-	--tf=#242424\
-	--fb=#f5f5f5\
-	--ff=#242424\
-	--nb=#f5f5f5\
-	--nf=#242424\
-	--hb=#0860f2\
-	--hf=#ffffff\
+	--tb=#f6f5f4\
+	--tf=#535353\
+	--fb=#f6f5f4\
+	--ff=#535353\
+	--nb=#f6f5f4\
+	--nf=#535353\
+	--hb=#bbbbbb\
+	--hf=#2e2e2e\
 '
 
 theme=$light_theme

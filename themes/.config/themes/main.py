@@ -100,7 +100,6 @@ class Theme:
         """
         if before == 0:  # If before is 0, then the signal was sent after suspend.
             # Adjust the next run time that was paused during suspend.
-            print("system suspend ended...")
             self.next_run_thread.terminate()
             self.update()
             self.launch_scheduler()
@@ -126,12 +125,10 @@ class Theme:
         self.current_time = datetime.now(pytz.utc)
 
         # check which theme to apply
-        print("runi")
         if (((self.current_time < self.sunrise) or
              (self.current_time > self.sunset))
                 and ("light" in self.current_theme)):
             # change theme
-            print("ok")
             self.theme_applications("dark")
             self.checked_theme = False
         elif (self.current_time > self.sunrise) and (
