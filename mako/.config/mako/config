@@ -9,18 +9,20 @@ default-timeout=15000
 
 # audio
 [category=audio]
-default-timeout=2000
+default-timeout=3000
 group-by=category
 format=<span font_family="JetBrainsMono Nerd Font" size="25pt" gravity_hint="line">%s </span><span rise="6pt">%b</span>
-padding=20,5
+padding=5,0
+width=200
 text-alignment=center
 
 # brightness
 [category=brightness]
-default-timeout=2000
+default-timeout=3000
 group-by=category
 format=<span font_family="JetBrainsMono Nerd Font" size="25pt" gravity_hint="line">%s </span><span rise="6pt">%b</span>
-padding=20,5
+padding=5,0
+width=200
 text-alignment=center
 
 # screenshot

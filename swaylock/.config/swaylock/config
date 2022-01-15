@@ -35,7 +35,7 @@ line-clear-color=00000000
 line-wrong-color=cc0000
 
 # Various
-key-hl-color=535353
+key-hl-color=535353ff
 bs-hl-color=00000000
 caps-lock-bs-hl-color=00000000
 caps-lock-key-hl-color=00000000

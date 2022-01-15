@@ -1,7 +1,7 @@
 bindsym $mod+d exec fuzzel -f "$FONT:style=Regular:size=14"\
                            -b '353535ff'\
                            -t 'c4c4c4ff'\
-                           -s '7ad3d3ff'\
-                           -S '353535ff'\
-                           -m '353535ff'\
+                           -s '666666ff'\
+                           -S 'e4e4e4ff'\
+                           -m 'e4e4e4ff'\
                            -i 'Papirus-Light'

@@ -2,15 +2,16 @@
 # define colors
 set $bg           #353535
 set $fg	          #c4c4c4
-set $sel_bg_color #7ad3d3
-set $sel_fg_color #353535
-set $red          #ffafaf
+set $sel_bg_color #1976d2
+set $sel_fg_color #fdfdfd
+set $warning_bg   #f44336
+set $warning_fg   #1e1e1e
 
 # set colors
-# class                 border         background     text           indicator  child_border
-client.focused          $sel_bg_color  $sel_bg_color  $sel_fg_color  $red       $sel_bg_color
-client.focused_inactive $sel_bg_color  $sel_bg_color  $sel_fg_color  $red       $sel_fg_color
-client.unfocused        $bg            $bg            $fg            $fg        $bg
-client.urgent           $red           $red           $bg            $fg        $fg
-client.placeholder      $fg            $fg            $fg            $fg        $fg
+# class                 border         background     text           indicator   child_border
+client.focused          $fg  $sel_bg_color  $sel_fg_color  $warning_bg        $sel_bg_color
+client.focused_inactive $fg  $sel_bg_color  $sel_fg_color  $warning_bg        $sel_fg_color
+client.unfocused        $fg            $bg            $fg            $fg         $bg
+client.urgent           $fg    $warning_bg    $warning_fg    $warning_fg $warning_fg
+client.placeholder      $fg            $fg            $fg            $fg         $fg
 client.background       $fg

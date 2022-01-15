@@ -5,8 +5,8 @@ dark_theme='
 	--ff=#c4c4c4\
 	--nb=#353535\
 	--nf=#c4c4c4\
-	--hb=#7ad3d3\
-	--hf=#353535\
+	--hb=#666666\
+	--hf=#e4e4e4\
 '
 light_theme='
 	--tb=#f6f5f4\

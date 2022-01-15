@@ -1,8 +1,8 @@
 {
     "kitty": {
         "path": "/.config/kitty/kitty.conf",
-        "light": ["AtomOneLight"],
-        "dark": ["AtomOneDark"],
+        "light": ["materialLight"],
+        "dark": ["materialDark"],
         "commands": ["killall -SIGUSR1 kitty"]
     },
     "bitwarden": {
@@ -28,8 +28,8 @@
     },
     "vscode": {
         "path": "/.config/Code/User/settings.json",
-        "light": ["Atom One Light"],
-        "dark": ["Atom One Dark"]
+        "light": ["Visual Studio Light"],
+        "dark": ["One Dark Pro"]
     },
     "ncmpcpp": {
         "path": "/.config/ncmpcpp/config",
@@ -59,8 +59,13 @@
     },
     "waybar": {
         "path": "/.config/waybar/style.css",
-        "light": ["#f6f5f4", "#535353", "#4040bf", "#923131"],
-        "dark": ["#353535", "#c4c4c4", "#7ad3d3", "#ffafaf"],
+        "light": ["#f6f5f4", "#535353", "#1976d2", "#d32f2f"],
+        "dark": ["#353535", "#c4c4c4", "#1976d2", "#f44336"],
         "commands": ["killall -SIGUSR2 waybar"]
+    },
+    "swaylock": {
+        "path": "/.config/swaylock/config",
+        "light": ["inside-color=f6f5f4ff", "text-color=535353ff","key-hl-color=535353ff"],
+        "dark": ["inside-color=353535ff", "text-color=c4c4c4ff","key-hl-color=c4c4c4ff"]
     }
 }

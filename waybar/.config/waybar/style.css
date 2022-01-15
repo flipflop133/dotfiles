@@ -13,8 +13,8 @@ window#waybar {
 
 /* MODULES LEFT */
 #workspaces button.focused {
-  color: #f6f5f4;
-  background: #4040bf;
+  color: #fdfdfd;
+  background: #1976d2;
 }
 
 /* Disable hover effect */
@@ -24,15 +24,15 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  background: #923131;
-  color: #f6f5f4;
+  background: #d32f2f;
+  color: #f4f4f4;
 }
 
 #mode {
   padding-left: 10px;
   padding-right: 10px;
-  background: #923131;
-  color: #f6f5f4;
+  background: #d32f2f;
+  color: #f4f4f4;
 }
 
 /* MODULES right */
@@ -46,15 +46,12 @@ window#waybar {
   padding-right: 10px;
 }
 
-#temperature.critical {
-  color: #923131;
-}
-
 #battery.warning:not(.charging) {
-  color: #923131;
+  background: #d32f2f;
+  color: #f4f4f4;
 }
 
 #battery.critical:not(.charging) {
-  background: #923131;
-  color: #f6f5f4;
+  background: #d32f2f;
+  color: #f4f4f4;
 }
