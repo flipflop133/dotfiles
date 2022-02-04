@@ -1,31 +1,20 @@
-# general
-background-color=#f6f5f4
-text-color=#535353
-border-color=#535353
+# General
+background-color=#353535
+text-color=#c4c4c4
+border-color=#c4c4c4
 font=$FONT 18px
 anchor=bottom-right
 layer=overlay
 default-timeout=15000
 
-# audio
-[category=audio]
+# Font-icon category
+[category=font-icon]
 default-timeout=3000
 group-by=category
 format=<span font_family="JetBrainsMono Nerd Font" size="25pt" gravity_hint="line">%s </span><span rise="6pt">%b</span>
-padding=5,0
-width=200
 text-alignment=center
 
-# brightness
-[category=brightness]
-default-timeout=3000
-group-by=category
-format=<span font_family="JetBrainsMono Nerd Font" size="25pt" gravity_hint="line">%s </span><span rise="6pt">%b</span>
-padding=5,0
-width=200
-text-alignment=center
-
-# screenshot
+# Screenshot
 [category=screenshot]
 default-timeout=10000
 format=<b>%s</b>\n%b

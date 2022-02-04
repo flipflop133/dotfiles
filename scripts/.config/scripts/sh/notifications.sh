@@ -21,7 +21,7 @@ brightness() {
 	fi
 
 	# Send the notification
-	notify-send -c brightness $icon "Brightness [$brightness%] " --icon "x" # $icon #-h int:value:"$brightness" 
+	notify-send -c font-icon $icon "Brightness [$brightness%] " # $icon #-h int:value:"$brightness" 
 }
 
 volume() {
@@ -44,7 +44,7 @@ volume() {
 	fi
 
 	# Send the notification
-	notify-send -c audio $icon "Volume [$volume%]" #-h int:value:"$volume" 
+	notify-send -c font-icon $icon "Volume [$volume%]" #-h int:value:"$volume" 
 }
 
 microphone() {
@@ -68,7 +68,7 @@ microphone() {
 	fi
 
 	# Send the notification
-	notify-send -c audio $icon "Mic [$volume%]" #-h int:value:"$volume" 
+	notify-send -c font-icon $icon "Mic [$volume%]" #-h int:value:"$volume" 
 }
 
 case "$1" in

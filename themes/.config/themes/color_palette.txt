@@ -1,0 +1,54 @@
+light-theme:
+    -> respects WCAG AAA
+    background-color:#f6f5f4
+    foreground-color:#535353
+    selection-background-color:#4040bf
+    selection-foreground-color:#f6f5f4
+    highlight-background-color:#bbbbbb
+    highlight-foreground-color:#2e2e2e
+    warnings-color:#923131
+
+dark-theme:
+    -> respects WCAG AAA
+    background-color:#353535
+    foreground-color:#c4c4c4
+    selection-background-color:#7ad3d3
+    selection-foreground-color:#333333
+    warnings-color:#ffafaf
+
+
+light-theme_material_design:
+    -> respects WCAG AAA
+    background-color:#f6f5f4
+    foreground-color:#535353
+
+    -> respects WCAG AA
+    selection-background-color:#1976d2
+    selection-foreground-color:#fdfdfd
+
+    -> respects WCAG AAA
+    highlight-background-color:#bbbbbb
+    highlight-foreground-color:#2e2e2e
+
+    -> respects WCAG AA
+    warning-background-color:#d32f2f
+    warning-foreground-color:#f4f4f4
+    warning-text-color:#923131
+
+dark-theme_material_design:
+    -> respects WCAG AAA
+    background-color:#353535
+    foreground-color:#c4c4c4
+
+    -> respects WCAG AA
+    selection-background-color:#1976d2
+    selection-foreground-color:#fdfdfd
+
+    -> respects WCAG AA
+    highlight-background-color:#666666
+    highlight-foreground-color:#e4e4e4
+
+    -> respects WCAG AA
+    warning-background-color:#f44336
+    warning-foreground-color:#1e1e1e
+    warning-text-color:#ffafaf

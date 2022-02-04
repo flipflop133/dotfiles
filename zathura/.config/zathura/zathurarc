@@ -1,5 +1,5 @@
-include lightTheme
-set font "$FONT 18"
+include darkTheme
+set font "$FONT 18px"
 set selection-clipboard clipboard
 set highlight-transparency 0.3
 set guioptions none # hide status bar

@@ -7,8 +7,8 @@
 }
 
 window#waybar {
-  background: #f6f5f4;
-  color: #535353;
+  background: #353535;
+  color: #c4c4c4;
 }
 
 /* MODULES LEFT */
@@ -24,15 +24,15 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  background: #d32f2f;
-  color: #f4f4f4;
+  background: #f44336;
+  color: #1e1e1e;
 }
 
 #mode {
   padding-left: 10px;
   padding-right: 10px;
-  background: #d32f2f;
-  color: #f4f4f4;
+  background: #f44336;
+  color: #1e1e1e;
 }
 
 /* MODULES right */
@@ -47,11 +47,11 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-  background: #d32f2f;
-  color: #f4f4f4;
+  background: #f44336;
+  color: #1e1e1e;
 }
 
 #battery.critical:not(.charging) {
-  background: #d32f2f;
-  color: #f4f4f4;
+  background: #f44336;
+  color: #1e1e1e;
 }

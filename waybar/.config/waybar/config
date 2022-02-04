@@ -36,6 +36,7 @@
 		"format": "{icon}",
 		"format-charging": "\uf583 {capacity}%",
 		"format-plugged": "{icon}\uDB85\uDC25{capacity}%",
+		"format-full": "{icon}\uDB85\uDC25{capacity}%",
 		"format-alt": "{power}W {icon}\uf22f",
 		"tooltip-format": "{capacity}%",
 		"format-icons": ["\uf58d", "\uf579", "\uf57a", "\uf57b", "\uf57c", "\uf57d", "\uf57e", "\uf57f", "\uf580", "\uf581", "\uf578"]

@@ -59,13 +59,28 @@
     },
     "waybar": {
         "path": "/.config/waybar/style.css",
-        "light": ["#f6f5f4", "#535353", "#1976d2", "#d32f2f"],
-        "dark": ["#353535", "#c4c4c4", "#1976d2", "#f44336"],
+        "light": ["#f6f5f4", "#535353", "#1976d2", "#d32f2f","f4f4f4"],
+        "dark": ["#353535", "#c4c4c4", "#1976d2", "#f44336","1e1e1e"],
         "commands": ["killall -SIGUSR2 waybar"]
     },
     "swaylock": {
         "path": "/.config/swaylock/config",
         "light": ["inside-color=f6f5f4ff", "text-color=535353ff","key-hl-color=535353ff"],
         "dark": ["inside-color=353535ff", "text-color=c4c4c4ff","key-hl-color=c4c4c4ff"]
+    },
+    "libre-office": {
+        "path": "/.config/libreoffice/4/user/registrymodifications.xcu",
+        "light": ["<item oor:path=\"/org.openoffice.Office.UI/ColorScheme\"><prop oor:name=\"CurrentColorScheme\" oor:op=\"fuse\"><value>LibreOffice</value></prop></item>"],
+        "dark": ["<item oor:path=\"/org.openoffice.Office.UI/ColorScheme\"><prop oor:name=\"CurrentColorScheme\" oor:op=\"fuse\"><value>LibreOffice Dark</value></prop></item>"]
+    },
+    "android-studio-ide": {
+        "path": "/.config/Google/AndroidStudio2020.3/options/colors.scheme.xml",
+        "light": ["global_color_scheme name=\"IntelliJ Light\""],
+        "dark": ["global_color_scheme name=\"_@user_Darcula\""]
+    },
+    "android-studio": {
+        "path": "/.config/Google/AndroidStudio2021.1/options/laf.xml",
+        "light": ["<laf class-name=\"com.intellij.ide.ui.laf.IntelliJLaf\" themeId=\"JetBrainsLightTheme\" />"],
+        "dark": ["<laf class-name=\"com.intellij.ide.ui.laf.darcula.DarculaLaf\" />"]
     }
 }

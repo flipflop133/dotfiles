@@ -1,10 +1,9 @@
 aaron-bond.better-comments
 abusaidm.html-snippets
-akamud.vscode-theme-onedark
-akamud.vscode-theme-onelight
 apedroed.Happy-Flasker
-arcticicestudio.nord-visual-studio-code
+arthurwang.vsc-prolog
 austin.code-gnu-global
+bmewburn.vscode-intelephense-client
 cschlosser.doxdocgen
 cstrap.flask-snippets
 Dart-Code.dart-code
@@ -15,9 +14,9 @@ eamodio.gitlens
 ecmel.vscode-html-css
 esbenp.prettier-vscode
 evgeniypeshkov.syntax-highlighter
+eww-yuck.yuck
 formulahendry.code-runner
 foxundermoon.shell-format
-GitHub.github-vscode-theme
 haskell.haskell
 HookyQR.beautify
 hoovercj.haskell-linter
@@ -42,7 +41,6 @@ mtxr.sqltools
 naumovs.color-highlight
 PKief.material-icon-theme
 redhat.java
-rozbo.papercolor-vscode
 shd101wyy.markdown-preview-enhanced
 shengchen.vscode-checkstyle
 SonarSource.sonarlint-vscode
