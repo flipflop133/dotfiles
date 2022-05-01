@@ -25,3 +25,4 @@ alias vip="nvim -p *"
 alias nf='clear; neofetch'
 alias n='nnn'
 alias pom='$HOME/.config/scripts/sh/pomodoro.sh'
+alias icat='kitty +kitten icat'

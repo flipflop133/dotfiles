@@ -1,7 +1,7 @@
 # General
-background-color=#353535
-text-color=#c4c4c4
-border-color=#c4c4c4
+background-color=#f6f5f4
+text-color=#535353
+border-color=#535353
 font=$FONT 18px
 anchor=bottom-right
 layer=overlay

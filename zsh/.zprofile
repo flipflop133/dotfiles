@@ -20,6 +20,7 @@ export FLUTTER="/flutter/bin"
 export PATH="$PATH:$HOME/flutter/bin"
 export PATH="$PATH:/usr/lib/dart/bin"
 export CHROME_EXECUTABLE="chromium"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Start sway in tty1
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then

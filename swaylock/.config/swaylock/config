@@ -10,13 +10,13 @@ indicator-radius=300
 timestr=%-I:%M %p
 datestr=%A %-d
 font-size=120
-text-color=c4c4c4ff
+text-color=535353ff
 text-ver-color=00000000
 text-clear-color=00000000
 text-wrong-color=00000000
 
 # Inside
-inside-color=353535ff
+inside-color=f6f5f4ff
 inside-ver-color=00000000
 inside-clear-color=00000000
 inside-wrong-color=00000000
@@ -35,7 +35,7 @@ line-clear-color=00000000
 line-wrong-color=cc0000
 
 # Various
-key-hl-color=c4c4c4ff
+key-hl-color=535353ff
 bs-hl-color=00000000
 caps-lock-bs-hl-color=00000000
 caps-lock-key-hl-color=00000000

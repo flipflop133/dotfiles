@@ -13,11 +13,11 @@
 		"spacing": 10
 	},
 	"clock": {
-		"format": "{:%-I:%M %p}"
+		"format": "{:%I:%M %p}"
 	},
 	"clock#date": {
 		"interval": 600,
-		"format": "{:%a %-d}",
+		"format": "{:%a %d}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"backlight": {
@@ -56,7 +56,7 @@
 		"smooth-scrolling-threshold": 5,
 		"on-click": "pactl set-sink-mute 0 toggle",
 		"format": "{icon} {volume}%",
-		"format-bluetooth": "{icon}\uf5ae {volume}%",
+		"format-bluetooth": "{icon} \uf5ae {volume}%",
 		"format-bluetooth-muted": "{icon}\uf5b1",
 		"format-muted": "\ufc5d",
 		"format-icons": {
@@ -75,8 +75,6 @@
 		"smooth-scrolling-threshold": 5,
 		"on-click": "pactl set-source-mute 0 toggle",
 		"format": "{format_source}",
-		"format-bluetooth": "{icon}\uf5ae {volume}% {format_source}",
-		"format-bluetooth-muted": "{icon}\uf5b1 {format_source}",
 		"format-muted": "{format_source}",
 		"format-source": "\uf86b {volume}%",
 		"format-source-muted": "\uf86c",

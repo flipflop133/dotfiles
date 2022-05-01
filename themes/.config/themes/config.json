@@ -74,7 +74,7 @@
         "dark": ["<item oor:path=\"/org.openoffice.Office.UI/ColorScheme\"><prop oor:name=\"CurrentColorScheme\" oor:op=\"fuse\"><value>LibreOffice Dark</value></prop></item>"]
     },
     "android-studio-ide": {
-        "path": "/.config/Google/AndroidStudio2020.3/options/colors.scheme.xml",
+        "path": "/.config/Google/AndroidStudio2021.1/options/colors.scheme.xml",
         "light": ["global_color_scheme name=\"IntelliJ Light\""],
         "dark": ["global_color_scheme name=\"_@user_Darcula\""]
     },

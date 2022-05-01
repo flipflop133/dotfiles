@@ -21,7 +21,7 @@ brightness() {
 	fi
 
 	# Send the notification
-	notify-send -c font-icon $icon "Brightness [$brightness%] " # $icon #-h int:value:"$brightness" 
+	notify-send -c "font-icon" $icon "Brightness [$brightness%] " # $icon #-h int:value:"$brightness" 
 }
 
 volume() {
@@ -31,9 +31,8 @@ volume() {
 
 	# Set the icon depending on the volume level
 	if [ "$mute_status" = "yes" ]; then
-		icon=$icon_path$volume_muted
 		# Send the notification
-		notify-send -c audio "Volume" "Muted" --icon "ﱝ"
+		notify-send -c "font-icon" "ﱝ" "Volume Muted"
 		exit
 	elif [ "$volume" -lt 34 ]; then
 		icon="奄"
@@ -44,7 +43,7 @@ volume() {
 	fi
 
 	# Send the notification
-	notify-send -c font-icon $icon "Volume [$volume%]" #-h int:value:"$volume" 
+	notify-send -c "font-icon" $icon "Volume [$volume%]" #-h int:value:"$volume" 
 }
 
 microphone() {
@@ -54,10 +53,8 @@ microphone() {
 
 	# Set the icon depending on the volume level
 	if [ "$status" = "yes" ]; then
-		icon=$icon_path$mic_off
-		micro="muted"
 		# Send the notification
-		notify-send -c audio "" "Mic $micro"
+		notify-send -c "font-icon" "" "Mic muted"
 		exit
 	elif [ "$volume" -lt 34 ]; then
 		icon="奄"
@@ -68,7 +65,7 @@ microphone() {
 	fi
 
 	# Send the notification
-	notify-send -c font-icon $icon "Mic [$volume%]" #-h int:value:"$volume" 
+	notify-send -c "font-icon" $icon "Mic [$volume%]" #-h int:value:"$volume" 
 }
 
 case "$1" in
